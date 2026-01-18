@@ -101,12 +101,11 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-bold font-heading text-[#0089CF]">
-                MANNHOLD
-              </span>
-              <span className="block text-sm font-semibold text-[#F7941D] tracking-wider">
-                HAUSTECHNIK
-              </span>
+              <img 
+                src="/images/logo.svg" 
+                alt="Mannhold Haustechnik Logo" 
+                className="h-10 lg:h-12 w-auto"
+              />
             </Link>
             <p className="mt-4 text-gray-400 leading-relaxed">
               Ihr Experte für Wärmepumpen und moderne Heiztechnik in Berlin Süd

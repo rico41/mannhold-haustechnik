@@ -1,0 +1,46 @@
+<svg width="250" height="70" viewBox="0 0 250 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- House Icon Group -->
+  <g transform="translate(5, 10)">
+    <!-- House outline - dark gray -->
+    <path d="M2 15 L2 35 L22 35 L22 25 L17 20 L7 20 L2 25 Z" stroke="#1a1a1a" stroke-width="1.5" fill="none"/>
+    <path d="M2 25 L12 18 L22 25" stroke="#1a1a1a" stroke-width="1.5" fill="none"/>
+    
+    <!-- Orange flame with white snowflake -->
+    <g transform="translate(5, 22)">
+      <!-- Flame shape - orange -->
+      <path d="M3 10 Q1 7 3 4 Q5 1 7 4 Q9 7 7 10 Q5 12 3 10 Z" fill="#F7941D"/>
+      <!-- Snowflake in white -->
+      <g transform="translate(5, 6.5)" fill="white" stroke="white" stroke-width="0.5">
+        <line x1="0" y1="-2" x2="0" y2="2"/>
+        <line x1="-2" y1="0" x2="2" y2="0"/>
+        <line x1="-1.4" y1="-1.4" x2="1.4" y2="1.4"/>
+        <line x1="1.4" y1="-1.4" x2="-1.4" y2="1.4"/>
+      </g>
+    </g>
+    
+    <!-- Blue water/pipe symbol -->
+    <g transform="translate(11, 24)">
+      <!-- Water drop shape - blue -->
+      <path d="M1 10 Q1 6 4 6 Q7 6 7 10 Q7 14 4 14 Q1 14 1 10 Z" fill="#0089CF" opacity="0.85"/>
+      <!-- Pipe curve - blue -->
+      <path d="M7 10 Q11 7 15 5 Q19 3 21 6" stroke="#0089CF" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <!-- Wrench head - dark gray -->
+      <g transform="translate(21, 6)">
+        <circle cx="0" cy="0" r="2" fill="#1a1a1a"/>
+        <rect x="-2.5" y="-1" width="5" height="2" fill="#1a1a1a" rx="0.4"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Text Group -->
+  <g transform="translate(38, 5)">
+    <!-- MANNHOLD in blue -->
+    <text x="0" y="24" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0089CF" letter-spacing="0.02em">MANNHOLD</text>
+    <!-- HAUSTECHNIK in orange -->
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#F7941D" letter-spacing="0.12em">HAUSTECHNIK</text>
+    <!-- Service bar background - dark gray -->
+    <rect x="0" y="45" width="165" height="18" fill="#1a1a1a" rx="3"/>
+    <!-- Service text - white with orange dots -->
+    <text x="8" y="57" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" letter-spacing="0.06em">SANITÄR • HEIZUNG • WARTUNG</text>
+  </g>
+</svg>

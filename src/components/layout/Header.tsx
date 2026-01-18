@@ -95,14 +95,11 @@ export const Header = () => {
             className="flex items-center gap-3 shrink-0"
             aria-label="Zur Startseite"
           >
-            <div className="flex flex-col">
-              <span className="text-xl lg:text-2xl font-bold font-heading text-[#0089CF]">
-                MANNHOLD
-              </span>
-              <span className="text-xs lg:text-sm font-semibold text-[#F7941D] tracking-wider">
-                HAUSTECHNIK
-              </span>
-            </div>
+            <img 
+              src="/images/logo.svg" 
+              alt="Mannhold Haustechnik Logo" 
+              className="h-10 lg:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -186,15 +183,13 @@ export const Header = () => {
                 <div className="p-6 border-b">
                   <Link
                     href="/"
-                    className="flex flex-col"
                     onClick={handleCloseMobileMenu}
                   >
-                    <span className="text-2xl font-bold font-heading text-[#0089CF]">
-                      MANNHOLD
-                    </span>
-                    <span className="text-sm font-semibold text-[#F7941D] tracking-wider">
-                      HAUSTECHNIK
-                    </span>
+                    <img 
+                      src="/images/logo.svg" 
+                      alt="Mannhold Haustechnik Logo" 
+                      className="h-10 w-auto"
+                    />
                   </Link>
                 </div>
 
