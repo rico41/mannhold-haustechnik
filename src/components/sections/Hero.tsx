@@ -1,0 +1,187 @@
+"use client";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { company } from "@/lib/data";
+
+const benefits = [
+  "Bis zu 70% Förderung",
+  "Vaillant & OVUM Partner",
+  "Kostenlose Beratung",
+];
+
+export const Hero = () => {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#0089CF]/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-[#F7941D]/10 to-transparent" />
+      </div>
+
+      <div className="container-custom relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-7rem)] py-12 lg:py-0">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center lg:text-left"
+          >
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium mb-6"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0089CF] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0089CF]"></span>
+              </span>
+              Zertifizierter Vaillant & OVUM Partner
+            </motion.div>
+
+            {/* Headline */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
+              <span className="text-foreground">Ihre neue </span>
+              <span className="text-gradient">Wärmepumpe</span>
+              <br />
+              <span className="text-foreground">für Berlin & Potsdam</span>
+            </h1>
+
+            {/* Subheadline */}
+            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
+              Professionelle Heizungsmodernisierung mit Vaillant und OVUM
+              Premium Wärmepumpen. Nutzen Sie bis zu 70% staatliche Förderung.
+            </p>
+
+            {/* Benefits */}
+            <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                  className="flex items-center gap-2 text-sm md:text-base"
+                >
+                  <CheckCircle2 className="h-5 w-5 text-[#F7941D]" />
+                  <span>{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            >
+              <Button
+                asChild
+                size="lg"
+                className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-lg px-8 h-14"
+              >
+                <Link href="/kontakt">
+                  Kostenlose Beratung
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto text-lg px-8 h-14 border-2"
+              >
+                <a href={`tel:${company.contact.phone}`}>
+                  <Phone className="mr-2 h-5 w-5" />
+                  {company.contact.phoneDisplay}
+                </a>
+              </Button>
+            </motion.div>
+          </motion.div>
+
+          {/* Visual */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative hidden lg:block"
+          >
+            <div className="relative aspect-square max-w-lg mx-auto">
+              {/* Background Blob/Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#F7941D]/20 to-[#0089CF]/20 rounded-[2rem] transform rotate-3 scale-105 blur-lg" />
+              
+              {/* Main Image */}
+              <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
+                {/* Bild: Modernes Haus mit Technik-Fokus */}
+                <img 
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" 
+                  alt="Modernes Haus mit effizienter Heiztechnik" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Overlay Gradient for Text Readability if needed */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+              </div>
+
+              {/* Floating badges */}
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-[#0089CF]/10 flex items-center justify-center">
+                     <span className="font-bold text-[#0089CF]">V</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-gray-900">Vaillant</div>
+                    <div className="text-xs text-muted-foreground">Premium Partner</div>
+                  </div>
+                </div>
+              </motion.div>
+
+              <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+                className="absolute bottom-12 -left-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100"
+              >
+                <div className="flex items-center gap-3">
+                   <div className="h-10 w-10 rounded-full bg-[#F7941D]/10 flex items-center justify-center">
+                     <span className="font-bold text-[#F7941D]">70%</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-bold text-gray-900">Förderung</div>
+                    <div className="text-xs text-muted-foreground">Wir helfen beim Antrag</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom wave */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg
+          viewBox="0 0 1440 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-auto"
+        >
+          <path
+            d="M0 50L48 45.8C96 41.7 192 33.3 288 35.2C384 37 480 49 576 54.2C672 59.3 768 57.7 864 52.5C960 47.3 1056 38.7 1152 38.3C1248 38 1344 46 1392 50L1440 54V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z"
+            fill="white"
+          />
+        </svg>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
