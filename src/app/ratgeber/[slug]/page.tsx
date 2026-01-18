@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import React from "react";
 import {
   Calendar,
   Clock,
@@ -78,13 +79,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 // Markdown-ähnliches Rendering für Content
 const renderContent = (content: string) => {
   const lines = content.split("\n");
-  const elements: JSX.Element[] = [];
+  const elements: React.ReactElement[] = [];
   let currentTable: string[][] = [];
   let inTable = false;
   let tableKey = 0;
 
-  const processInlineFormatting = (text: string): JSX.Element[] => {
-    const parts: JSX.Element[] = [];
+  const processInlineFormatting = (text: string): React.ReactElement[] => {
+    const parts: React.ReactElement[] = [];
     let remaining = text;
     let partKey = 0;
 
