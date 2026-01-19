@@ -20,7 +20,7 @@ export const company = {
   hours: {
     weekdays: "Mo - Do: 08:00 - 16:00 Uhr",
     friday: "Fr: 08:00 - 12:00 Uhr",
-    saturday: "Sa: Nach Vereinbarung",
+    saturday: "Sa: Geschlossen",
     sunday: "So: Geschlossen",
   },
   social: {
