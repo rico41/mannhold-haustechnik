@@ -5,6 +5,7 @@ import {
   Settings,
   Calculator,
   Wrench,
+  RefreshCw,
   type LucideIcon,
 } from "lucide-react";
 
@@ -285,6 +286,40 @@ export const services: Service[] = [
       "Heizung Service",
     ],
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: "heizung-erneuern",
+    slug: "heizung-erneuern",
+    title: "Heizung erneuern",
+    shortTitle: "Heizung erneuern",
+    description:
+      "Komplettservice für den Heizungsaustausch: Von der Beratung über Förderung bis zur Installation – alles aus einer Hand.",
+    longDescription:
+      "Sie möchten Ihre alte Heizung erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung über den Förderantrag bis zur Installation – alles aus einer Hand.",
+    icon: RefreshCw,
+    features: [
+      "Kostenlose Erstberatung",
+      "Heizlastberechnung",
+      "Förderberatung & Antragstellung",
+      "Wärmepumpe oder Brennwerttherme",
+      "Komplette Installation",
+      "Einweisung & Übergabe",
+    ],
+    benefits: [
+      "Bis zu 70% Förderung",
+      "Bis zu 50% Energieeinsparung",
+      "Alles aus einer Hand",
+      "Förderberatung inklusive",
+      "Planbare Kosten",
+    ],
+    keywords: [
+      "Heizung erneuern Berlin",
+      "Heizungsaustausch",
+      "Heizung erneuern lassen",
+      "Alte Heizung austauschen",
+      "Heizung erneuern Förderung",
+    ],
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800",
   },
 ];
 
