@@ -40,38 +40,6 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#1a1a1a] text-white">
-      {/* CTA Section */}
-      <div className="bg-gradient-to-r from-[#F7941D] to-[#0089CF]">
-        <div className="container-custom py-12 md:py-16">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold font-heading text-white">
-                Bereit für Ihre neue Heizung?
-              </h3>
-              <p className="mt-2 text-white/90">
-                Kostenlose Beratung und Fördercheck – wir sind für Sie da.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-[#F7941D] font-semibold rounded-lg hover:bg-white/90 transition-colors"
-              >
-                Jetzt Beratung anfragen
-                <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
-              <a
-                href={`tel:${company.contact.phone}`}
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                {company.contact.phoneDisplay}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* SEO Links Section - Programmatic Pages */}
       <div className="bg-[#252525]">
         <div className="container-custom py-8">
