@@ -141,7 +141,7 @@ export const LocationsPreview = () => {
             <div className="relative aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg border-2 border-white/50">
               <img 
                 src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&q=80&w=1200" 
-                alt="Berlin Skyline und Karte" 
+                alt="Wärmepumpe Berlin - Servicegebiet Steglitz, Charlottenburg, Potsdam - Mannhold Haustechnik" 
                 className="w-full h-full object-cover grayscale opacity-50"
               />
               {/* Overlay mit Pin */}

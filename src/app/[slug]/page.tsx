@@ -52,14 +52,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { service, location } = parsed;
 
-  // Generiere Title und Description
-  const title = service.titleTemplate.replace(/{bezirk}/g, location.name);
-  const description = service.metaDescriptionTemplate.replace(
-    /{bezirk}/g,
-    location.name
-  );
+  // Generiere Title und Description mit allen Platzhaltern
+  const title = service.titleTemplate
+    .replace(/{bezirk}/g, location.name)
+    .replace(/{shortName}/g, location.shortName);
+  const description = service.metaDescriptionTemplate
+    .replace(/{bezirk}/g, location.name)
+    .replace(/{shortName}/g, location.shortName)
+    .replace(/{distanceInfo}/g, location.distanceInfo);
   const keywords = service.keywordTemplates.map((kw) =>
-    kw.replace(/{bezirk}/g, location.name)
+    kw.replace(/{bezirk}/g, location.name).replace(/{shortName}/g, location.shortName)
   );
 
   return {
@@ -101,12 +103,16 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
   const relatedLocations = getRelatedLocationPages(slug, 4);
   const relatedServices = getRelatedServicePages(slug, 4);
 
-  // LocalBusiness Schema
+  // LocalBusiness Schema (erweitert)
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `https://mannhold-haustechnik.de/${slug}`,
     name: company.name,
-    description: service.metaDescriptionTemplate.replace(/{bezirk}/g, location.name),
+    image: "https://mannhold-haustechnik.de/images/logo.svg",
+    description: service.metaDescriptionTemplate
+      .replace(/{bezirk}/g, location.name)
+      .replace(/{distanceInfo}/g, location.distanceInfo),
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address.street,
@@ -114,15 +120,32 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
       postalCode: company.address.zip,
       addressCountry: "DE",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 52.4862,
+      longitude: 13.3589,
+    },
     telephone: company.contact.phone,
     email: company.contact.email,
     url: `https://mannhold-haustechnik.de/${slug}`,
+    priceRange: "€€",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
     areaServed: {
       "@type": "Place",
       name: location.name,
     },
-    priceRange: "$$",
-    openingHours: "Mo-Fr 08:00-18:00",
+    sameAs: company.social ? [
+      company.social.facebook,
+      company.social.instagram,
+      company.social.linkedin,
+    ].filter(Boolean) : [],
   };
 
   // Service Schema
@@ -155,6 +178,32 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
     })),
   };
 
+  // BreadcrumbList Schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://mannhold-haustechnik.de",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: service.name,
+        item: `https://mannhold-haustechnik.de/leistungen/${service.slug}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${service.name} in ${location.name}`,
+        item: `https://mannhold-haustechnik.de/${slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       {/* Schema Markup */}
@@ -169,6 +218,10 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       {/* Hero Section */}

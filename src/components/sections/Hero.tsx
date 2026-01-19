@@ -46,10 +46,10 @@ export const Hero = () => {
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
-              <span className="text-foreground">Ihre neue </span>
-              <span className="text-gradient">Wärmepumpe</span>
+              <span className="text-foreground">Wärmepumpe Berlin: </span>
+              <span className="text-gradient">Vaillant & OVUM Installation</span>
               <br />
-              <span className="text-foreground">für Berlin & Potsdam</span>
+              <span className="text-foreground">mit bis zu 70% Förderung</span>
             </h1>
 
             {/* Subheadline */}
@@ -121,7 +121,7 @@ export const Hero = () => {
                 {/* Bild: Modernes Haus mit Technik-Fokus */}
                 <img 
                   src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" 
-                  alt="Modernes Haus mit effizienter Heiztechnik" 
+                  alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
                   className="w-full h-full object-cover"
                 />
                 

@@ -84,7 +84,7 @@ export const Services = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
                       <img 
                         src={service.image} 
-                        alt={service.title}
+                        alt={`${service.title} Installation Berlin - Mannhold Haustechnik ${service.shortTitle}`}
                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute bottom-4 left-6 right-6 z-20 flex items-center gap-3">

@@ -44,10 +44,10 @@ export const seoServices: SEOService[] = [
     shortName: "Wärmepumpe",
     icon: Wind,
     priority: 1,
-    titleTemplate: "Wärmepumpe {bezirk} | Installation & Beratung",
+    titleTemplate: "Wärmepumpe {bezirk} | Installation & Wartung | Mannhold",
     metaDescriptionTemplate:
-      "Wärmepumpen-Installation in {bezirk} ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Kostenlose Beratung vor Ort. Jetzt Angebot für {bezirk} anfragen!",
-    h1Template: "Wärmepumpe in {bezirk}",
+      "Wärmepumpe in {bezirk} ✓ {distanceInfo} ✓ Vaillant Partner ✓ Bis 70% Förderung ✓ Altbau-Spezialist ✓ Jetzt beraten lassen!",
+    h1Template: "Wärmepumpe {bezirk}: Installation & Wartung vom Profi",
     introTemplate:
       "Sie suchen einen zuverlässigen Partner für die Installation einer Wärmepumpe in {bezirk}? Als zertifizierter Vaillant und OVUM Partner sind wir Ihr lokaler Experte für moderne Heiztechnik. Von unserem Standort in Berlin-Schöneberg erreichen wir Sie in {bezirk} schnell und unkompliziert.",
     benefits: [
@@ -102,10 +102,10 @@ export const seoServices: SEOService[] = [
     shortName: "Heizungsinstallateur",
     icon: Home,
     priority: 1,
-    titleTemplate: "Heizungsinstallateur {bezirk} | Ihr lokaler Fachbetrieb",
+    titleTemplate: "Heizungsinstallateur {bezirk} | Wärmepumpen & Gasthermen | Mannhold",
     metaDescriptionTemplate:
-      "Heizungsinstallateur in {bezirk} gesucht? ✓ Wärmepumpen ✓ Gasthermen ✓ Fußbodenheizung ✓ Schneller Service. Mannhold Haustechnik – Ihr Meisterbetrieb!",
-    h1Template: "Heizungsinstallateur in {bezirk}",
+      "Heizungsinstallateur in {bezirk} ✓ {distanceInfo} ✓ Wärmepumpen ✓ Gasthermen ✓ Fußbodenheizung ✓ Schneller Service. Mannhold Haustechnik – Ihr Meisterbetrieb!",
+    h1Template: "Heizungsinstallateur {bezirk}: Wärmepumpen & Gasthermen vom Profi",
     introTemplate:
       "Als erfahrener Heizungsinstallateur in {bezirk} bieten wir Ihnen das komplette Spektrum moderner Heiztechnik. Ob Wärmepumpe, Gastherme oder Fußbodenheizung – unser Fachteam ist schnell bei Ihnen vor Ort in {bezirk}.",
     benefits: [

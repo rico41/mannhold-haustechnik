@@ -102,7 +102,7 @@ export default function UeberUnsPage() {
               <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
                 <img 
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Das Team von Mannhold Haustechnik bei einer Besprechung" 
+                  alt="Mannhold Haustechnik Team - Heizungsinstallateur Berlin - Wärmepumpen Experten" 
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -363,7 +363,7 @@ export default function UeberUnsPage() {
             <div className="relative aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg border-2 border-white">
               <img 
                 src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&q=80&w=1200" 
-                alt="Berlin Skyline und Karte" 
+                alt="Mannhold Haustechnik Standort Berlin-Schöneberg - Servicegebiet Berlin Süd bis Potsdam" 
                 className="w-full h-full object-cover grayscale opacity-50"
               />
               {/* Overlay mit Pin */}

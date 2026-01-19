@@ -14,7 +14,7 @@ export const CTASection = () => {
         <div className="absolute inset-0 bg-[#1a1a1a]/85 z-10" />
         <img 
           src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&q=80&w=2000" 
-          alt="Hintergrund" 
+          alt="Heizungsinstallateur Berlin - Wärmepumpen Installation und Wartung" 
           className="w-full h-full object-cover"
         />
       </div>

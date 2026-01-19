@@ -23,7 +23,8 @@ const replacePlaceholders = (template: string, location: SEOLocation): string =>
   return template
     .replace(/{bezirk}/g, location.name)
     .replace(/{shortName}/g, location.shortName)
-    .replace(/{region}/g, location.region === "berlin" ? "Berlin" : "Brandenburg");
+    .replace(/{region}/g, location.region === "berlin" ? "Berlin" : "Brandenburg")
+    .replace(/{distanceInfo}/g, location.distanceInfo);
 };
 
 /**
