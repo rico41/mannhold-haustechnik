@@ -144,7 +144,6 @@ export const services: Service[] = [
       "Schnelle Terminvergabe",
       "Festpreisangebote",
       "Alle Marken",
-      "24h Notdienst verfügbar",
       "Umstiegsberatung Wärmepumpe",
     ],
     keywords: [

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     "Wärmepumpe Altbau Berlin",
     "Wärmepumpe Förderung Berlin",
     "Heizung erneuern Berlin",
-    "Heizungsnotdienst Berlin",
+    "Heizungsmodernisierung Berlin",
     // Bezirks-Keywords
     "Wärmepumpe Steglitz",
     "Wärmepumpe Zehlendorf",

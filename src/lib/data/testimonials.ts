@@ -9,62 +9,64 @@ export type Testimonial = {
   image?: string;
 };
 
+/**
+ * Echte Google-Bewertungen
+ * Automatisch abgerufen am: 2026-01-19
+ * Gesamt-Rating: 5 (7 Bewertungen)
+ */
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    name: "Familie Müller",
-    location: "Berlin-Steglitz",
+    name: "Luis domingo",
+    location: "Berlin",
     rating: 5,
-    text: "Herr Mannhold und sein Team haben unsere alte Gasheizung durch eine moderne Vaillant Wärmepumpe ersetzt. Von der Beratung bis zur Installation alles top! Die Förderanträge wurden ebenfalls unterstützt. Absolute Empfehlung!",
-    service: "Wärmepumpe",
-    date: "2024-11",
+    text: "Herr Mannhold hat unseren Gasherdschlauch neu angebracht und angeschlossen. Des Weiteren auch unsere Duschrinne freigemacht. Wir können seine Dienstleistung nur wärmstens weiterempfehlen! Sehr sympathisch und professionell.",
+    service: "Heizungsservice",
+    date: "2022-11",
   },
   {
     id: "2",
-    name: "Thomas K.",
-    location: "Berlin-Schöneberg",
+    name: "Lorenzo Toso",
+    location: "Berlin",
     rating: 5,
-    text: "Schnelle und unkomplizierte Wartung unserer Fußbodenheizung. Die Spülung hat wahre Wunder gewirkt – endlich wieder gleichmäßig warm in allen Räumen. Sehr professioneller und freundlicher Service.",
-    service: "Fußbodenheizung",
-    date: "2024-10",
+    text: "Herr Mannhold war kurzfristig zu erreichen, pünktlich und freundlich. Er hat das Problem sofort erkannt und schnell behoben. Gerne wieder",
+    service: "Heizungsservice",
+    date: "2021-01",
   },
   {
     id: "3",
-    name: "Dr. Schneider",
-    location: "Berlin-Zehlendorf",
+    name: "Wilfried Peters",
+    location: "Berlin",
     rating: 5,
-    text: "Wir haben uns für eine OVUM Premium Wärmepumpe entschieden und sind begeistert. Extrem leise und effizient. Das Team hat sauber gearbeitet und alles bestens erklärt. Top Beratung zur Förderung!",
-    service: "OVUM Wärmepumpe",
-    date: "2024-09",
+    text: "Alles bestens, kann ich jederzeit weiterempfehlen. Sehr netter Kontakt und schnelle Hilfe. Danke.",
+    service: "Heizungsservice",
+    date: "2021-02",
   },
   {
     id: "4",
-    name: "Sabine W.",
-    location: "Potsdam",
+    name: "FRIEDRICH GÄRTNER",
+    location: "Berlin",
     rating: 5,
-    text: "Trotz der Anfahrt aus Berlin wurden wir super betreut. Der hydraulische Abgleich wurde fachgerecht durchgeführt und dokumentiert – wichtig für unsere Förderung. Sehr zufrieden!",
-    service: "Hydraulischer Abgleich",
-    date: "2024-08",
+    text: "Einhaltung der Terminabsprachen. Professionelle Abwicklung. Sympathisches Auftreten. Faire Preisgestaltung.",
+    service: "Heizungsservice",
+    date: "2022-11",
   },
   {
     id: "5",
-    name: "Michael R.",
-    location: "Berlin-Tempelhof",
+    name: "julian l",
+    location: "Berlin",
     rating: 5,
-    text: "Unsere alte Gastherme musste dringend ersetzt werden. Mannhold Haustechnik hat innerhalb einer Woche ein neues Brennwertgerät installiert. Faire Preise und pünktliche Ausführung.",
-    service: "Gastherme",
-    date: "2024-07",
-  },
-  {
-    id: "6",
-    name: "Andrea & Peter L.",
-    location: "Berlin-Friedenau",
-    rating: 5,
-    text: "Die Heizlastberechnung wurde sehr gründlich durchgeführt. Auf dieser Basis konnten wir unsere Wärmepumpe optimal dimensionieren. Kompetente Beratung und faire Konditionen.",
-    service: "Heizlastberechnung",
-    date: "2024-06",
-  },
+    text: "Schnelle Antworten, schnelles Angebot, freundliches Gespräch vor Ort mit vielen Tipps. Vielen Dank!",
+    service: "Heizungsservice",
+    date: "2023-04",
+  }
 ];
+
+export const googleRating = {
+  average: 5,
+  total: 7,
+  lastUpdated: "2026-01-19",
+};
 
 export const getTestimonialsByLocation = (location: string): Testimonial[] => {
   return testimonials.filter((t) =>

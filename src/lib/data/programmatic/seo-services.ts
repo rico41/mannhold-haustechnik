@@ -165,23 +165,21 @@ export const seoServices: SEOService[] = [
     priority: 1,
     titleTemplate: "Heizungsinstallateur {bezirk} | Wärmepumpen & Gasthermen | Mannhold",
     metaDescriptionTemplate:
-      "Heizungsinstallateur in {bezirk} ✓ {distanceInfo} ✓ Wärmepumpen ✓ Gasthermen ✓ Fußbodenheizung ✓ Notdienst. Mannhold Haustechnik – Ihr Meisterbetrieb!",
+      "Heizungsinstallateur in {bezirk} ✓ {distanceInfo} ✓ Wärmepumpen ✓ Gasthermen ✓ Fußbodenheizung. Mannhold Haustechnik – Ihr Meisterbetrieb!",
     h1Template: "Heizungsinstallateur {bezirk}: Wärmepumpen & Gasthermen vom Profi",
     introTemplate:
-      "Als erfahrener Heizungsinstallateur in {bezirk} bieten wir Ihnen das komplette Spektrum moderner Heiztechnik. Ob Wärmepumpe von Vaillant oder OVUM, Gastherme oder Fußbodenheizung – unser Fachteam ist schnell bei Ihnen vor Ort in {bezirk}. Bei Notfällen sind wir auch kurzfristig erreichbar. Lassen Sie sich jetzt beraten!",
+      "Als erfahrener Heizungsinstallateur in {bezirk} bieten wir Ihnen das komplette Spektrum moderner Heiztechnik. Ob Wärmepumpe von Vaillant oder OVUM, Gastherme oder Fußbodenheizung – unser Fachteam ist schnell bei Ihnen vor Ort in {bezirk}. Lassen Sie sich jetzt beraten!",
     benefits: [
       "Lokaler Meisterbetrieb",
       "Schnelle Terminvergabe",
       "Faire Festpreise",
       "Alle Heizsysteme",
       "Förderberatung inklusive",
-      "Notdienst verfügbar",
     ],
     features: [
       "Heizungsinstallation",
       "Heizungsaustausch",
       "Heizungsmodernisierung",
-      "Notdienst",
       "Wartung & Service",
       "Energieberatung",
     ],
@@ -191,11 +189,6 @@ export const seoServices: SEOService[] = [
           "Wie finde ich einen guten Heizungsinstallateur in {bezirk}?",
         answerTemplate:
           "Bei der Wahl eines Heizungsinstallateurs in {bezirk} sollten Sie auf Zertifizierungen (z.B. Vaillant Partner), Kundenbewertungen und lokale Präsenz achten. Als Meisterbetrieb aus Berlin-Schöneberg sind wir schnell bei Ihnen in {bezirk} und bieten faire Festpreise.",
-      },
-      {
-        questionTemplate: "Bieten Sie Notdienst in {bezirk} an?",
-        answerTemplate:
-          "Ja, wir bieten auch Notdienst in {bezirk} an. Bei Heizungsausfällen im Winter erreichen Sie uns telefonisch und wir versuchen, schnellstmöglich bei Ihnen in {bezirk} zu sein.",
       },
       {
         questionTemplate: "Was kostet ein Heizungsinstallateur in {bezirk}?",
@@ -222,7 +215,6 @@ export const seoServices: SEOService[] = [
       "Heizung installieren {bezirk}",
       // Intent-Keywords
       "Heizungsinstallateur finden {bezirk}",
-      "Heizungsinstallateur Notdienst {bezirk}",
       "Heizungsinstallateur in der Nähe {bezirk}",
       "Heizungsinstallateur Beratung {bezirk}",
       // Marken-Keywords
@@ -236,7 +228,6 @@ export const seoServices: SEOService[] = [
       // Service-Keywords
       "Heizung reparieren {bezirk}",
       "Heizung warten {bezirk}",
-      "Heizung Notdienst {bezirk}",
     ],
     relatedServices: ["waermepumpe", "gastherme", "wartung-heizung"],
   },
@@ -311,7 +302,6 @@ export const seoServices: SEOService[] = [
       // Long-Tail Keywords
       "Gastherme defekt {bezirk}",
       "Gastherme tropft {bezirk}",
-      "Gastherme Notdienst {bezirk}",
       "Neue Gastherme {bezirk}",
       // Vergleichs-Keywords
       "Gastherme oder Wärmepumpe {bezirk}",
@@ -643,7 +633,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Was beinhaltet ein Wartungsvertrag in {bezirk}?",
         answerTemplate:
-          "Ein Wartungsvertrag in {bezirk} beinhaltet die jährliche Wartung zum Festpreis, bevorzugte Terminvergabe, und je nach Vertrag auch Rabatte auf Ersatzteile und Notdienst-Priorität.",
+          "Ein Wartungsvertrag in {bezirk} beinhaltet die jährliche Wartung zum Festpreis, bevorzugte Terminvergabe, und je nach Vertrag auch Rabatte auf Ersatzteile.",
       },
       {
         questionTemplate: "Wann ist der beste Zeitpunkt für die Heizungswartung in {bezirk}?",
@@ -778,86 +768,6 @@ export const seoServices: SEOService[] = [
       maxPercent: 70,
       info: "Bis zu 70% Förderung durch BAFA/KfW beim Umstieg auf Wärmepumpe",
     },
-  },
-  {
-    id: "heizungsnotdienst",
-    slug: "heizungsnotdienst",
-    name: "Heizungsnotdienst",
-    shortName: "Notdienst",
-    icon: AlertTriangle,
-    priority: 1,
-    titleTemplate: "Heizungsnotdienst {bezirk} | Schnelle Hilfe bei Heizungsausfall",
-    metaDescriptionTemplate:
-      "Heizungsnotdienst in {bezirk} ✓ Schnelle Hilfe bei Heizungsausfall ✓ Wärmepumpe & Gastherme ✓ Erreichbar auch am Wochenende. Jetzt anrufen!",
-    h1Template: "Heizungsnotdienst {bezirk}: Schnelle Hilfe bei Heizungsausfall",
-    introTemplate:
-      "Ihre Heizung in {bezirk} ist ausgefallen? Unser Heizungsnotdienst ist für Sie da – auch kurzfristig. Ob Wärmepumpe, Gastherme oder Fußbodenheizung – wir diagnostizieren das Problem schnell und beheben es, damit Sie nicht frieren müssen. Rufen Sie uns jetzt an!",
-    benefits: [
-      "Schnelle Reaktionszeit",
-      "Erfahrene Techniker",
-      "Alle Heizsysteme",
-      "Transparente Preise",
-      "Ersatzteilversorgung",
-    ],
-    features: [
-      "Fehlerdiagnose",
-      "Sofortreparatur",
-      "Ersatzteilbeschaffung",
-      "Provisorische Lösungen",
-      "Folgetermin bei Bedarf",
-      "Telefonische Beratung",
-    ],
-    faqTemplates: [
-      {
-        questionTemplate: "Was tun bei Heizungsausfall in {bezirk}?",
-        answerTemplate:
-          "Bei Heizungsausfall in {bezirk} rufen Sie uns zuerst an. Wir versuchen telefonisch zu helfen und schicken bei Bedarf schnellstmöglich einen Techniker. Prüfen Sie vorab: Ist Strom/Gas vorhanden? Ist der Thermostat eingestellt?",
-      },
-      {
-        questionTemplate: "Was kostet der Heizungsnotdienst in {bezirk}?",
-        answerTemplate:
-          "Die Kosten für den Heizungsnotdienst in {bezirk} hängen von der Uhrzeit und dem Problem ab. Wir nennen Ihnen am Telefon einen Orientierungspreis. Die Anfahrt und Fehlerdiagnose werden transparent berechnet.",
-      },
-      {
-        questionTemplate: "Reparieren Sie alle Heizungsmarken in {bezirk}?",
-        answerTemplate:
-          "Ja, unser Heizungsnotdienst in {bezirk} repariert alle gängigen Marken – Vaillant, Viessmann, Buderus, Wolf und mehr. Bei Wärmepumpen sind wir als Vaillant und OVUM Partner besonders spezialisiert.",
-      },
-      {
-        questionTemplate: "Wie schnell sind Sie bei Heizungsausfall in {bezirk}?",
-        answerTemplate:
-          "Bei akutem Heizungsausfall in {bezirk} versuchen wir, noch am selben Tag zu kommen. Je nach Auslastung und Uhrzeit kann es einige Stunden dauern. Im Winter haben Notfälle Priorität.",
-      },
-      {
-        questionTemplate: "Was wenn die Reparatur länger dauert in {bezirk}?",
-        answerTemplate:
-          "Wenn die Heizungsreparatur in {bezirk} länger dauert (z.B. weil Ersatzteile bestellt werden müssen), suchen wir nach provisorischen Lösungen. In dringenden Fällen können wir mobile Heizgeräte zur Überbrückung bereitstellen.",
-      },
-    ],
-    keywordTemplates: [
-      // Haupt-Keywords
-      "Heizungsnotdienst {bezirk}",
-      "Heizung Notdienst {bezirk}",
-      "Heizung Notfall {bezirk}",
-      "Heizungsausfall {bezirk}",
-      "Heizung kaputt {bezirk}",
-      // Intent-Keywords
-      "Heizung reparieren schnell {bezirk}",
-      "Heizung reparieren heute {bezirk}",
-      "Heizung ausgefallen {bezirk}",
-      "Heizung defekt {bezirk}",
-      // Long-Tail Keywords
-      "Heizung heizt nicht {bezirk}",
-      "Heizung macht Geräusche {bezirk}",
-      "Heizung verliert Druck {bezirk}",
-      "Wärmepumpe Störung {bezirk}",
-      "Gastherme Störung {bezirk}",
-      // Service-Keywords
-      "Heizung 24h Service {bezirk}",
-      "Heizung Wochenende {bezirk}",
-      "Heizung Sofort Hilfe {bezirk}",
-    ],
-    relatedServices: ["wartung-heizung", "waermepumpe", "gastherme"],
   },
 ];
 
