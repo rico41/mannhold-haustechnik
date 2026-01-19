@@ -138,9 +138,15 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
         opens: "08:00",
-        closes: "18:00",
+        closes: "16:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday"],
+        opens: "08:00",
+        closes: "12:00",
       },
     ],
     areaServed: {

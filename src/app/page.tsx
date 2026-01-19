@@ -9,9 +9,10 @@ import {
   BlogPreview,
   FAQPreview,
   CTASection,
+  GoogleMapsSection,
 } from "@/components/sections";
 import { company } from "@/lib/data";
-import { testimonials } from "@/lib/data/testimonials";
+import { testimonials, googleRating } from "@/lib/data/testimonials";
 
 export const metadata: Metadata = {
   title: "Wärmepumpe Berlin | Vaillant & OVUM Installation ab 12.000€ | Mannhold Haustechnik",
@@ -37,12 +38,21 @@ export const metadata: Metadata = {
     siteName: "Mannhold Haustechnik",
     locale: "de_DE",
     type: "website",
+    images: [
+      {
+        url: "https://mannhold-haustechnik.de/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mannhold Haustechnik - Wärmepumpen Installation Berlin",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold",
     description:
       "Wärmepumpe Berlin: Bis zu 70% Förderung ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
+    images: ["https://mannhold-haustechnik.de/images/og-image.jpg"],
   },
   alternates: {
     canonical: "https://mannhold-haustechnik.de",
@@ -89,9 +99,15 @@ const localBusinessSchema = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
       opens: "08:00",
-      closes: "18:00",
+      closes: "16:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Friday"],
+      opens: "08:00",
+      closes: "12:00",
     },
   ],
   areaServed: [
@@ -100,6 +116,7 @@ const localBusinessSchema = {
     { "@type": "City", name: "Charlottenburg-Wilmersdorf" },
     { "@type": "City", name: "Neukölln" },
     { "@type": "City", name: "Friedrichshain-Kreuzberg" },
+    { "@type": "City", name: "Spandau" },
     { "@type": "City", name: "Potsdam" },
     { "@type": "City", name: "Kleinmachnow" },
   ],
@@ -156,7 +173,7 @@ const localBusinessSchema = {
   ],
 };
 
-// Review Schema für Homepage
+// Review Schema für Homepage - mit echten Google-Bewertungen
 const reviewSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -164,10 +181,10 @@ const reviewSchema = {
   name: company.name,
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: testimonials.length,
+    ratingValue: googleRating.average.toString(),
+    reviewCount: googleRating.total.toString(),
     bestRating: "5",
-    worstRating: "5",
+    worstRating: "1",
   },
   review: testimonials.slice(0, 5).map((testimonial) => ({
     "@type": "Review",
@@ -204,6 +221,7 @@ export default function HomePage() {
       <Benefits />
       <Testimonials />
       <LocationsPreview />
+      <GoogleMapsSection />
       <BlogPreview />
       <FAQPreview />
       <CTASection />

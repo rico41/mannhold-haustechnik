@@ -7,3 +7,4 @@ export { CTASection } from "./CTASection";
 export { FAQPreview } from "./FAQPreview";
 export { LocationsPreview } from "./LocationsPreview";
 export { BlogPreview } from "./BlogPreview";
+export { GoogleMapsSection } from "./GoogleMapsSection";

@@ -18,7 +18,8 @@ export const company = {
     website: "https://mannhold-haustechnik.de",
   },
   hours: {
-    weekdays: "Mo - Fr: 08:00 - 18:00 Uhr",
+    weekdays: "Mo - Do: 08:00 - 16:00 Uhr",
+    friday: "Fr: 08:00 - 12:00 Uhr",
     saturday: "Sa: Nach Vereinbarung",
     sunday: "So: Geschlossen",
   },
