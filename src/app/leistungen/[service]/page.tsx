@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: Props) {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#F7941D]/10 to-[#0089CF]/10 flex items-center justify-center">
                   <Icon className="h-7 w-7 text-[#0089CF]" />
                 </div>
-                <Badge variant="secondary" className="text-[#0089CF]">
+                <Badge className="bg-[#0089CF] text-white hover:bg-[#0089CF]/90">
                   Kernleistung
                 </Badge>
               </div>
