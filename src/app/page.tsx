@@ -136,7 +136,7 @@ const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Heizungsmodernisierung",
-          description: "Schnelle Hilfe bei Heizungsausfall in Berlin und Potsdam",
+          description: "Komplette Heizungsmodernisierung in Berlin und Potsdam",
         },
       },
     ],
