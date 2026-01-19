@@ -108,6 +108,8 @@ export const Footer = () => {
                 <span>
                   {company.hours.weekdays}
                   <br />
+                  {company.hours.friday}
+                  <br />
                   {company.hours.saturday}
                 </span>
               </div>

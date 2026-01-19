@@ -113,6 +113,8 @@ export default function KontaktPage() {
                     <p className="text-muted-foreground">
                       {company.hours.weekdays}
                       <br />
+                      {company.hours.friday}
+                      <br />
                       {company.hours.saturday}
                     </p>
                   </div>
