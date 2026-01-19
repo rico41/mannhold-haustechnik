@@ -96,11 +96,11 @@ export const CTASection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="w-full sm:w-auto text-lg px-8 h-14 border-2 border-white/20 text-white hover:bg-white/10 hover:text-white"
+              className="w-full sm:w-auto text-lg px-8 h-14 border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:text-white hover:border-white/50 font-semibold"
             >
               <a href={`tel:${company.contact.phone}`}>
                 <Phone className="mr-2 h-5 w-5" />
-                {company.contact.phoneDisplay}
+                <span className="font-bold">{company.contact.phoneDisplay}</span>
               </a>
             </Button>
           </motion.div>
