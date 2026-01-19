@@ -29,6 +29,7 @@ import {
   type SEOLocation,
 } from "@/lib/data/programmatic";
 import { company } from "@/lib/data";
+import { getTestimonialsByLocation, getTestimonialsByService } from "@/lib/data/testimonials";
 import { CTASection } from "@/components/sections";
 
 type Props = {
@@ -102,6 +103,11 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
   // Verwandte Seiten
   const relatedLocations = getRelatedLocationPages(slug, 4);
   const relatedServices = getRelatedServicePages(slug, 4);
+
+  // Bezirksspezifische Testimonials
+  const localTestimonials = getTestimonialsByLocation(location.name)
+    .concat(getTestimonialsByService(service.name))
+    .slice(0, 3);
 
   // LocalBusiness Schema (erweitert)
   const localBusinessSchema = {
@@ -411,44 +417,136 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Area Description */}
+      {/* Area Description - Erweitert mit bezirksspezifischem Content */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-                {service.name} in {location.name}
+                {service.name} in {location.name} – Ihr lokaler Experte
               </h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                {location.areaDescription}
-              </p>
+              
+              {/* Erweiterte Beschreibung - min. 300 Wörter Content */}
+              <div className="prose prose-lg max-w-none mb-8">
+                <p className="text-lg text-muted-foreground mb-4">
+                  {location.areaDescription}
+                </p>
+                
+                <p className="text-muted-foreground mb-4">
+                  Als zertifizierter Partner von Vaillant und OVUM sind wir spezialisiert auf die Installation und Wartung moderner Heizsysteme in {location.name}. 
+                  {location.region === "berlin" 
+                    ? " Die vielfältige Bausubstanz in Berlin erfordert individuelle Lösungen – von Altbauten bis zu modernen Neubauten." 
+                    : " In Brandenburg profitieren Sie von unserer Erfahrung mit Einfamilienhäusern und größeren Objekten."}
+                </p>
 
-              <div className="space-y-4">
+                <p className="text-muted-foreground mb-4">
+                  {location.distanceInfo === "Unser Standort – sofort verfügbar" 
+                    ? `Da wir direkt in ${location.name} ansässig sind, können wir Ihnen kurzfristige Termine anbieten und sind bei Notfällen schnell vor Ort.` 
+                    : `Von unserem Standort in Berlin-Schöneberg erreichen wir ${location.name} ${location.distanceInfo.toLowerCase()}. Diese kurze Anfahrtszeit ermöglicht es uns, Ihnen schnelle und zuverlässige Serviceleistungen anzubieten.`}
+                </p>
+
+                <p className="text-muted-foreground mb-4">
+                  Die Wohnstruktur in {location.name} ist geprägt von {location.characteristics.slice(0, 2).join(" und ").toLowerCase()}. 
+                  Diese Besonderheiten berücksichtigen wir bei der Planung und Installation Ihrer neuen Heizungsanlage. 
+                  Ob {service.name.toLowerCase()} für ein Einfamilienhaus oder eine größere Immobilie – wir finden die optimale Lösung für Ihr Objekt.
+                </p>
+
+                <p className="text-muted-foreground mb-6">
+                  Unsere langjährige Erfahrung in {location.name} zeigt sich in zahlreichen zufriedenen Kunden und erfolgreichen Projekten. 
+                  Wir kennen die örtlichen Gegebenheiten, die Anforderungen der Gebäude und die Wünsche der Bewohner. 
+                  Profitieren Sie von unserer lokalen Expertise und lassen Sie sich unverbindlich beraten.
+                </p>
+              </div>
+
+              {/* Characteristics */}
+              <div className="space-y-4 mb-6">
+                <h3 className="text-xl font-semibold mb-4">Besonderheiten in {location.shortName}</h3>
                 {location.characteristics.map((char, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <Building className="h-5 w-5 text-[#0089CF]" />
-                    <span>{char}</span>
+                    <Building className="h-5 w-5 text-[#0089CF] shrink-0" />
+                    <span className="text-muted-foreground">{char}</span>
                   </div>
                 ))}
               </div>
+
+              {/* Nearby Areas */}
+              {location.nearbyLocations.length > 0 && (
+                <div className="mt-6 p-4 bg-gray-50 rounded-xl">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    Wir sind auch in diesen nahegelegenen Gebieten aktiv:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {location.nearbyLocations.slice(0, 3).map((nearby, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {nearby}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="aspect-square bg-gray-100 rounded-2xl flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-[#F7941D] mx-auto mb-4" />
-                <p className="font-medium">{location.name}</p>
-                <p className="text-sm text-muted-foreground">
-                  {location.region === "berlin" ? "Berlin" : "Brandenburg"}
-                </p>
-              </div>
+            {/* Google Maps Embed */}
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-lg border-2 border-gray-200">
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'AIzaSyBFw0Qbyq9zTFTd-tUY6dS6FG4QmuUBlUo'}&q=${encodeURIComponent(company.address.street + ", " + company.address.zip + " " + company.address.city)}&zoom=13&maptype=roadmap`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Mannhold Haustechnik Standort - ${location.name}`}
+              />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Local References / Testimonials */}
+      {localTestimonials.length > 0 && (
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading">
+                Referenzen aus {location.name}
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Lesen Sie, was Kunden aus {location.shortName} über unsere Arbeit sagen.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {localTestimonials.map((testimonial) => (
+                <Card key={testimonial.id} className="bg-white">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-1 mb-4">
+                      {Array.from({ length: testimonial.rating }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-[#F7941D] text-[#F7941D]"
+                        />
+                      ))}
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-4 italic">
+                      &ldquo;{testimonial.text}&rdquo;
+                    </p>
+                    <div className="pt-4 border-t">
+                      <div className="font-semibold text-sm">{testimonial.name}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {testimonial.location} • {testimonial.service}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
