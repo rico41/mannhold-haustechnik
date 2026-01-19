@@ -417,6 +417,125 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Kosten & Förderung Section - NEU für Local SEO */}
+      {service.priceRange && (
+        <section className="section-padding bg-white">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Kosten-Bereich */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold font-heading mb-6">
+                  Was kostet {service.name} in {location.name}?
+                </h2>
+                <div className="bg-gradient-to-br from-[#F7941D]/5 to-[#0089CF]/5 rounded-2xl p-8">
+                  <div className="text-center mb-6">
+                    <p className="text-sm text-muted-foreground mb-2">Preisrahmen</p>
+                    <p className="text-3xl md:text-4xl font-bold text-[#0089CF]">
+                      {service.priceRange.min.toLocaleString("de-DE")}€ – {service.priceRange.max.toLocaleString("de-DE")}€
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2">
+                      je nach Gebäude und Anforderungen
+                    </p>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
+                      <span className="text-sm">Individuelles Angebot nach Vor-Ort-Termin</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
+                      <span className="text-sm">Transparente Festpreise ohne versteckte Kosten</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle2 className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
+                      <span className="text-sm">Kostenlose Förderberatung inklusive</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Förderung-Bereich */}
+              {service.foerderung && (
+                <div>
+                  <h2 className="text-2xl md:text-3xl font-bold font-heading mb-6">
+                    Förderung für {service.name} in {location.name}
+                  </h2>
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
+                    <div className="text-center mb-6">
+                      <p className="text-sm text-green-700 mb-2">Maximale Förderung</p>
+                      <p className="text-4xl md:text-5xl font-bold text-green-600">
+                        bis zu {service.foerderung.maxPercent}%
+                      </p>
+                      <p className="text-sm text-green-700 mt-2">
+                        {service.foerderung.info}
+                      </p>
+                    </div>
+                    <div className="bg-white/50 rounded-xl p-4 mt-4">
+                      <p className="font-semibold text-sm mb-2">Unser Service:</p>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600" />
+                          Förderberatung & Antragsprüfung
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600" />
+                          Hilfe bei BAFA/KfW-Anträgen
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle2 className="h-4 w-4 text-green-600" />
+                          Förderfähige Dokumentation
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Prozess/Ablauf Section - NEU für Local SEO */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading">
+              So läuft {service.name} in {location.name} ab
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Von der ersten Beratung bis zur fertigen Anlage – unser Prozess in 5 Schritten.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-4">
+            {[
+              { step: 1, title: "Kontakt", desc: "Telefonisch oder über unser Formular" },
+              { step: 2, title: "Vor-Ort-Termin", desc: "Kostenlose Beratung bei Ihnen" },
+              { step: 3, title: "Angebot", desc: "Individuelles Festpreis-Angebot" },
+              { step: 4, title: "Umsetzung", desc: "Professionelle Installation" },
+              { step: 5, title: "Abnahme", desc: "Einweisung & Übergabe" },
+            ].map((item) => (
+              <div key={item.step} className="text-center">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#F7941D] to-[#0089CF] flex items-center justify-center mx-auto mb-3 text-white font-bold">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold mb-1">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Link href="/kontakt">
+                Jetzt {service.name} in {location.shortName} anfragen
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Area Description - Erweitert mit bezirksspezifischem Content */}
       <section className="section-padding bg-white">
         <div className="container-custom">

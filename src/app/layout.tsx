@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -17,39 +18,57 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mannhold Haustechnik | Wärmepumpen & Heizung Berlin",
+    default: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
     template: "%s | Mannhold Haustechnik",
   },
   description:
-    "Ihr Experte für Wärmepumpen, Gasthermen und Heizungsinstallation in Berlin Süd und Potsdam. Vaillant & OVUM Partner. ✓ Heizlastberechnung ✓ Hydraulischer Abgleich ✓ Fußbodenheizung",
+    "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Heizungsinstallateur ✓ Gasthermen ✓ Hydraulischer Abgleich ✓ Heizlastberechnung. Jetzt beraten lassen!",
   keywords: [
+    // Haupt-Keywords
     "Wärmepumpe Berlin",
-    "Heizungsinstallation Berlin",
-    "Vaillant Wärmepumpe",
-    "OVUM Wärmepumpe",
-    "Gasthermen Austausch",
-    "Heizlastberechnung",
-    "Hydraulischer Abgleich",
-    "Fußbodenheizung Wartung",
-    "Heizungsbauer Berlin Süd",
+    "Wärmepumpe Potsdam",
+    "Heizungsinstallateur Berlin",
+    "Heizungsbauer Berlin",
+    // Marken-Keywords
+    "Vaillant Wärmepumpe Berlin",
+    "OVUM Wärmepumpe Berlin",
+    "Vaillant aroTHERM Berlin",
+    "Vaillant Partner Berlin",
+    // Service-Keywords
+    "Gastherme austauschen Berlin",
+    "Heizlastberechnung Berlin",
+    "Hydraulischer Abgleich Berlin",
+    "Fußbodenheizung Wartung Berlin",
+    "Heizungswartung Berlin",
+    // Long-Tail Keywords
+    "Wärmepumpe Altbau Berlin",
+    "Wärmepumpe Förderung Berlin",
+    "Heizung erneuern Berlin",
+    "Heizungsnotdienst Berlin",
+    // Bezirks-Keywords
+    "Wärmepumpe Steglitz",
+    "Wärmepumpe Zehlendorf",
+    "Wärmepumpe Charlottenburg",
+    "Wärmepumpe Schöneberg",
     "Heizungsfirma Potsdam",
   ],
   authors: [{ name: "Mannhold Haustechnik GmbH" }],
   creator: "Mannhold Haustechnik GmbH",
+  publisher: "Mannhold Haustechnik GmbH",
   openGraph: {
     type: "website",
     locale: "de_DE",
     url: "https://mannhold-haustechnik.de",
     siteName: "Mannhold Haustechnik",
-    title: "Mannhold Haustechnik | Wärmepumpen & Heizung Berlin",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
     description:
-      "Ihr Experte für Wärmepumpen, Gasthermen und Heizungsinstallation in Berlin Süd und Potsdam.",
+      "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Heizungsinstallateur. Jetzt beraten lassen!",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mannhold Haustechnik | Wärmepumpen & Heizung Berlin",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold",
     description:
-      "Ihr Experte für Wärmepumpen, Gasthermen und Heizungsinstallation in Berlin Süd und Potsdam.",
+      "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Heizungsinstallateur",
   },
   robots: {
     index: true,
@@ -63,7 +82,16 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // google: "your-google-verification-code",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION || undefined,
+  },
+  alternates: {
+    canonical: "https://mannhold-haustechnik.de",
+  },
+  other: {
+    "geo.region": "DE-BE",
+    "geo.placename": "Berlin",
+    "geo.position": "52.4862;13.3589",
+    "ICBM": "52.4862, 13.3589",
   },
 };
 
@@ -76,6 +104,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" suppressHydrationWarning>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >

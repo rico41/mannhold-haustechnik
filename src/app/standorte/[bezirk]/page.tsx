@@ -64,18 +64,25 @@ export default async function StandortPage({ params }: Props) {
   const services = getMainServices();
   const locationTestimonials = getTestimonialsByLocation(location.name);
 
-  // Schema.org LocalBusiness markup
+  // Schema.org HVACBusiness markup (spezifischer als LocalBusiness)
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "HVACBusiness",
+    "@id": `https://mannhold-haustechnik.de/standorte/${bezirk}`,
     name: company.name,
     description: location.description,
+    image: "https://mannhold-haustechnik.de/images/logo.svg",
     address: {
       "@type": "PostalAddress",
       streetAddress: company.address.street,
       addressLocality: company.address.city,
       postalCode: company.address.zip,
       addressCountry: "DE",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 52.4862,
+      longitude: 13.3589,
     },
     telephone: company.contact.phone,
     email: company.contact.email,
@@ -84,8 +91,51 @@ export default async function StandortPage({ params }: Props) {
       "@type": "Place",
       name: location.fullName,
     },
-    priceRange: "$$",
-    openingHours: "Mo-Fr 08:00-18:00",
+    serviceArea: {
+      "@type": "GeoCircle",
+      geoMidpoint: {
+        "@type": "GeoCoordinates",
+        latitude: 52.4862,
+        longitude: 13.3589,
+      },
+      geoRadius: "50000", // 50km Radius
+    },
+    priceRange: "€€",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "18:00",
+      },
+    ],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Heizungsdienstleistungen",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Wärmepumpen-Installation",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Heizungswartung",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Hydraulischer Abgleich",
+          },
+        },
+      ],
+    },
   };
 
   return (
@@ -336,6 +386,41 @@ export default async function StandortPage({ params }: Props) {
               <p className="text-muted-foreground">
                 Unsere Kunden in {location.name} sind zufrieden – überzeugen Sie
                 sich selbst.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading">
+              Unser Standort
+            </h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Von Berlin-Schöneberg aus erreichen wir {location.name} schnell und unkompliziert.
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video rounded-2xl overflow-hidden shadow-lg border-2 border-gray-200">
+              <iframe
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || 'AIzaSyBFw0Qbyq9zTFTd-tUY6dS6FG4QmuUBlUo'}&q=${encodeURIComponent(company.address.street + ", " + company.address.zip + " " + company.address.city)}&zoom=13&maptype=roadmap`}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Mannhold Haustechnik Standort - Service in ${location.name}`}
+              />
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-muted-foreground">
+                <strong>Mannhold Haustechnik GmbH</strong><br />
+                {company.address.street}, {company.address.zip} {company.address.city}
               </p>
             </div>
           </div>

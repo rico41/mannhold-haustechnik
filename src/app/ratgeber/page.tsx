@@ -1,4 +1,6 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import {
   Calendar,
@@ -16,19 +18,8 @@ import {
   upcomingArticles,
   getPublishedArticles,
 } from "@/lib/data/blog";
+import { ArticleFilter } from "@/components/blog/ArticleFilter";
 import { CTASection } from "@/components/sections";
-
-export const metadata: Metadata = {
-  title: "Ratgeber | Wärmepumpe, Förderung & Heizungstipps",
-  description:
-    "Expertenwissen zu Wärmepumpen, Heizungsförderung und Energiesparen. Aktuelle Artikel vom Berliner Fachbetrieb Mannhold Haustechnik.",
-  keywords: [
-    "wärmepumpe ratgeber",
-    "heizung förderung 2026",
-    "hydraulischer abgleich anleitung",
-    "heizungstausch tipps",
-  ],
-};
 
 // Format date helper
 const formatDate = (dateString: string) => {
@@ -50,10 +41,15 @@ const formatShortDate = (dateString: string) => {
 export default function RatgeberPage() {
   const publishedArticles = getPublishedArticles();
   const featuredArticle = publishedArticles[0];
-  const otherArticles = publishedArticles.slice(1);
-
+  
   // Categories for filter
-  const categories = [...new Set(blogArticles.map((a) => a.category))];
+  const categories = useMemo(
+    () => [...new Set(blogArticles.map((a) => a.category))],
+    []
+  );
+
+  // State for filtered articles
+  const [filteredArticles, setFilteredArticles] = useState(blogArticles);
 
   return (
     <>
@@ -138,27 +134,22 @@ export default function RatgeberPage() {
             </h2>
 
             {/* Category Filter */}
-            <div className="flex flex-wrap gap-2">
-              <Badge
-                variant="secondary"
-                className="cursor-pointer hover:bg-primary hover:text-white transition-colors"
-              >
-                Alle
-              </Badge>
-              {categories.map((category) => (
-                <Badge
-                  key={category}
-                  variant="outline"
-                  className="cursor-pointer hover:bg-primary hover:text-white hover:border-primary transition-colors"
-                >
-                  {category}
-                </Badge>
-              ))}
-            </div>
+            <ArticleFilter
+              articles={blogArticles}
+              categories={categories}
+              onFilterChange={setFilteredArticles}
+            />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogArticles.map((article) => (
+            {filteredArticles.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground">
+                  Keine Artikel in dieser Kategorie gefunden.
+                </p>
+              </div>
+            ) : (
+              filteredArticles.map((article) => (
               <Link
                 key={article.slug}
                 href={`/ratgeber/${article.slug}`}
@@ -202,7 +193,8 @@ export default function RatgeberPage() {
                   </CardContent>
                 </Card>
               </Link>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>

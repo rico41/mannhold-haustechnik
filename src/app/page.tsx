@@ -49,27 +49,42 @@ export const metadata: Metadata = {
   },
 };
 
-// LocalBusiness Schema für Homepage
+// HVACBusiness Schema für Homepage (spezifischer als LocalBusiness)
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "HVACBusiness",
   "@id": "https://mannhold-haustechnik.de",
   name: company.name,
+  alternateName: "Mannhold Haustechnik",
+  description: "Ihr Experte für Wärmepumpen, Heizungsinstallation und Heizungswartung in Berlin und Potsdam. Vaillant & OVUM Partner.",
   image: "https://mannhold-haustechnik.de/images/logo.svg",
   url: "https://mannhold-haustechnik.de",
   telephone: company.contact.phone,
+  email: company.contact.email,
   priceRange: "€€",
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Credit Card, Bank Transfer",
   address: {
     "@type": "PostalAddress",
     streetAddress: company.address.street,
     addressLocality: company.address.city,
     postalCode: company.address.zip,
+    addressRegion: "Berlin",
     addressCountry: "DE",
   },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 52.4862,
     longitude: 13.3589,
+  },
+  serviceArea: {
+    "@type": "GeoCircle",
+    geoMidpoint: {
+      "@type": "GeoCoordinates",
+      latitude: 52.4862,
+      longitude: 13.3589,
+    },
+    geoRadius: "50000", // 50km Radius
   },
   openingHoursSpecification: [
     {
@@ -80,32 +95,65 @@ const localBusinessSchema = {
     },
   ],
   areaServed: [
-    {
-      "@type": "City",
-      name: "Tempelhof-Schöneberg",
-    },
-    {
-      "@type": "City",
-      name: "Steglitz-Zehlendorf",
-    },
-    {
-      "@type": "City",
-      name: "Charlottenburg-Wilmersdorf",
-    },
-    {
-      "@type": "City",
-      name: "Neukölln",
-    },
-    {
-      "@type": "City",
-      name: "Potsdam",
-    },
+    { "@type": "City", name: "Tempelhof-Schöneberg" },
+    { "@type": "City", name: "Steglitz-Zehlendorf" },
+    { "@type": "City", name: "Charlottenburg-Wilmersdorf" },
+    { "@type": "City", name: "Neukölln" },
+    { "@type": "City", name: "Friedrichshain-Kreuzberg" },
+    { "@type": "City", name: "Potsdam" },
+    { "@type": "City", name: "Kleinmachnow" },
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Heizungsdienstleistungen",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wärmepumpen-Installation",
+          description: "Installation von Vaillant und OVUM Wärmepumpen mit bis zu 70% Förderung",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Heizungswartung",
+          description: "Jährliche Wartung für Wärmepumpen, Gasthermen und Fußbodenheizungen",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Hydraulischer Abgleich",
+          description: "Hydraulischer Abgleich nach Verfahren B für optimale Heizungseffizienz",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Heizungsnotdienst",
+          description: "Schnelle Hilfe bei Heizungsausfall in Berlin und Potsdam",
+        },
+      },
+    ],
+  },
   sameAs: company.social ? [
     company.social.facebook,
     company.social.instagram,
     company.social.linkedin,
   ].filter(Boolean) : [],
+  knowsAbout: [
+    "Wärmepumpen",
+    "Heizungsinstallation",
+    "Hydraulischer Abgleich",
+    "Heizlastberechnung",
+    "Fußbodenheizung",
+    "Gasthermen",
+  ],
 };
 
 // Review Schema für Homepage

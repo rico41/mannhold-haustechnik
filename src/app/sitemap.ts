@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/lib/data/services";
 import { locations } from "@/lib/data/locations";
-import { generateAllSEOPages } from "@/lib/data/programmatic";
+import { generateAllSEOPages, generateAllDistrictPages } from "@/lib/data/programmatic";
 import { blogArticles } from "@/lib/data/blog";
 
 const baseUrl = "https://mannhold-haustechnik.de";
@@ -110,6 +110,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // ========================================
+  // STADTTEIL / DISTRICT PAGES (Hyper-Local SEO)
+  // ========================================
+  // Generiert ~150+ Seiten für Service+Stadtteil Kombinationen
+  const districtPages = generateAllDistrictPages().map((page) => {
+    let priority = 0.8;
+    if (page.priority <= 3) {
+      priority = 0.9;
+    } else if (page.priority <= 5) {
+      priority = 0.85;
+    }
+
+    return {
+      url: `${baseUrl}/stadtteil/${page.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority,
+    };
+  });
+
+  // ========================================
   // BLOG / RATGEBER PAGES
   // ========================================
   const blogPages = blogArticles.map((article) => ({
@@ -124,6 +144,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...servicePages,
     ...locationPages,
     ...programmaticPages,
+    ...districtPages,
     ...blogPages,
   ];
 }
