@@ -1,16 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { ArrowRight, MapPin, Calendar, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { CategoryFilter } from "@/components/common/CategoryFilter";
 import { CTASection } from "@/components/sections";
-
-export const metadata: Metadata = {
-  title: "Referenzen & Projekte",
-  description:
-    "Unsere Referenzprojekte: Wärmepumpen-Installationen, Heizungsmodernisierungen und mehr in Berlin und Potsdam. Überzeugen Sie sich von unserer Arbeit.",
-};
 
 // Placeholder project data
 const projects = [
@@ -106,15 +103,15 @@ const projects = [
   },
 ];
 
-const categories = [
-  { value: "all", label: "Alle" },
-  { value: "Wärmepumpe", label: "Wärmepumpe" },
-  { value: "Gastherme", label: "Gastherme" },
-  { value: "Fußbodenheizung", label: "Fußbodenheizung" },
-  { value: "Service", label: "Service" },
-];
-
 export default function ReferenzenPage() {
+  // Categories aus den Projekten extrahieren
+  const categories = useMemo(
+    () => [...new Set(projects.map((p) => p.category))],
+    []
+  );
+
+  // State für gefilterte Projekte
+  const [filteredProjects, setFilteredProjects] = useState(projects);
   return (
     <>
       {/* Hero */}
@@ -172,22 +169,27 @@ export default function ReferenzenPage() {
       {/* Projects */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          {/* Filter Placeholder */}
+          {/* Filter */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((cat) => (
-              <Badge
-                key={cat.value}
-                variant={cat.value === "all" ? "default" : "secondary"}
-                className="px-4 py-2 text-sm cursor-pointer hover:bg-primary hover:text-white transition-colors"
-              >
-                {cat.label}
-              </Badge>
-            ))}
+            <CategoryFilter
+              items={projects}
+              categories={categories}
+              getCategory={(project) => project.category}
+              onFilterChange={setFilteredProjects}
+              allLabel="Alle"
+            />
           </div>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {filteredProjects.length === 0 ? (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground">
+                  Keine Projekte in dieser Kategorie gefunden.
+                </p>
+              </div>
+            ) : (
+              filteredProjects.map((project) => (
               <Card
                 key={project.id}
                 className="group overflow-hidden border-0 shadow-md hover:shadow-xl transition-all"
@@ -235,7 +237,8 @@ export default function ReferenzenPage() {
                   </ul>
                 </CardContent>
               </Card>
-            ))}
+              ))
+            )}
           </div>
         </div>
       </section>
