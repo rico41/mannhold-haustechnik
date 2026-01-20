@@ -226,7 +226,7 @@ Bei Mannhold Haustechnik begleiten wir Sie durch den gesamten Prozess:
 
 ✅ Kostenvoranschlag für Ihren Antrag  
 ✅ Beratung zur optimalen Förderkombination  
-✅ Unterstützung bei der Antragstellung  
+✅ Hilfestellung bei der Antragstellung  
 ✅ Erstellung aller Nachweise (BzA)`,
   },
   {
