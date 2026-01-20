@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Moderne Browser als Baseline - reduziert Polyfills
+  // Diese Einstellung teilt Next.js mit, dass moderne Browser unterstützt werden
+  // und unnötige Polyfills entfernt werden können
   // Performance Optimierungen
   compress: true,
   poweredByHeader: false,
@@ -30,6 +33,14 @@ const nextConfig: NextConfig = {
   },
   // Kompilierungs-Optimierungen
   swcMinify: true,
+  // SWC Compiler für moderne Browser - reduziert Polyfills
+  compiler: {
+    // Entfernt unnötige Polyfills für moderne Browser
+    // Unterstützt: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+    removeConsole: process.env.NODE_ENV === "production" ? {
+      exclude: ["error", "warn"], // Behalte error und warn für Debugging
+    } : false,
+  },
   // Webpack Optimierungen
   webpack: (config, { isServer, dev }) => {
     if (!isServer) {

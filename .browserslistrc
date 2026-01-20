@@ -1,0 +1,21 @@
+# Moderne Browser als Baseline - reduziert Polyfills um ~13.7 KiB
+# Unterstützt die letzten 2 Versionen der Hauptbrowser
+# Diese Browser unterstützen nativ: Array.at, Array.flat, Object.fromEntries, etc.
+
+# Chrome, Edge (Chromium)
+last 2 Chrome versions
+last 2 Edge versions
+
+# Firefox
+last 2 Firefox versions
+
+# Safari
+last 2 Safari versions
+last 2 iOS versions
+
+# Moderne Mobile Browser
+last 2 Android versions
+
+# Fallback für sehr alte Browser (optional, kann entfernt werden)
+# > 0.5%
+# not dead
