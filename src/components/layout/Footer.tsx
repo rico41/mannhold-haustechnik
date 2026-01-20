@@ -190,7 +190,7 @@ export const Footer = () => {
                   className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />
                 <img
-                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
                   alt="OVUM Premium Partner Logo"
                   className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />

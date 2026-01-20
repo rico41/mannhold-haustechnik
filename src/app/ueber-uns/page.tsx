@@ -293,7 +293,7 @@ export default function UeberUnsPage() {
             <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow border border-transparent hover:border-[#0089CF]/20">
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
                   alt="OVUM Premium Partner Logo"
                   className="h-16 w-auto object-contain"
                 />
