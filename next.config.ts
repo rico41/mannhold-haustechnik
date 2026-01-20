@@ -31,9 +31,8 @@ const nextConfig: NextConfig = {
     // CSS-Inlining für kritische Styles
     optimizeServerReact: true,
   },
-  // Kompilierungs-Optimierungen
-  swcMinify: true,
   // SWC Compiler für moderne Browser - reduziert Polyfills
+  // swcMinify ist in Next.js 16 standardmäßig aktiviert
   compiler: {
     // Entfernt unnötige Polyfills für moderne Browser
     // Unterstützt: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
@@ -41,6 +40,9 @@ const nextConfig: NextConfig = {
       exclude: ["error", "warn"], // Behalte error und warn für Debugging
     } : false,
   },
+  // Turbopack Konfiguration (leer = Webpack wird verwendet)
+  // Next.js 16 verwendet standardmäßig Turbopack, aber wir nutzen Webpack für Code Splitting
+  turbopack: {},
   // Webpack Optimierungen
   webpack: (config, { isServer, dev }) => {
     if (!isServer) {
