@@ -25,7 +25,11 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
     optimizeCss: true,
+    // CSS-Inlining für kritische Styles
+    optimizeServerReact: true,
   },
+  // Kompilierungs-Optimierungen
+  swcMinify: true,
   // Webpack Optimierungen
   webpack: (config, { isServer }) => {
     if (!isServer) {
