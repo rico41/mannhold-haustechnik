@@ -219,6 +219,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
+        style={{ willChange: "scroll-position" }}
       >
         {/* Skip to main content - Accessibility */}
         <a
