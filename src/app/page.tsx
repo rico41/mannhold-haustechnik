@@ -17,7 +17,7 @@ import { testimonials, googleRating } from "@/lib/data/testimonials";
 export const metadata: Metadata = {
   title: "Wärmepumpe Berlin | Vaillant & OVUM Installation ab 12.000€ | Mannhold Haustechnik",
   description:
-    "Wärmepumpe Berlin: Bis zu 70% Förderung ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam ✓ Kostenlose Beratung ✓ 030 550 718 31",
+    "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam ✓ Kostenlose Beratung ✓ 030 550 718 31",
   keywords: [
     "Wärmepumpe Berlin",
     "Wärmepumpe Installation Berlin",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
     description:
-      "Wärmepumpe Berlin: Bis zu 70% Förderung ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
+      "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
     url: "https://mannhold-haustechnik.de",
     siteName: "Mannhold Haustechnik",
     locale: "de_DE",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold",
     description:
-      "Wärmepumpe Berlin: Bis zu 70% Förderung ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
+      "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
     images: ["https://mannhold-haustechnik.de/images/og-image.jpg"],
   },
   alternates: {
@@ -129,7 +129,7 @@ const localBusinessSchema = {
         itemOffered: {
           "@type": "Service",
           name: "Wärmepumpen-Installation",
-          description: "Installation von Vaillant und OVUM Wärmepumpen mit bis zu 70% Förderung",
+          description: "Installation von Vaillant und OVUM Wärmepumpen mit bis zu 70% Förderung möglich",
         },
       },
       {

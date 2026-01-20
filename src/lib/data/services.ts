@@ -32,7 +32,7 @@ export const services: Service[] = [
     description:
       "Professionelle Installation von Vaillant und OVUM Premium Wärmepumpen für eine nachhaltige und effiziente Heizlösung.",
     longDescription:
-      "Als zertifizierter Partner von Vaillant und OVUM installieren wir hochwertige Wärmepumpen, die optimal auf Ihre Bedürfnisse abgestimmt sind. Von der Beratung über die Planung bis zur fachgerechten Montage – wir begleiten Sie durch den gesamten Prozess. Nutzen Sie attraktive Förderungen von bis zu 70% und senken Sie Ihre Heizkosten nachhaltig.",
+      "Als zertifizierter Partner von Vaillant und OVUM installieren wir hochwertige Wärmepumpen, die optimal auf Ihre Bedürfnisse abgestimmt sind. Von der Beratung über die Planung bis zur fachgerechten Montage – wir begleiten Sie durch den gesamten Prozess. Bis zu 70% Förderung sind möglich – wir unterstützen Sie bei Förderanträgen und senken Sie Ihre Heizkosten nachhaltig.",
     icon: Wind,
     features: [
       "Luft-Wasser-Wärmepumpen",
@@ -40,7 +40,7 @@ export const services: Service[] = [
       "Vaillant aroTHERM plus",
       "OVUM Premium Wärmepumpen",
       "Hybridlösungen",
-      "Förderberatung inklusive",
+      "Hilfestellung bei Förderungen",
     ],
     benefits: [
       "Bis zu 70% Förderung möglich",
@@ -294,21 +294,21 @@ export const services: Service[] = [
     description:
       "Komplettservice für den Heizungsaustausch: Von der Beratung über Förderung bis zur Installation – alles aus einer Hand.",
     longDescription:
-      "Sie möchten Ihre alte Heizung erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung über den Förderantrag bis zur Installation – alles aus einer Hand.",
+      "Sie möchten Ihre alte Heizung erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung bis zur Installation und geben Ihnen Hilfestellung bei Förderanträgen – alles aus einer Hand.",
     icon: RefreshCw,
     features: [
       "Kostenlose Erstberatung",
       "Heizlastberechnung",
-      "Förderberatung & Antragstellung",
+      "Hilfestellung bei Förderanträgen",
       "Wärmepumpe oder Brennwerttherme",
       "Komplette Installation",
       "Einweisung & Übergabe",
     ],
     benefits: [
-      "Bis zu 70% Förderung",
+      "Bis zu 70% Förderung möglich",
       "Bis zu 50% Energieeinsparung",
       "Alles aus einer Hand",
-      "Förderberatung inklusive",
+      "Hilfestellung bei Förderungen",
       "Planbare Kosten",
     ],
     keywords: [

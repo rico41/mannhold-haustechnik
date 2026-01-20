@@ -158,7 +158,7 @@ Die pauschale Aussage "Im Altbau funktioniert keine Wärmepumpe" ist überholt. 
 
 ### Schritt 1: Fachbetrieb beauftragen (VORHER!)
 
-⚠️ **Wichtig:** Der Antrag muss VOR Beauftragung gestellt werden. Wir als Fachbetrieb erstellen einen Kostenvoranschlag, mit dem du den Antrag stellst.
+⚠️ **Wichtig:** Der Antrag muss VOR Beauftragung gestellt werden. Wir als Fachbetrieb erstellen einen Kostenvoranschlag und geben Ihnen Hilfestellung beim Antrag.
 
 ### Schritt 2: Online-Antrag bei der KfW
 

@@ -40,14 +40,14 @@ export const faqItems: FAQItem[] = [
     id: "fo-1",
     question: "Welche Förderung gibt es für Wärmepumpen in Berlin?",
     answer:
-      "Aktuell können Sie bis zu 70% Förderung erhalten: 30% Grundförderung + 20% Klimageschwindigkeitsbonus + 20% Einkommensbonus (bei Haushaltseinkommen unter 40.000€). Wir unterstützen Sie bei der Antragstellung und erstellen alle nötigen Unterlagen.",
+      "Aktuell können Sie bis zu 70% Förderung erhalten: 30% Grundförderung + 20% Klimageschwindigkeitsbonus + 20% Einkommensbonus (bei Haushaltseinkommen unter 40.000€). Wir geben Ihnen Hilfestellung bei Förderanträgen und helfen bei der Erstellung der nötigen Unterlagen.",
     category: "foerderung",
   },
   {
     id: "fo-2",
     question: "Ist der hydraulische Abgleich Pflicht für die Förderung?",
     answer:
-      "Ja, seit 2024 ist der hydraulische Abgleich (Verfahren B) Voraussetzung für die Heizungsförderung. Wir führen die Berechnung und Dokumentation nach den aktuellen Vorgaben durch, sodass Ihr Förderantrag problemlos genehmigt wird.",
+      "Ja, seit 2024 ist der hydraulische Abgleich (Verfahren B) Voraussetzung für die Heizungsförderung. Wir führen die Berechnung und Dokumentation nach den aktuellen Vorgaben durch, sodass Sie die Förderung problemlos beantragen können.",
     category: "foerderung",
   },
   // Gastherme FAQs
@@ -92,7 +92,7 @@ export const faqItems: FAQItem[] = [
     id: "al-2",
     question: "Wie läuft die Zusammenarbeit ab?",
     answer:
-      "1. Kostenlose Erstberatung vor Ort, 2. Individuelle Heizlastberechnung und Angebot, 3. Förderantrag gemeinsam stellen, 4. Terminierte Installation durch unser Fachteam, 5. Einweisung und laufender Service. Wir begleiten Sie durch den gesamten Prozess.",
+      "1. Kostenlose Erstberatung vor Ort, 2. Individuelle Heizlastberechnung und Angebot, 3. Hilfestellung bei Förderanträgen, 4. Terminierte Installation durch unser Fachteam, 5. Einweisung und laufender Service. Wir begleiten Sie durch den gesamten Prozess.",
     category: "allgemein",
   },
 ];

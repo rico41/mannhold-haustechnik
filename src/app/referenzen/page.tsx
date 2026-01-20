@@ -23,7 +23,7 @@ const projects = [
       "Vaillant aroTHERM plus 10kW",
       "Heizlastberechnung nach DIN EN 12831",
       "Hydraulischer Abgleich",
-      "70% Förderung",
+      "70% Förderung möglich",
     ],
   },
   {

@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Mannhold Haustechnik",
   },
   description:
-    "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Heizungsinstallateur ✓ Gasthermen ✓ Hydraulischer Abgleich ✓ Heizlastberechnung. Jetzt beraten lassen!",
+    "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Heizungsinstallateur ✓ Gasthermen ✓ Hydraulischer Abgleich ✓ Heizlastberechnung. Jetzt beraten lassen!",
   keywords: [
     // Haupt-Keywords
     "Wärmepumpe Berlin",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Mannhold Haustechnik",
     title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
     description:
-      "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Heizungsinstallateur. Jetzt beraten lassen!",
+      "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Heizungsinstallateur. Jetzt beraten lassen!",
   },
   twitter: {
     card: "summary_large_image",

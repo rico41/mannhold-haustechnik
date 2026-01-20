@@ -61,7 +61,7 @@ export const seoServices: SEOService[] = [
       "Wärmepumpe in {bezirk} ✓ {distanceInfo} ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Altbau-Spezialist ✓ Jetzt beraten lassen!",
     h1Template: "Wärmepumpe {bezirk}: Installation & Wartung vom Profi",
     introTemplate:
-      "Sie suchen einen zuverlässigen Partner für die Installation einer Wärmepumpe in {bezirk}? Als zertifizierter Vaillant und OVUM Partner sind wir Ihr lokaler Experte für moderne Heiztechnik. Ob Sie eine Wärmepumpe kaufen, installieren lassen oder eine Beratung benötigen – von unserem Standort in Berlin-Schöneberg erreichen wir Sie in {bezirk} schnell und unkompliziert. Wir unterstützen Sie auch bei der Förderung und dem Antrag.",
+      "Sie suchen einen zuverlässigen Partner für die Installation einer Wärmepumpe in {bezirk}? Als zertifizierter Vaillant und OVUM Partner sind wir Ihr lokaler Experte für moderne Heiztechnik. Ob Sie eine Wärmepumpe kaufen, installieren lassen oder eine Beratung benötigen – von unserem Standort in Berlin-Schöneberg erreichen wir Sie in {bezirk} schnell und unkompliziert. Wir geben Ihnen auch Hilfestellung bei Förderungen und Förderanträgen.",
     benefits: [
       "Bis zu 70% staatliche Förderung",
       "Bis zu 50% niedrigere Heizkosten",
@@ -75,7 +75,7 @@ export const seoServices: SEOService[] = [
       "Luft-Wasser-Wärmepumpen",
       "Sole-Wasser-Wärmepumpen",
       "Hybridlösungen",
-      "Kostenlose Förderberatung",
+      "Hilfestellung bei Förderanträgen",
     ],
     faqTemplates: [
       {
@@ -91,7 +91,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Wie lange dauert die Installation in {bezirk}?",
         answerTemplate:
-          "Die Installation einer Wärmepumpe in {bezirk} dauert in der Regel 2-3 Tage. Inklusive Planung, Förderantrag und Terminierung rechnen Sie mit ca. 4-8 Wochen vom Erstkontakt bis zur fertigen Anlage.",
+          "Die Installation einer Wärmepumpe in {bezirk} dauert in der Regel 2-3 Tage. Inklusive Planung, Hilfestellung bei Förderanträgen und Terminierung rechnen Sie mit ca. 4-8 Wochen vom Erstkontakt bis zur fertigen Anlage.",
       },
       {
         questionTemplate: "Ist eine Wärmepumpe im Altbau in {bezirk} sinnvoll?",
@@ -106,7 +106,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Welche Förderung gibt es für Wärmepumpen in {bezirk}?",
         answerTemplate:
-          "Für Wärmepumpen in {bezirk} gibt es bis zu 70% Förderung durch die BAFA/KfW. Die genaue Höhe hängt von Ihrem Haushalt und der Art des Austauschs ab. Wir helfen Ihnen beim Antrag und stellen sicher, dass Sie alle Voraussetzungen erfüllen.",
+          "Für Wärmepumpen in {bezirk} gibt es bis zu 70% Förderung durch die BAFA/KfW. Die genaue Höhe hängt von Ihrem Haushalt und der Art des Austauschs ab. Wir geben Ihnen Hilfestellung bei Förderanträgen und helfen Ihnen, alle Voraussetzungen zu erfüllen.",
       },
       {
         questionTemplate: "Wie hoch ist die Jahresarbeitszahl einer Wärmepumpe in {bezirk}?",
@@ -174,7 +174,7 @@ export const seoServices: SEOService[] = [
       "Schnelle Terminvergabe",
       "Faire Festpreise",
       "Alle Heizsysteme",
-      "Förderberatung inklusive",
+      "Hilfestellung bei Förderungen",
     ],
     features: [
       "Heizungsinstallation",
@@ -349,7 +349,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Ist der hydraulische Abgleich in {bezirk} Pflicht?",
         answerTemplate:
-          "Ja, seit 2024 ist der hydraulische Abgleich nach Verfahren B Voraussetzung für die Heizungsförderung. Wenn Sie in {bezirk} eine neue Heizung planen und Förderung beantragen möchten, führen wir den Abgleich fachgerecht durch.",
+          "Ja, seit 2024 ist der hydraulische Abgleich nach Verfahren B Voraussetzung für die Heizungsförderung. Wenn Sie in {bezirk} eine neue Heizung planen und Förderung beantragen möchten, führen wir den Abgleich fachgerecht durch und geben Ihnen Hilfestellung beim Antrag.",
       },
       {
         questionTemplate:
@@ -544,7 +544,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Ist eine Heizlastberechnung für die Förderung in {bezirk} Pflicht?",
         answerTemplate:
-          "Ja, für die Heizungsförderung in {bezirk} ist eine Heizlastberechnung nach DIN EN 12831 meist Voraussetzung. Wir erstellen die förderfähige Dokumentation und reichen sie für Sie ein.",
+          "Ja, für die Heizungsförderung in {bezirk} ist eine Heizlastberechnung nach DIN EN 12831 meist Voraussetzung. Wir erstellen die förderfähige Dokumentation und geben Ihnen Hilfestellung beim Einreichen.",
       },
       {
         questionTemplate: "Wie lange dauert eine Heizlastberechnung in {bezirk}?",
@@ -681,7 +681,7 @@ export const seoServices: SEOService[] = [
       "Heizung in {bezirk} erneuern ✓ Wärmepumpe oder Brennwert ✓ Bis 70% Förderung ✓ Komplettservice ✓ Beratung. Jetzt alte Heizung in {bezirk} austauschen!",
     h1Template: "Heizung erneuern in {bezirk}: Austausch, Förderung & Beratung",
     introTemplate:
-      "Sie möchten Ihre alte Heizung in {bezirk} erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung über den Förderantrag bis zur Installation – alles aus einer Hand.",
+      "Sie möchten Ihre alte Heizung in {bezirk} erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung bis zur Installation und geben Ihnen Hilfestellung bei Förderanträgen – alles aus einer Hand.",
     benefits: [
       "Bis zu 70% Förderung",
       "Bis zu 50% weniger Heizkosten",
@@ -692,7 +692,7 @@ export const seoServices: SEOService[] = [
     features: [
       "Beratung vor Ort",
       "Heizlastberechnung",
-      "Förderantrag",
+      "Hilfestellung bei Förderanträgen",
       "Demontage Altanlage",
       "Installation Neuanlage",
       "Inbetriebnahme",
@@ -711,12 +711,12 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Welche Förderung gibt es für die Heizungserneuerung in {bezirk}?",
         answerTemplate:
-          "Für die Heizungserneuerung in {bezirk} gibt es bis zu 70% Förderung durch BAFA/KfW – besonders beim Umstieg auf eine Wärmepumpe. Wir helfen Ihnen beim Antrag und stellen sicher, dass alle Voraussetzungen erfüllt sind.",
+          "Für die Heizungserneuerung in {bezirk} gibt es bis zu 70% Förderung durch BAFA/KfW – besonders beim Umstieg auf eine Wärmepumpe. Wir geben Ihnen Hilfestellung bei Förderanträgen und helfen Ihnen, alle Voraussetzungen zu erfüllen.",
       },
       {
         questionTemplate: "Wie lange dauert der Heizungsaustausch in {bezirk}?",
         answerTemplate:
-          "Der eigentliche Heizungsaustausch in {bezirk} dauert 2-5 Tage je nach System. Inklusive Planung, Förderantrag und Terminierung rechnen Sie mit 4-12 Wochen vom Erstkontakt bis zur fertigen Anlage.",
+          "Der eigentliche Heizungsaustausch in {bezirk} dauert 2-5 Tage je nach System. Inklusive Planung, Hilfestellung bei Förderanträgen und Terminierung rechnen Sie mit 4-12 Wochen vom Erstkontakt bis zur fertigen Anlage.",
       },
       {
         questionTemplate: "Heizung erneuern: Wärmepumpe oder Gastherme in {bezirk}?",

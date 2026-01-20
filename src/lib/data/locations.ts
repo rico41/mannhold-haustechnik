@@ -51,7 +51,7 @@ export const locations: Location[] = [
       "Steglitz mit seinen zahlreichen Ein- und Mehrfamilienhäusern ist ideal für den Umstieg auf Wärmepumpen. Wir beraten Sie zu Förderungen und finden die optimale Lösung für Ihr Zuhause.",
     seoTitle: "Wärmepumpe Steglitz | Installation & Service vom Fachbetrieb",
     seoDescription:
-      "Wärmepumpen-Installation in Berlin-Steglitz ✓ Vaillant & OVUM Partner ✓ Bis zu 70% Förderung ✓ Hydraulischer Abgleich. Kostenlose Beratung vor Ort!",
+      "Wärmepumpen-Installation in Berlin-Steglitz ✓ Vaillant & OVUM Partner ✓ Bis zu 70% Förderung möglich ✓ Hydraulischer Abgleich. Kostenlose Beratung vor Ort!",
     keywords: [
       "Wärmepumpe Steglitz",
       "Heizung Steglitz",

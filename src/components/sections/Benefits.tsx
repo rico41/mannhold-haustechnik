@@ -13,9 +13,9 @@ import {
 const benefits = [
   {
     icon: Banknote,
-    title: "Bis zu 70% Förderung",
+    title: "Bis zu 70% Förderung möglich",
     description:
-      "Nutzen Sie staatliche Förderprogramme und sparen Sie bei Ihrer neuen Heizung. Wir unterstützen Sie bei der Antragstellung.",
+      "Nutzen Sie staatliche Förderprogramme und sparen Sie bei Ihrer neuen Heizung. Wir geben Ihnen Hilfestellung bei Förderanträgen.",
   },
   {
     icon: Leaf,

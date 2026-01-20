@@ -454,7 +454,7 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
                     </li>
                     <li className="flex items-start gap-3">
                       <CheckCircle2 className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
-                      <span className="text-sm">Kostenlose Förderberatung inklusive</span>
+                      <span className="text-sm">Hilfestellung bei Förderanträgen</span>
                     </li>
                   </ul>
                 </div>
@@ -481,11 +481,11 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-center gap-2">
                           <CheckCircle2 className="h-4 w-4 text-green-600" />
-                          Förderberatung & Antragsprüfung
+                          Hilfestellung bei Förderanträgen
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle2 className="h-4 w-4 text-green-600" />
-                          Hilfe bei BAFA/KfW-Anträgen
+                          Hilfestellung bei BAFA/KfW-Anträgen
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle2 className="h-4 w-4 text-green-600" />

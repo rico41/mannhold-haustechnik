@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 import { company } from "@/lib/data";
 
 const benefits = [
-  "Bis zu 70% Förderung",
+  "Bis zu 70% Förderung möglich",
   "Vaillant & OVUM Partner",
-  "Kostenlose Beratung",
+  "Hilfestellung bei Förderanträgen",
 ];
 
 export const Hero = () => {
@@ -49,13 +49,13 @@ export const Hero = () => {
               <span className="text-foreground">Wärmepumpe Berlin: </span>
               <span className="text-gradient">Vaillant & OVUM Installation</span>
               <br />
-              <span className="text-foreground">mit bis zu 70% Förderung</span>
+              <span className="text-foreground">mit bis zu 70% Förderung möglich</span>
             </h1>
 
             {/* Subheadline */}
             <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
               Professionelle Heizungsmodernisierung mit Vaillant und OVUM
-              Premium Wärmepumpen. Nutzen Sie bis zu 70% staatliche Förderung.
+              Premium Wärmepumpen. Bis zu 70% staatliche Förderung möglich – wir helfen beim Antrag.
             </p>
 
             {/* Benefits */}
@@ -157,7 +157,7 @@ export const Hero = () => {
                   </div>
                   <div>
                     <div className="text-sm font-bold text-gray-900">Förderung</div>
-                    <div className="text-xs text-muted-foreground">Wir helfen beim Antrag</div>
+                    <div className="text-xs text-muted-foreground">Hilfestellung beim Antrag</div>
                   </div>
                 </div>
               </motion.div>
