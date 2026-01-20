@@ -199,13 +199,10 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <head>
         {/* Preconnect für kritische Ressourcen - Performance Optimierung */}
-        {/* WICHTIG: Diese Links müssen ganz oben im <head> stehen */}
+        {/* WICHTIG: Maximal 2-3 Preconnect-Links (Lighthouse Best Practice) */}
         {/* Eigene Domain für _next/static Assets - HOCHSTE PRIORITÄT */}
         <link rel="preconnect" href="https://mannhold-haustechnik.de" crossOrigin="" />
-        <link rel="dns-prefetch" href="https://mannhold-haustechnik.de" />
-        {/* Google Fonts - Next.js lädt diese automatisch, Preconnect beschleunigt */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Google Fonts werden von Next.js automatisch optimiert - KEIN Preconnect nötig */}
         {/* Externe Domains - dns-prefetch für weniger kritische Ressourcen */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
