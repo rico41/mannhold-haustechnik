@@ -97,10 +97,10 @@ const nextConfig: NextConfig = {
         splitChunks: {
           chunks: "all",
           maxInitialRequests: 30, // Erhöht für besseres Splitting
-          minSize: 8000, // Reduziert für aggressiveres Splitting
-          maxSize: 40000, // Reduziert für kleinere Chunks (weniger ungenutztes JS)
+          minSize: 10000, // Balanciert für LCP und ungenutztes JS
+          maxSize: 45000, // Balanciert für LCP und ungenutztes JS
           // Reduziere Chunk-Größe für weniger ungenutztes JavaScript
-          enforceSizeThreshold: 25000, // Reduziert für aggressiveres Splitting
+          enforceSizeThreshold: 30000, // Balanciert für LCP und ungenutztes JS
           cacheGroups: {
             default: false,
             vendors: false,
@@ -136,24 +136,24 @@ const nextConfig: NextConfig = {
               priority: 25,
               reuseExistingChunk: true,
             },
-            // Vendor chunks (restliche node_modules) - aggressiveres Splitting
+            // Vendor chunks (restliche node_modules) - balanciertes Splitting
             vendor: {
               name: "vendor",
-              chunks: "async", // Nur async laden für besseres initiales Bundle
+              chunks: "all", // Zurück auf "all" für besseren LCP
               test: /[\\/]node_modules[\\/]/,
               priority: 20,
               reuseExistingChunk: true,
               minChunks: 1,
-              maxSize: 40000, // Kleinere Vendor-Chunks
+              maxSize: 45000, // Leicht erhöht für besseres initiales Laden
             },
-            // Common chunks (mehrfach verwendeter Code) - reduziert ungenutztes JS
+            // Common chunks (mehrfach verwendeter Code) - balanciertes Splitting
             common: {
               name: "common",
-              minChunks: 3, // Erhöht von 2 auf 3 für weniger ungenutztes JS
+              minChunks: 2, // Zurück auf 2 für besseren LCP
               chunks: "all",
               priority: 10,
               reuseExistingChunk: true,
-              minSize: 8000, // Reduziert für aggressiveres Splitting
+              minSize: 10000, // Zurück auf 10000 für besseres initiales Laden
             },
             // CSS separate für besseres Caching
             styles: {
