@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import { Hero } from "@/components/sections/Hero";
 import { company } from "@/lib/data";
 
-// Kritische Komponenten (above the fold) - direkt importiert für schnelles initiales Rendering
-// Hero wird sofort geladen (LCP-Element)
-const Hero = dynamic(() => import("@/components/sections/Hero").then((mod) => ({ default: mod.Hero })), {
-  ssr: true,
-  loading: () => <div className="min-h-[600px]" />,
-});
-
+// Hero ist LCP-Element - MUSS direkt importiert werden für schnelles initiales Rendering
+// Lazy-Loading würde LCP verschlechtern!
 // Partners wird lazy-loaded, da es nicht kritisch für LCP ist
 const Partners = dynamic(() => import("@/components/sections/Partners").then((mod) => ({ default: mod.Partners })), {
   ssr: true,
