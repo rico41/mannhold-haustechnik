@@ -2,7 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { company } from "@/lib/data/company";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Resend wird nur initialisiert, wenn der API Key vorhanden ist
+// Dies verhindert Build-Fehler, wenn der Key noch nicht gesetzt ist
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return null;
+  }
+  return new Resend(apiKey);
+};
 
 type ContactFormData = {
   name: string;
@@ -107,7 +115,8 @@ export async function POST(request: NextRequest) {
     `;
 
     // E-Mail an das Unternehmen senden
-    if (process.env.RESEND_API_KEY) {
+    const resend = getResend();
+    if (resend) {
       try {
         await resend.emails.send({
           from: process.env.RESEND_FROM_EMAIL || `Kontaktformular <noreply@${process.env.RESEND_DOMAIN || "mannhold-haustechnik.de"}>`,
