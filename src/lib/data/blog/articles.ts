@@ -110,7 +110,7 @@ Bei Investitionskosten von ca. 8.000 € (nach Förderung) amortisiert sich die 
 2. **Vor-Ort-Termin** – Aufnahme der Gebäudedaten
 3. **Heizlastberechnung nach DIN 12831** – Exakte Bedarfsermittlung
 4. **Angebotserstellung** – Transparent mit allen Kosten und Förderung
-5. **Förderantrag** – Wir unterstützen Sie beim Antrag
+5. **Förderantrag** – Wir geben Ihnen Hilfestellung beim Antrag
 
 ## Fazit: Altbau und Wärmepumpe – es geht!
 
@@ -220,7 +220,7 @@ Der Zuschuss wird auf dein Konto überwiesen – meist innerhalb von 4 Wochen.
 ❌ **Fehler 4:** Falschen Antragszeitraum wählen  
 → Budget ausgeschöpft!
 
-## Wir unterstützen Sie beim Antrag
+## Wir geben Ihnen Hilfestellung beim Antrag
 
 Bei Mannhold Haustechnik begleiten wir Sie durch den gesamten Prozess:
 
