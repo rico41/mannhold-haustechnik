@@ -1,18 +1,53 @@
 import type { Metadata } from "next";
-import {
-  Hero,
-  Services,
-  Benefits,
-  Partners,
-  Testimonials,
-  LocationsPreview,
-  BlogPreview,
-  FAQPreview,
-  CTASection,
-  GoogleMapsSection,
-} from "@/components/sections";
+import dynamic from "next/dynamic";
+import { Hero, Partners } from "@/components/sections";
 import { company } from "@/lib/data";
 import { testimonials, googleRating } from "@/lib/data/testimonials";
+
+// Kritische Komponenten (above the fold) - direkt importiert
+// Hero, Partners werden sofort geladen
+
+// Lazy Load Komponenten mit Framer Motion (große Library)
+const Services = dynamic(() => import("@/components/sections/Services").then((mod) => ({ default: mod.Services })), {
+  ssr: true,
+  loading: () => <div className="min-h-[500px]" />,
+});
+
+const Benefits = dynamic(() => import("@/components/sections/Benefits").then((mod) => ({ default: mod.Benefits })), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px]" />,
+});
+
+// Lazy Load nicht-kritische Komponenten (below the fold)
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then((mod) => ({ default: mod.Testimonials })), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px]" />,
+});
+
+const LocationsPreview = dynamic(() => import("@/components/sections/LocationsPreview").then((mod) => ({ default: mod.LocationsPreview })), {
+  ssr: true,
+  loading: () => <div className="min-h-[300px]" />,
+});
+
+const GoogleMapsSection = dynamic(() => import("@/components/sections/GoogleMapsSection").then((mod) => ({ default: mod.GoogleMapsSection })), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px]" />,
+});
+
+const BlogPreview = dynamic(() => import("@/components/sections/BlogPreview").then((mod) => ({ default: mod.BlogPreview })), {
+  ssr: true,
+  loading: () => <div className="min-h-[300px]" />,
+});
+
+const FAQPreview = dynamic(() => import("@/components/sections/FAQPreview").then((mod) => ({ default: mod.FAQPreview })), {
+  ssr: true,
+  loading: () => <div className="min-h-[300px]" />,
+});
+
+const CTASection = dynamic(() => import("@/components/sections/CTASection").then((mod) => ({ default: mod.CTASection })), {
+  ssr: true,
+  loading: () => <div className="min-h-[300px]" />,
+});
 
 export const metadata: Metadata = {
   title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",

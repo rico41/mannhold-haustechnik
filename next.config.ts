@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
   },
   // Optimierung für Render-Blocking Resources
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion"],
+    optimizePackageImports: ["lucide-react", "framer-motion", "@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-select"],
     optimizeCss: true,
     // CSS-Inlining für kritische Styles
     optimizeServerReact: true,
@@ -51,34 +51,61 @@ const nextConfig: NextConfig = {
         ...config.optimization,
         splitChunks: {
           chunks: "all",
-          maxInitialRequests: 25,
-          minSize: 20000,
+          maxInitialRequests: 20,
+          minSize: 15000,
+          maxSize: 100000,
           cacheGroups: {
             default: false,
             vendors: false,
-            // Vendor chunks
+            // React & React DOM separate
+            react: {
+              name: "react",
+              test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+              chunks: "all",
+              priority: 40,
+              reuseExistingChunk: true,
+            },
+            // Framer Motion separate (große Library)
+            framerMotion: {
+              name: "framer-motion",
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              chunks: "async", // Nur async laden
+              priority: 35,
+              reuseExistingChunk: true,
+            },
+            // Radix UI separate
+            radixUI: {
+              name: "radix-ui",
+              test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
+              chunks: "all",
+              priority: 30,
+              reuseExistingChunk: true,
+            },
+            // Lucide React separate (Icon Library)
+            lucideReact: {
+              name: "lucide-react",
+              test: /[\\/]node_modules[\\/]lucide-react[\\/]/,
+              chunks: "all",
+              priority: 25,
+              reuseExistingChunk: true,
+            },
+            // Vendor chunks (restliche node_modules)
             vendor: {
               name: "vendor",
               chunks: "all",
-              test: /node_modules/,
+              test: /[\\/]node_modules[\\/]/,
               priority: 20,
               reuseExistingChunk: true,
+              minChunks: 1,
             },
-            // Common chunks
+            // Common chunks (mehrfach verwendeter Code)
             common: {
               name: "common",
               minChunks: 2,
               chunks: "all",
               priority: 10,
               reuseExistingChunk: true,
-            },
-            // Framer Motion separate
-            framerMotion: {
-              name: "framer-motion",
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              chunks: "all",
-              priority: 30,
-              reuseExistingChunk: true,
+              minSize: 10000,
             },
             // CSS separate für besseres Caching
             styles: {
@@ -86,7 +113,7 @@ const nextConfig: NextConfig = {
               test: /\.(css|scss|sass)$/,
               chunks: "all",
               enforce: true,
-              priority: 40,
+              priority: 50,
             },
           },
         },
