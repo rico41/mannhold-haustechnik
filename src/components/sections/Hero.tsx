@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -119,10 +120,14 @@ export const Hero = () => {
               {/* Main Image */}
               <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                 {/* Bild: Modernes Haus mit Technik-Fokus */}
-                <img 
+                <Image 
                   src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
                   alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 0vw, 512px"
+                  className="object-cover"
+                  quality={90}
                 />
                 
                 {/* Overlay Gradient for Text Readability if needed */}
@@ -135,10 +140,13 @@ export const Hero = () => {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100"
               >
-                <img
+                <Image
                   src="/images/vaillant-logo-aw-2104046.jpg"
                   alt="Vaillant Partner Logo"
+                  width={120}
+                  height={40}
                   className="h-10 w-auto object-contain"
+                  quality={85}
                 />
               </motion.div>
 

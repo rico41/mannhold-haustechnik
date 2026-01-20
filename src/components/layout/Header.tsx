@@ -173,7 +173,13 @@ export const Header = () => {
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="lg:hidden">
-              <Button variant="ghost" size="icon" aria-label="Menü öffnen">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                aria-label={isMobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
+              >
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
@@ -194,7 +200,7 @@ export const Header = () => {
                 </div>
 
                 {/* Mobile Nav Items */}
-                <nav className="flex-1 overflow-y-auto p-6">
+                <nav id="mobile-navigation" className="flex-1 overflow-y-auto p-6" aria-label="Hauptnavigation">
                   <ul className="space-y-2">
                     {navItems.map((item) => (
                       <li key={item.href}>

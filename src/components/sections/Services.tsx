@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -82,10 +83,14 @@ export const Services = () => {
                     {/* Image Header */}
                     <div className="relative h-48 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                      <img 
+                      <Image 
                         src={service.image} 
                         alt={`${service.title} Installation Berlin - Mannhold Haustechnik ${service.shortTitle}`}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        quality={85}
                       />
                       <div className="absolute bottom-4 left-6 right-6 z-20 flex items-center gap-3">
                         <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">

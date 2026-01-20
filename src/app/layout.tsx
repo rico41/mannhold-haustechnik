@@ -18,8 +18,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
-    template: "%s | Mannhold Haustechnik",
+    default: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
+    template: "%s | Mannhold",
   },
   description:
     "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Heizungsinstallateur ✓ Gasthermen ✓ Hydraulischer Abgleich ✓ Heizlastberechnung. Jetzt beraten lassen!",
@@ -60,9 +60,17 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: "https://mannhold-haustechnik.de",
     siteName: "Mannhold Haustechnik",
-    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
     description:
       "Wärmepumpe Berlin & Potsdam ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Heizungsinstallateur. Jetzt beraten lassen!",
+    images: [
+      {
+        url: "https://mannhold-haustechnik.de/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mannhold Haustechnik - Wärmepumpen Installation Berlin",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -96,6 +104,87 @@ export const metadata: Metadata = {
 };
 
 import { Header, Footer } from "@/components/layout";
+import { company } from "@/lib/data";
+import { googleRating } from "@/lib/data/testimonials";
+
+// LocalBusiness Schema für alle Seiten
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://mannhold-haustechnik.de",
+  name: company.name,
+  image: "https://mannhold-haustechnik.de/images/logo.svg",
+  url: "https://mannhold-haustechnik.de",
+  telephone: company.contact.phone,
+  email: company.contact.email,
+  priceRange: "€€-€€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: company.address.street,
+    addressLocality: company.address.city,
+    postalCode: company.address.zip,
+    addressRegion: "BE",
+    addressCountry: "DE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 52.4862,
+    longitude: 13.3589,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "City", name: "Tempelhof-Schöneberg" },
+    { "@type": "City", name: "Steglitz-Zehlendorf" },
+    { "@type": "City", name: "Charlottenburg-Wilmersdorf" },
+    { "@type": "City", name: "Neukölln" },
+    { "@type": "City", name: "Friedrichshain-Kreuzberg" },
+    { "@type": "City", name: "Spandau" },
+    { "@type": "City", name: "Potsdam" },
+    { "@type": "City", name: "Kleinmachnow" },
+  ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Heizungstechnik Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wärmepumpe Installation",
+          description: "Installation von Vaillant und OVUM Wärmepumpen",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Hydraulischer Abgleich",
+          description: "Optimierung der Heizungsanlage nach DIN EN 12831",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Wartung & Service",
+          description: "Regelmäßige Wartung von Wärmepumpen und Gasthermen",
+        },
+      },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: googleRating.average.toString(),
+    reviewCount: googleRating.total.toString(),
+  },
+};
 
 export default function RootLayout({
   children,
@@ -105,13 +194,44 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        <GoogleAnalytics />
+        {/* Preconnect für externe Domains - Performance Optimierung */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {/* Preload Hero-Bild für besseren LCP */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg"
+          fetchPriority="high"
+        />
+        {/* Content Security Policy - Report Only Mode für Entwicklung */}
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://images.unsplash.com; frame-src 'self' https://www.google.com;"
+        />
+        {/* Schema.org */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
       </head>
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
       >
+        {/* Skip to main content - Accessibility */}
+        <a
+          href="#main-content"
+          className="absolute left-[-9999px] focus:left-4 focus:top-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+        >
+          Zum Hauptinhalt springen
+        </a>
+        <GoogleAnalytics />
         <Header />
-        <main className="min-h-screen pt-16 lg:pt-28">{children}</main>
+        <main id="main-content" className="min-h-screen pt-16 lg:pt-28" role="main">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

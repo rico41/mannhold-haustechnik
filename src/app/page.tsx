@@ -15,7 +15,7 @@ import { company } from "@/lib/data";
 import { testimonials, googleRating } from "@/lib/data/testimonials";
 
 export const metadata: Metadata = {
-  title: "Wärmepumpe Berlin | Vaillant & OVUM Installation ab 12.000€ | Mannhold Haustechnik",
+  title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
   description:
     "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam ✓ Kostenlose Beratung ✓ 030 550 718 31",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Heizungsinstallateur Berlin",
   ],
   openGraph: {
-    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold Haustechnik",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
     description:
       "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
     url: "https://mannhold-haustechnik.de",
@@ -71,7 +71,7 @@ const localBusinessSchema = {
   url: "https://mannhold-haustechnik.de",
   telephone: company.contact.phone,
   email: company.contact.email,
-  priceRange: "€€",
+  priceRange: "€€-€€€",
   currenciesAccepted: "EUR",
   paymentAccepted: "Cash, Credit Card, Bank Transfer",
   address: {

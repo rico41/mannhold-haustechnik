@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export const Partners = () => {
@@ -26,10 +27,13 @@ export const Partners = () => {
               className="group"
             >
               <div className="px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
-                <img
+                <Image
                   src="/images/vaillant-logo-aw-2104046.jpg"
                   alt="Vaillant Partner Logo"
+                  width={120}
+                  height={48}
                   className="h-12 w-auto object-contain"
+                  quality={85}
                 />
               </div>
             </motion.div>
@@ -43,10 +47,13 @@ export const Partners = () => {
               className="group"
             >
               <div className="px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
-                <img
+                <Image
                   src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
                   alt="OVUM Premium Partner Logo"
+                  width={120}
+                  height={48}
                   className="h-12 w-auto object-contain"
+                  quality={85}
                 />
               </div>
             </motion.div>

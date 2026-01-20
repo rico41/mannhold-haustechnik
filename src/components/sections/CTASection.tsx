@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,10 +13,15 @@ export const CTASection = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[#1a1a1a]/85 z-10" />
-        <img 
+        <Image 
           src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&q=80&w=2000" 
           alt="Heizungsinstallateur Berlin - Wärmepumpen Installation und Wartung" 
-          className="w-full h-full object-cover"
+          fill
+          sizes="100vw"
+          className="object-cover"
+          loading="lazy"
+          quality={75}
+          priority={false}
         />
       </div>
 
