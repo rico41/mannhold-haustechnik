@@ -17,7 +17,7 @@ export const Partners = () => {
           </motion.p>
 
           <div className="flex items-center gap-12 md:gap-16">
-            {/* Vaillant Logo Placeholder */}
+            {/* Vaillant Logo */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -25,22 +25,16 @@ export const Partners = () => {
               transition={{ delay: 0.1 }}
               className="group"
             >
-              <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-[#00923F] flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">V</span>
-                </div>
-                <div>
-                  <span className="font-bold text-xl text-[#00923F]">
-                    Vaillant
-                  </span>
-                  <span className="block text-xs text-muted-foreground">
-                    Partner
-                  </span>
-                </div>
+              <div className="px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
+                <img
+                  src="/images/vaillant-logo-aw-2104046.jpg"
+                  alt="Vaillant Partner Logo"
+                  className="h-12 w-auto object-contain"
+                />
               </div>
             </motion.div>
 
-            {/* OVUM Logo Placeholder */}
+            {/* OVUM Logo */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -48,16 +42,12 @@ export const Partners = () => {
               transition={{ delay: 0.2 }}
               className="group"
             >
-              <div className="flex items-center gap-3 px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-full bg-[#0089CF] flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">O</span>
-                </div>
-                <div>
-                  <span className="font-bold text-xl text-[#0089CF]">OVUM</span>
-                  <span className="block text-xs text-muted-foreground">
-                    Premium Partner
-                  </span>
-                </div>
+              <div className="px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
+                <img
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
+                  alt="OVUM Premium Partner Logo"
+                  className="h-12 w-auto object-contain"
+                />
               </div>
             </motion.div>
           </div>

@@ -258,9 +258,11 @@ export default function UeberUnsPage() {
             {/* Vaillant */}
             <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow border border-transparent hover:border-[#00923F]/20">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-[#00923F] flex items-center justify-center text-white shrink-0">
-                  <span className="text-2xl font-bold">V</span>
-                </div>
+                <img
+                  src="/images/vaillant-logo-aw-2104046.jpg"
+                  alt="Vaillant Partner Logo"
+                  className="h-16 w-auto object-contain"
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-[#00923F]">Vaillant</h3>
                   <p className="text-muted-foreground font-medium">Zertifizierter Partner</p>
@@ -290,9 +292,11 @@ export default function UeberUnsPage() {
             {/* OVUM */}
             <div className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow border border-transparent hover:border-[#0089CF]/20">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-full bg-[#0089CF] flex items-center justify-center text-white shrink-0">
-                  <span className="text-2xl font-bold">O</span>
-                </div>
+                <img
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
+                  alt="OVUM Premium Partner Logo"
+                  className="h-16 w-auto object-contain"
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-[#0089CF]">OVUM</h3>
                   <p className="text-muted-foreground font-medium">Premium Partner</p>

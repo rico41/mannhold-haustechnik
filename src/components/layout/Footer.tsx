@@ -184,10 +184,16 @@ export const Footer = () => {
             <div className="mt-6">
               <p className="text-sm text-gray-500 mb-3">Partner:</p>
               <div className="flex items-center gap-4">
-                <span className="text-sm font-semibold text-gray-400">
-                  Vaillant
-                </span>
-                <span className="text-sm font-semibold text-gray-400">OVUM</span>
+                <img
+                  src="/images/vaillant-logo-aw-2104046.jpg"
+                  alt="Vaillant Partner Logo"
+                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
+                <img
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
+                  alt="OVUM Premium Partner Logo"
+                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                />
               </div>
             </div>
           </div>
