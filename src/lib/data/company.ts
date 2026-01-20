@@ -45,6 +45,12 @@ export const company = {
     "Berlin Wilmersdorf",
     "Potsdam",
   ],
+  legal: {
+    vatId: "DE366664439",
+    taxNumber: "29/432/31314",
+    commercialRegister: "HRB 261024 B",
+    registerCourt: "Amtsgericht Charlottenburg",
+  },
 } as const;
 
 export type Company = typeof company;

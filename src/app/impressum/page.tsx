@@ -34,16 +34,23 @@ export default function ImpressumPage() {
             <p>
               Eintragung im Handelsregister.
               <br />
-              Registergericht: Amtsgericht Charlottenburg
+              Registergericht: {company.legal.registerCourt}
               <br />
-              Registernummer: HRB XXXXX B
+              Registernummer: {company.legal.commercialRegister}
             </p>
 
             <h2>Umsatzsteuer-ID</h2>
             <p>
               Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
               <br />
-              DE XXXXXXXXX
+              {company.legal.vatId}
+            </p>
+
+            <h2>Steuernummer</h2>
+            <p>
+              Steuernummer:
+              <br />
+              {company.legal.taxNumber}
             </p>
 
             <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
