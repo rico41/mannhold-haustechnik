@@ -125,6 +125,7 @@ export const Hero = () => {
                   alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
                   fill
                   priority
+                  fetchPriority="high"
                   sizes="(max-width: 1024px) 0vw, 512px"
                   className="object-cover"
                   quality={90}

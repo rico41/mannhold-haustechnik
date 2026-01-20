@@ -204,7 +204,7 @@ export default function RootLayout({
           rel="preload"
           as="image"
           href="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg"
-          fetchPriority="high"
+          fetchpriority="high"
         />
         {/* Content Security Policy - Report Only Mode für Entwicklung */}
         <meta
