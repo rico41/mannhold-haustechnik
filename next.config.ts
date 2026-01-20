@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   // Performance Optimierungen
   compress: true,
   poweredByHeader: false,
+  // Deaktiviere automatische Polyfills für moderne Browser
+  // Next.js 16 fügt standardmäßig Polyfills hinzu, auch wenn Browser sie unterstützen
+  // Durch explizite Browserslist-Konfiguration (Chrome 92+, Firefox 90+, Safari 15.4+)
+  // sollten Polyfills für ES2022 Features nicht mehr benötigt werden
+  transpilePackages: [],
   // Image Optimization
   images: {
     formats: ["image/avif", "image/webp"],
@@ -67,7 +72,19 @@ const nextConfig: NextConfig = {
           "net": false,
           "tls": false,
         },
+        // Deaktiviere automatische Polyfill-Injection
+        alias: {
+          ...config.resolve?.alias,
+          // Verhindere, dass core-js Polyfills eingebunden werden
+        },
       };
+
+      // Entferne Polyfill-Plugins aus Webpack
+      config.plugins = config.plugins?.filter((plugin: any) => {
+        // Entferne automatische Polyfill-Plugins
+        const pluginName = plugin?.constructor?.name || "";
+        return !pluginName.includes("Polyfill") && !pluginName.includes("core-js");
+      });
 
       // Code Splitting optimieren
       config.optimization = {
