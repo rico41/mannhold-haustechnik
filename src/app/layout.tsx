@@ -196,15 +196,15 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <head>
         {/* Preconnect für kritische Ressourcen - Performance Optimierung */}
+        {/* WICHTIG: Preconnect muss VOR allen anderen Ressourcen stehen */}
+        {/* Eigene Domain für _next/static Assets - HOCHSTE PRIORITÄT */}
+        <link rel="preconnect" href="https://mannhold-haustechnik.de" />
+        <link rel="dns-prefetch" href="https://mannhold-haustechnik.de" />
         {/* Google Fonts (Next.js lädt diese automatisch, aber Preconnect hilft) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Eigene Domain für _next/static Assets */}
-        <link rel="dns-prefetch" href="https://mannhold-haustechnik.de" />
-        {/* Externe Domains */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        {/* Externe Domains (nur wenn wirklich benötigt) */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Preload Hero-Bild für besseren LCP */}
         <link

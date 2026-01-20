@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
     optimizeCss: true,
     // CSS-Inlining für kritische Styles
     optimizeServerReact: true,
+    // CSS-Module-Optimierung
+    cssChunking: "strict",
   },
   // SWC Compiler für moderne Browser - reduziert Polyfills
   // swcMinify ist in Next.js 16 standardmäßig aktiviert
