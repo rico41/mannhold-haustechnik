@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company } from "@/lib/data";
@@ -12,6 +9,9 @@ const benefits = [
   "Vaillant & OVUM Partner",
   "Hilfestellung bei Förderanträgen",
 ];
+
+// CSS Keyframes werden in globals.css definiert
+// Hier nutzen wir CSS-Animationen statt Framer Motion für besseren LCP
 
 export const Hero = () => {
   return (
@@ -24,26 +24,22 @@ export const Hero = () => {
 
       <div className="container-custom relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-7rem)] py-12 lg:py-0">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+          {/* Content - CSS Animation statt Framer Motion */}
+          <div
+            className="text-center lg:text-left animate-fade-in-up"
+            style={{ animationDelay: "0ms" }}
           >
             {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium mb-6"
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium mb-6 animate-fade-in-scale"
+              style={{ animationDelay: "200ms" }}
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0089CF] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0089CF]"></span>
               </span>
               Zertifizierter Vaillant & OVUM Partner
-            </motion.div>
+            </div>
 
             {/* Headline */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight">
@@ -62,25 +58,21 @@ export const Hero = () => {
             {/* Benefits */}
             <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               {benefits.map((benefit, index) => (
-                <motion.div
+                <div
                   key={benefit}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  className="flex items-center gap-2 text-sm md:text-base"
+                  className="flex items-center gap-2 text-sm md:text-base animate-fade-in-left"
+                  style={{ animationDelay: `${400 + index * 100}ms` }}
                 >
                   <CheckCircle2 className="h-5 w-5 text-[#F7941D]" />
                   <span>{benefit}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+            <div
+              className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up"
+              style={{ animationDelay: "600ms" }}
             >
               <Button
                 asChild
@@ -103,25 +95,20 @@ export const Hero = () => {
                   {company.contact.phoneDisplay}
                 </a>
               </Button>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
-            // Reduziere Animation-Delay für besseren LCP
-            style={{ willChange: "transform" }}
+          {/* Visual - CSS Animation statt Framer Motion */}
+          <div
+            className="relative hidden lg:block animate-fade-in-scale"
+            style={{ animationDelay: "300ms" }}
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Background Blob/Gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F7941D]/20 to-[#0089CF]/20 rounded-[2rem] transform rotate-3 scale-105 blur-lg" />
               
-              {/* Main Image */}
+              {/* Main Image - LCP Element */}
               <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
-                {/* Bild: Modernes Haus mit Technik-Fokus */}
                 <Image 
                   src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
                   alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
@@ -132,18 +119,16 @@ export const Hero = () => {
                   className="object-cover"
                   quality={85}
                   placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
                 />
                 
                 {/* Overlay Gradient for Text Readability if needed */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
 
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100"
+              {/* Floating badges - CSS Animation statt Framer Motion */}
+              <div
+                className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100 animate-float"
               >
                 <Image
                   src="/images/vaillant-logo-aw-2104046.jpg"
@@ -153,12 +138,10 @@ export const Hero = () => {
                   className="h-10 w-auto object-contain"
                   quality={85}
                 />
-              </motion.div>
+              </div>
 
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-                className="absolute bottom-12 -left-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100"
+              <div
+                className="absolute bottom-12 -left-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100 animate-float-delayed"
               >
                 <div className="flex items-center gap-3">
                    <div className="h-10 w-10 rounded-full bg-[#F7941D]/10 flex items-center justify-center">
@@ -169,9 +152,9 @@ export const Hero = () => {
                     <div className="text-xs text-muted-foreground">Hilfestellung beim Antrag</div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

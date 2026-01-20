@@ -26,9 +26,11 @@ const nextConfig: NextConfig = {
   },
   // Optimierung für Render-Blocking Resources
   experimental: {
-    optimizePackageImports: ["lucide-react", "framer-motion", "@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-select"],
+    optimizePackageImports: ["lucide-react", "framer-motion", "@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-select", "@radix-ui/react-navigation-menu"],
     optimizeCss: true,
     // CSS-Inlining für kritische Styles (reduziert kritische Request Chain)
+    // Inlined CSS wird direkt im HTML ausgegeben, keine separate CSS-Anfrage nötig
+    inlineCss: true,
     optimizeServerReact: true,
     // CSS-Module-Optimierung - striktes Chunking reduziert initiale CSS-Größe
     // Dies hilft, die kritische Request Chain zu verkürzen, indem CSS in kleinere Chunks aufgeteilt wird
