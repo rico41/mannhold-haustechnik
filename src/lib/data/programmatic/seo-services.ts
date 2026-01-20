@@ -56,7 +56,7 @@ export const seoServices: SEOService[] = [
     shortName: "Wärmepumpe",
     icon: Wind,
     priority: 1,
-    titleTemplate: "Wärmepumpe {bezirk} | Installation & Wartung | Mannhold",
+    titleTemplate: "Wärmepumpe {bezirk} | Installation & Wartung",
     metaDescriptionTemplate:
       "Wärmepumpe in {bezirk} ✓ {distanceInfo} ✓ Vaillant & OVUM Partner ✓ Bis 70% Förderung ✓ Altbau-Spezialist ✓ Jetzt beraten lassen!",
     h1Template: "Wärmepumpe {bezirk}: Installation & Wartung vom Profi",
