@@ -72,11 +72,11 @@ const nextConfig: NextConfig = {
         ...config.optimization,
         splitChunks: {
           chunks: "all",
-          maxInitialRequests: 20,
-          minSize: 15000,
-          maxSize: 100000,
-          // Reduziere CSS-Chunk-Größe für schnellere kritische Request Chain
-          enforceSizeThreshold: 50000,
+          maxInitialRequests: 25,
+          minSize: 10000, // Reduziert von 15000 für besseres Code-Splitting
+          maxSize: 50000, // Reduziert von 100000 für kleinere Chunks
+          // Reduziere Chunk-Größe für weniger ungenutztes JavaScript
+          enforceSizeThreshold: 30000, // Reduziert von 50000
           cacheGroups: {
             default: false,
             vendors: false,
