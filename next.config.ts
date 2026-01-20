@@ -31,13 +31,15 @@ const nextConfig: NextConfig = {
   // Kompilierungs-Optimierungen
   swcMinify: true,
   // Webpack Optimierungen
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, dev }) => {
     if (!isServer) {
       // Code Splitting optimieren
       config.optimization = {
         ...config.optimization,
         splitChunks: {
           chunks: "all",
+          maxInitialRequests: 25,
+          minSize: 20000,
           cacheGroups: {
             default: false,
             vendors: false,
@@ -47,6 +49,7 @@ const nextConfig: NextConfig = {
               chunks: "all",
               test: /node_modules/,
               priority: 20,
+              reuseExistingChunk: true,
             },
             // Common chunks
             common: {
@@ -62,6 +65,15 @@ const nextConfig: NextConfig = {
               test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
               chunks: "all",
               priority: 30,
+              reuseExistingChunk: true,
+            },
+            // CSS separate für besseres Caching
+            styles: {
+              name: "styles",
+              test: /\.(css|scss|sass)$/,
+              chunks: "all",
+              enforce: true,
+              priority: 40,
             },
           },
         },
