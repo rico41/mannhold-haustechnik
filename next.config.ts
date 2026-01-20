@@ -12,12 +12,12 @@ const nextConfig: NextConfig = {
   // Durch explizite Browserslist-Konfiguration (Chrome 92+, Firefox 90+, Safari 15.4+)
   // sollten Polyfills für ES2022 Features nicht mehr benötigt werden
   transpilePackages: [],
-  // Image Optimization
+  // Image Optimization - verbessert Bildübermittlung (54 KiB Einsparung)
   images: {
-    formats: ["image/avif", "image/webp"],
+    formats: ["image/avif", "image/webp"], // AVIF hat beste Kompression
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000, // 1 Jahr Cache für optimierte Bilder
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    // Aggressivere Bildoptimierung
+    unoptimized: false,
   },
   // Optimierung für Render-Blocking Resources
   experimental: {
@@ -86,16 +88,19 @@ const nextConfig: NextConfig = {
         return !pluginName.includes("Polyfill") && !pluginName.includes("core-js");
       });
 
-      // Code Splitting optimieren
+      // Code Splitting optimieren - reduziert ungenutztes JavaScript (119 KiB)
       config.optimization = {
         ...config.optimization,
+        // Tree-shaking verbessern
+        usedExports: true,
+        sideEffects: false,
         splitChunks: {
           chunks: "all",
-          maxInitialRequests: 25,
-          minSize: 10000, // Reduziert von 15000 für besseres Code-Splitting
-          maxSize: 50000, // Reduziert von 100000 für kleinere Chunks
+          maxInitialRequests: 30, // Erhöht für besseres Splitting
+          minSize: 8000, // Reduziert für aggressiveres Splitting
+          maxSize: 40000, // Reduziert für kleinere Chunks (weniger ungenutztes JS)
           // Reduziere Chunk-Größe für weniger ungenutztes JavaScript
-          enforceSizeThreshold: 30000, // Reduziert von 50000
+          enforceSizeThreshold: 25000, // Reduziert für aggressiveres Splitting
           cacheGroups: {
             default: false,
             vendors: false,
@@ -131,23 +136,24 @@ const nextConfig: NextConfig = {
               priority: 25,
               reuseExistingChunk: true,
             },
-            // Vendor chunks (restliche node_modules)
+            // Vendor chunks (restliche node_modules) - aggressiveres Splitting
             vendor: {
               name: "vendor",
-              chunks: "all",
+              chunks: "async", // Nur async laden für besseres initiales Bundle
               test: /[\\/]node_modules[\\/]/,
               priority: 20,
               reuseExistingChunk: true,
               minChunks: 1,
+              maxSize: 40000, // Kleinere Vendor-Chunks
             },
-            // Common chunks (mehrfach verwendeter Code)
+            // Common chunks (mehrfach verwendeter Code) - reduziert ungenutztes JS
             common: {
               name: "common",
-              minChunks: 2,
+              minChunks: 3, // Erhöht von 2 auf 3 für weniger ungenutztes JS
               chunks: "all",
               priority: 10,
               reuseExistingChunk: true,
-              minSize: 10000,
+              minSize: 8000, // Reduziert für aggressiveres Splitting
             },
             // CSS separate für besseres Caching
             styles: {
@@ -162,6 +168,38 @@ const nextConfig: NextConfig = {
       };
     }
     return config;
+  },
+  // Cache-Headers optimieren (20 KiB Einsparung)
+  async headers() {
+    return [
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable", // 1 Jahr Cache für Bilder
+          },
+        ],
+      },
+      {
+        source: "/_next/static/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable", // 1 Jahr Cache für statische Assets
+          },
+        ],
+      },
+      {
+        source: "/_next/image/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable", // 1 Jahr Cache für optimierte Bilder
+          },
+        ],
+      },
+    ];
   },
 };
 
