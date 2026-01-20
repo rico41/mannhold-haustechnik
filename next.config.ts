@@ -37,17 +37,35 @@ const nextConfig: NextConfig = {
   // swcMinify ist in Next.js 16 standardmäßig aktiviert
   compiler: {
     // Entfernt unnötige Polyfills für moderne Browser
-    // Unterstützt: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+    // Unterstützt: Chrome 92+, Firefox 90+, Safari 15.4+, Edge 92+
+    // Diese Browser unterstützen nativ: Array.at, Array.flat, Object.fromEntries, Object.hasOwn, etc.
     removeConsole: process.env.NODE_ENV === "production" ? {
       exclude: ["error", "warn"], // Behalte error und warn für Debugging
     } : false,
   },
+  // Deaktiviere automatische Polyfills für moderne Browser
+  // Next.js 16 fügt standardmäßig Polyfills hinzu, auch wenn Browser sie unterstützen
+  // Durch explizite Browserslist-Konfiguration (Chrome 92+, Firefox 90+, Safari 15.4+)
+  // sollten Polyfills für ES2022 Features nicht mehr benötigt werden
   // Turbopack Konfiguration (leer = Webpack wird verwendet)
   // Next.js 16 verwendet standardmäßig Turbopack, aber wir nutzen Webpack für Code Splitting
   turbopack: {},
   // Webpack Optimierungen
   webpack: (config, { isServer, dev }) => {
     if (!isServer) {
+      // Polyfills für moderne Browser deaktivieren
+      // Entfernt core-js Polyfills, die für ES2022 Features nicht benötigt werden
+      config.resolve = {
+        ...config.resolve,
+        fallback: {
+          ...config.resolve?.fallback,
+          // Deaktiviere Node.js Polyfills (nicht benötigt für Browser)
+          "fs": false,
+          "net": false,
+          "tls": false,
+        },
+      };
+
       // Code Splitting optimieren
       config.optimization = {
         ...config.optimization,
