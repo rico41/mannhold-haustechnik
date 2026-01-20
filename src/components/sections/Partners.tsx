@@ -42,7 +42,7 @@ export const Partners = () => {
               transition={{ delay: 0.2 }}
               className="group"
             >
-              <div className="px-6 py-4 rounded-xl bg-white shadow-sm group-hover:shadow-md transition-shadow">
+              <div className="px-6 py-4 rounded-xl bg-gray-900 shadow-sm group-hover:shadow-md transition-shadow">
                 <img
                   src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_white.png"
                   alt="OVUM Premium Partner Logo"
