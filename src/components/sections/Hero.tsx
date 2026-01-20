@@ -120,7 +120,7 @@ export const Hero = () => {
               <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                 {/* Bild: Modernes Haus mit Technik-Fokus */}
                 <img 
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" 
+                  src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
                   alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
                   className="w-full h-full object-cover"
                 />

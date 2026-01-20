@@ -181,18 +181,28 @@ export const Footer = () => {
               ))}
             </ul>
             {/* Partner Logos */}
-            <div className="mt-6">
-              <p className="text-sm text-gray-500 mb-3">Partner:</p>
-              <div className="flex items-center gap-4">
+            <div className="mt-6 space-y-4">
+              <div>
+                <p className="text-sm text-gray-500 mb-3">Partner:</p>
+                <div className="flex items-center gap-4">
+                  <img
+                    src="/images/vaillant-logo-aw-2104046.jpg"
+                    alt="Vaillant Partner Logo"
+                    className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <img
+                    src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
+                    alt="OVUM Premium Partner Logo"
+                    className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              </div>
+              <div>
+                <p className="text-sm text-gray-500 mb-3">Innungsmitglied:</p>
                 <img
-                  src="/images/vaillant-logo-aw-2104046.jpg"
-                  alt="Vaillant Partner Logo"
-                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
-                />
-                <img
-                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
-                  alt="OVUM Premium Partner Logo"
-                  className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  src="/images/neues-shk-logo.jpg"
+                  alt="SHK Innung Berlin Logo - Innungsmitglied"
+                  className="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
             </div>

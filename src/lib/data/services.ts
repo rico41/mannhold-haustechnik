@@ -56,7 +56,7 @@ export const services: Service[] = [
       "OVUM Wärmepumpe",
       "Luft-Wasser-Wärmepumpe",
     ],
-    image: "https://images.unsplash.com/photo-1599818820498-8959f6498776?auto=format&fit=crop&q=80&w=800",
+    image: "/images/vaillant/aroTHERMplus_13x18_quer_300dpi1.jpg",
   },
   {
     id: "vaillant",
@@ -88,7 +88,7 @@ export const services: Service[] = [
       "aroTHERM plus Installation",
       "Vaillant Partner Berlin",
     ],
-    image: "https://images.unsplash.com/photo-1635334235472-8820986161b4?auto=format&fit=crop&q=80&w=800",
+    image: "/images/vaillant/aroTHERMplus_13x18_quer_300dpi2.jpg",
   },
   {
     id: "ovum",
@@ -120,7 +120,7 @@ export const services: Service[] = [
       "OVUM Premium Installation",
       "Premium Wärmepumpe kaufen",
     ],
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    image: "/images/ovum/ACP312_black_Medaille.png",
   },
   {
     id: "gastherme",
