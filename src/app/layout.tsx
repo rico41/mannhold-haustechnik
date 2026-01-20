@@ -102,6 +102,9 @@ export const metadata: Metadata = {
     "geo.position": "52.4862;13.3589",
     "ICBM": "52.4862, 13.3589",
   },
+  // Preconnect-Links über Metadata API (wird früher im HTML ausgegeben)
+  // Next.js 16 rendert diese automatisch im <head>
+  metadataBase: new URL("https://mannhold-haustechnik.de"),
 };
 
 import { Header, Footer } from "@/components/layout";
@@ -196,14 +199,14 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <head>
         {/* Preconnect für kritische Ressourcen - Performance Optimierung */}
-        {/* WICHTIG: Preconnect muss VOR allen anderen Ressourcen stehen */}
+        {/* WICHTIG: Diese Links müssen ganz oben im <head> stehen */}
         {/* Eigene Domain für _next/static Assets - HOCHSTE PRIORITÄT */}
-        <link rel="preconnect" href="https://mannhold-haustechnik.de" />
+        <link rel="preconnect" href="https://mannhold-haustechnik.de" crossOrigin="" />
         <link rel="dns-prefetch" href="https://mannhold-haustechnik.de" />
-        {/* Google Fonts (Next.js lädt diese automatisch, aber Preconnect hilft) */}
+        {/* Google Fonts - Next.js lädt diese automatisch, Preconnect beschleunigt */}
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Externe Domains (nur wenn wirklich benötigt) */}
+        {/* Externe Domains - dns-prefetch für weniger kritische Ressourcen */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Preload Hero-Bild für besseren LCP */}
