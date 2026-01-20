@@ -108,6 +108,8 @@ export const Header = () => {
             <img 
               src="/images/logo.svg" 
               alt="Mannhold Haustechnik Logo" 
+              width={180}
+              height={48}
               className="h-10 lg:h-12 w-auto"
             />
           </Link>
@@ -204,6 +206,8 @@ export const Header = () => {
                     <img 
                       src="/images/logo.svg" 
                       alt="Mannhold Haustechnik Logo" 
+                      width={150}
+                      height={40}
                       className="h-10 w-auto"
                     />
                   </Link>

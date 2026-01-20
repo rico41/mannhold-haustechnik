@@ -261,6 +261,8 @@ export default function UeberUnsPage() {
                 <img
                   src="/images/vaillant-logo-aw-2104046.jpg"
                   alt="Vaillant Partner Logo"
+                  width={160}
+                  height={64}
                   className="h-16 w-auto object-contain"
                 />
                 <div>
@@ -295,6 +297,8 @@ export default function UeberUnsPage() {
                 <img
                   src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
                   alt="OVUM Premium Partner Logo"
+                  width={200}
+                  height={64}
                   className="h-16 w-auto object-contain"
                 />
                 <div>

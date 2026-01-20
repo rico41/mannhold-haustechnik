@@ -73,6 +73,8 @@ export const Footer = () => {
               <img 
                 src="/images/logo.svg" 
                 alt="Mannhold Haustechnik Logo" 
+                width={180}
+                height={48}
                 className="h-10 lg:h-12 w-auto"
               />
             </Link>
@@ -188,11 +190,15 @@ export const Footer = () => {
                   <img
                     src="/images/vaillant-logo-aw-2104046.jpg"
                     alt="Vaillant Partner Logo"
+                    width={80}
+                    height={32}
                     className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                   />
                   <img
                     src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
                     alt="OVUM Premium Partner Logo"
+                    width={100}
+                    height={32}
                     className="h-8 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
@@ -202,6 +208,8 @@ export const Footer = () => {
                 <img
                   src="/images/neues-shk-logo.jpg"
                   alt="SHK Innung Berlin Logo - Innungsmitglied"
+                  width={100}
+                  height={40}
                   className="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity"
                 />
               </div>
