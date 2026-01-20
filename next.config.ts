@@ -75,6 +75,8 @@ const nextConfig: NextConfig = {
           maxInitialRequests: 20,
           minSize: 15000,
           maxSize: 100000,
+          // Reduziere CSS-Chunk-Größe für schnellere kritische Request Chain
+          enforceSizeThreshold: 50000,
           cacheGroups: {
             default: false,
             vendors: false,

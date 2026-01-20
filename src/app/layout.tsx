@@ -196,11 +196,9 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning>
       <head>
-        {/* Preconnect für kritische Ressourcen - Performance Optimierung */}
-        {/* WICHTIG: Diese Links müssen GANZ OBEN im <head> stehen, VOR allen anderen Ressourcen */}
-        {/* Next.js 16 App Router rendert Links im <head> korrekt, aber sie müssen früh stehen */}
-        {/* Eigene Domain für _next/static Assets - KRITISCH für CSS-Loading */}
-        <link rel="preconnect" href="https://mannhold-haustechnik.de" />
+        {/* Performance Optimierung: Preconnect nur für externe Domains */}
+        {/* HINWEIS: Preconnect für die eigene Domain ist nicht sinnvoll, da die Verbindung bereits besteht */}
+        {/* Lighthouse meldet daher "keine vorverbundenen Ursprünge" - das ist korrekt */}
         {/* Externe Domains - dns-prefetch für weniger kritische Ressourcen */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
