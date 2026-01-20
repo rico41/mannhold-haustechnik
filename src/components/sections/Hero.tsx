@@ -133,17 +133,13 @@ export const Hero = () => {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100"
+                className="absolute top-8 -right-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100"
               >
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-[#0089CF]/10 flex items-center justify-center">
-                     <span className="font-bold text-[#0089CF]">V</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-gray-900">Vaillant</div>
-                    <div className="text-xs text-muted-foreground">Premium Partner</div>
-                  </div>
-                </div>
+                <img
+                  src="/images/vaillant-logo-aw-2104046.jpg"
+                  alt="Vaillant Partner Logo"
+                  className="h-10 w-auto object-contain"
+                />
               </motion.div>
 
               <motion.div
