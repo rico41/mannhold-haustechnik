@@ -32,7 +32,7 @@ export const Hero = () => {
             {/* Badge */}
             <div
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium mb-6 animate-fade-in-scale"
-              style={{ animationDelay: "200ms" }}
+              style={{ animationDelay: "100ms" }}
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0089CF] opacity-75"></span>
@@ -61,7 +61,7 @@ export const Hero = () => {
                 <div
                   key={benefit}
                   className="flex items-center gap-2 text-sm md:text-base animate-fade-in-left"
-                  style={{ animationDelay: `${400 + index * 100}ms` }}
+                  style={{ animationDelay: `${200 + index * 50}ms` }}
                 >
                   <CheckCircle2 className="h-5 w-5 text-[#F7941D]" />
                   <span>{benefit}</span>
@@ -72,7 +72,7 @@ export const Hero = () => {
             {/* CTAs */}
             <div
               className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up"
-              style={{ animationDelay: "600ms" }}
+              style={{ animationDelay: "300ms" }}
             >
               <Button
                 asChild
@@ -99,9 +99,10 @@ export const Hero = () => {
           </div>
 
           {/* Visual - CSS Animation statt Framer Motion */}
+          {/* LCP-Element: Keine Animation für besseren LCP */}
           <div
-            className="relative hidden lg:block animate-fade-in-scale"
-            style={{ animationDelay: "300ms" }}
+            className="relative hidden lg:block"
+            style={{ opacity: 1 }}
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Background Blob/Gradient */}
@@ -115,9 +116,10 @@ export const Hero = () => {
                   fill
                   priority
                   fetchPriority="high"
-                  sizes="(max-width: 1024px) 0vw, (max-width: 1280px) 50vw, 480px"
+                  sizes="(max-width: 1024px) 0vw, (max-width: 1280px) 50vw, 450px"
                   className="object-cover"
-                  quality={80}
+                  quality={75}
+                  unoptimized={false}
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
                   loading="eager"

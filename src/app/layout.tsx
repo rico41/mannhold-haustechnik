@@ -8,7 +8,7 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional", // Besseres LCP als "swap" - verhindert FOIT, nutzt Fallback sofort
   preload: true, // Preload für besseren LCP
   adjustFontFallback: true,
 });
@@ -16,7 +16,7 @@ const inter = Inter({
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional", // Besseres LCP als "swap" - verhindert FOIT, nutzt Fallback sofort
   weight: ["400", "500", "600", "700", "800"],
   preload: true, // Preload für besseren LCP
   adjustFontFallback: true,
