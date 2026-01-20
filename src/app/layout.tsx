@@ -8,18 +8,20 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "optional", // Besseres LCP als "swap" - verhindert FOIT, nutzt Fallback sofort
+  display: "swap", // Swap ist besser für LCP als optional
   preload: true, // Preload für besseren LCP
   adjustFontFallback: true,
+  fallback: ["system-ui", "arial"], // Schnelle Fallbacks
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
   subsets: ["latin"],
-  display: "optional", // Besseres LCP als "swap" - verhindert FOIT, nutzt Fallback sofort
+  display: "swap", // Swap ist besser für LCP als optional
   weight: ["400", "500", "600", "700", "800"],
   preload: true, // Preload für besseren LCP
   adjustFontFallback: true,
+  fallback: ["system-ui", "arial"], // Schnelle Fallbacks
 });
 
 // Header und Footer lazy laden für besseren LCP
@@ -236,12 +238,13 @@ export default function RootLayout({
         {/* Externe Domains - dns-prefetch für weniger kritische Ressourcen */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
-        {/* Preload Hero-Bild für besseren LCP */}
+        {/* Preload Hero-Bild für besseren LCP - höchste Priorität */}
         <link
           rel="preload"
           as="image"
           href="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg"
           fetchPriority="high"
+          type="image/jpeg"
         />
         {/* Content Security Policy - Report Only Mode für Entwicklung */}
         <meta
