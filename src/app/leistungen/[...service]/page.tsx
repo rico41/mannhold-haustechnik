@@ -10,17 +10,20 @@ import { company, testimonials } from "@/lib/data";
 import { CTASection } from "@/components/sections";
 
 type Props = {
-  params: Promise<{ service: string }>;
+  params: Promise<{ service: string[] }>;
 };
 
 export async function generateStaticParams() {
   return services.map((service) => ({
-    service: service.slug,
+    // Split slug by "/" for catch-all route
+    service: service.slug.split("/"),
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { service: serviceSlug } = await params;
+  const { service: serviceSegments } = await params;
+  // Join segments back to original slug format
+  const serviceSlug = serviceSegments.join("/");
   const service = getServiceBySlug(serviceSlug);
 
   if (!service) {
@@ -37,7 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function ServicePage({ params }: Props) {
-  const { service: serviceSlug } = await params;
+  const { service: serviceSegments } = await params;
+  // Join segments back to original slug format (e.g., ["waermepumpe", "vaillant"] -> "waermepumpe/vaillant")
+  const serviceSlug = serviceSegments.join("/");
   const service = getServiceBySlug(serviceSlug);
 
   if (!service) {
