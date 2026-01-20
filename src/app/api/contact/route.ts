@@ -118,8 +118,11 @@ export async function POST(request: NextRequest) {
     const resend = getResend();
     if (resend) {
       try {
+        // Entferne Anführungszeichen vom from-Feld falls vorhanden
+        const fromEmail = (process.env.RESEND_FROM_EMAIL || `Kontaktformular <noreply@${process.env.RESEND_DOMAIN || "mannhold-haustechnik.de"}>`).replace(/^["']|["']$/g, '');
+        
         await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL || `Kontaktformular <noreply@${process.env.RESEND_DOMAIN || "mannhold-haustechnik.de"}>`,
+          from: fromEmail,
           to: company.contact.email,
           replyTo: data.email,
           subject: emailSubject,
@@ -158,7 +161,7 @@ export async function POST(request: NextRequest) {
           `;
 
           await resend.emails.send({
-            from: process.env.RESEND_FROM_EMAIL || `Kontaktformular <noreply@${process.env.RESEND_DOMAIN || "mannhold-haustechnik.de"}>`,
+            from: fromEmail,
             to: data.email,
             subject: `Ihre Anfrage bei ${company.name}`,
             html: confirmationHtml,
