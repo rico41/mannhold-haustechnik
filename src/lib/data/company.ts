@@ -12,8 +12,8 @@ export const company = {
     country: "Deutschland",
   },
   contact: {
-    phone: "+49 30 12345678",
-    phoneDisplay: "030 123 456 78",
+    phone: "+49 30 55071831",
+    phoneDisplay: "030 550 718 31",
     email: "info@mannhold-haustechnik.de",
     website: "https://mannhold-haustechnik.de",
   },

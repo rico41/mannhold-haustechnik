@@ -162,7 +162,7 @@ export const ContactForm = () => {
               <Input
                 id="phone"
                 type="tel"
-                placeholder="030 123 456 78"
+                placeholder="030 550 718 31"
                 {...register("phone")}
               />
             </div>
