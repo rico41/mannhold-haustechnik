@@ -102,8 +102,6 @@ export const metadata: Metadata = {
     "geo.position": "52.4862;13.3589",
     "ICBM": "52.4862, 13.3589",
   },
-  // Preconnect-Links über Metadata API (wird früher im HTML ausgegeben)
-  // Next.js 16 rendert diese automatisch im <head>
   metadataBase: new URL("https://mannhold-haustechnik.de"),
 };
 
@@ -199,10 +197,10 @@ export default function RootLayout({
     <html lang="de" suppressHydrationWarning>
       <head>
         {/* Preconnect für kritische Ressourcen - Performance Optimierung */}
-        {/* WICHTIG: Maximal 2-3 Preconnect-Links (Lighthouse Best Practice) */}
-        {/* Eigene Domain für _next/static Assets - HOCHSTE PRIORITÄT */}
-        <link rel="preconnect" href="https://mannhold-haustechnik.de" crossOrigin="" />
-        {/* Google Fonts werden von Next.js automatisch optimiert - KEIN Preconnect nötig */}
+        {/* WICHTIG: Diese Links müssen GANZ OBEN im <head> stehen, VOR allen anderen Ressourcen */}
+        {/* Next.js 16 App Router rendert Links im <head> korrekt, aber sie müssen früh stehen */}
+        {/* Eigene Domain für _next/static Assets - KRITISCH für CSS-Loading */}
+        <link rel="preconnect" href="https://mannhold-haustechnik.de" />
         {/* Externe Domains - dns-prefetch für weniger kritische Ressourcen */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
