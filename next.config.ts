@@ -28,9 +28,10 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion", "@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-select"],
     optimizeCss: true,
-    // CSS-Inlining für kritische Styles
+    // CSS-Inlining für kritische Styles (reduziert kritische Request Chain)
     optimizeServerReact: true,
-    // CSS-Module-Optimierung
+    // CSS-Module-Optimierung - striktes Chunking reduziert initiale CSS-Größe
+    // Dies hilft, die kritische Request Chain zu verkürzen, indem CSS in kleinere Chunks aufgeteilt wird
     cssChunking: "strict",
   },
   // SWC Compiler für moderne Browser - reduziert Polyfills
