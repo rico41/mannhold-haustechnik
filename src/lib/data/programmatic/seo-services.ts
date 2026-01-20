@@ -163,7 +163,7 @@ export const seoServices: SEOService[] = [
     shortName: "Heizungsinstallateur",
     icon: Home,
     priority: 1,
-    titleTemplate: "Heizungsinstallateur {bezirk} | Wärmepumpen & Gasthermen | Mannhold",
+    titleTemplate: "Heizungsinstallateur {bezirk} | Wärmepumpen & Gasthermen",
     metaDescriptionTemplate:
       "Heizungsinstallateur in {bezirk} ✓ {distanceInfo} ✓ Wärmepumpen ✓ Gasthermen ✓ Fußbodenheizung. Mannhold Haustechnik – Ihr Meisterbetrieb!",
     h1Template: "Heizungsinstallateur {bezirk}: Wärmepumpen & Gasthermen vom Profi",

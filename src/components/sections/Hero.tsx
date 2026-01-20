@@ -23,6 +23,34 @@ export const Hero = () => {
       </div>
 
       <div className="container-custom relative">
+        {/* Mobile Hero Image - LCP Element für mobile Geräte - ZUERST für besseren LCP */}
+        <div className="relative lg:hidden mb-8">
+          <div className="relative aspect-[4/3] max-w-md mx-auto">
+            {/* Background Blob/Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#F7941D]/20 to-[#0089CF]/20 rounded-2xl transform rotate-3 scale-105 blur-lg" />
+            
+            {/* Main Image - LCP Element Mobile */}
+            <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-xl border-2 border-white">
+              <Image 
+                src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
+                alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
+                fill
+                priority
+                fetchPriority="high"
+                sizes="(max-width: 640px) 100vw, 640px"
+                className="object-cover"
+                quality={75}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
+                loading="eager"
+              />
+              
+              {/* Overlay Gradient for Text Readability if needed */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            </div>
+          </div>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[calc(100vh-7rem)] py-12 lg:py-0">
           {/* Content - CSS Animation statt Framer Motion */}
           <div
@@ -98,8 +126,7 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Visual - CSS Animation statt Framer Motion */}
-          {/* LCP-Element: Keine Animation für besseren LCP */}
+          {/* Desktop Hero Image - LCP Element für Desktop */}
           <div
             className="relative hidden lg:block"
             style={{ opacity: 1 }}
@@ -108,7 +135,7 @@ export const Hero = () => {
               {/* Background Blob/Gradient */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#F7941D]/20 to-[#0089CF]/20 rounded-[2rem] transform rotate-3 scale-105 blur-lg" />
               
-              {/* Main Image - LCP Element */}
+              {/* Main Image - LCP Element Desktop */}
               <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
                   src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
@@ -119,8 +146,6 @@ export const Hero = () => {
                   sizes="(max-width: 1024px) 0vw, (max-width: 1280px) 50vw, 480px"
                   className="object-cover"
                   quality={78}
-                  // Optimiert für LCP <1.8s
-                  // Next.js wählt automatisch AVIF/WebP basierend auf Browser-Unterstützung
                   placeholder="blur"
                   blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
                   loading="eager"
