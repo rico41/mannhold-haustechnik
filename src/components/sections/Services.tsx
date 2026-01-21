@@ -3,10 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getMainServices } from "@/lib/data/services";
+import { company } from "@/lib/data";
+import { trackCTAClick } from "@/lib/analytics/conversion-events";
 
 const services = getMainServices();
 
@@ -120,10 +122,35 @@ export const Services = () => {
                         ))}
                       </ul>
 
-                      {/* Link */}
-                      <div className="flex items-center text-primary font-medium group-hover:gap-3 gap-2 transition-all">
-                        Mehr erfahren
-                        <ArrowRight className="h-4 w-4" />
+                      {/* CTA Buttons */}
+                      <div className="flex flex-col gap-2 mt-4">
+                        <Button
+                          asChild
+                          size="sm"
+                          variant="outline"
+                          className="w-full text-sm"
+                        >
+                          <Link
+                            href={`/leistungen/${service.slug}`}
+                            onClick={() => trackCTAClick(`service_${service.slug}`, "services", "service_card")}
+                          >
+                            Mehr erfahren
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
+                        <Button
+                          asChild
+                          size="sm"
+                          className="w-full bg-primary hover:bg-primary/90 text-sm"
+                        >
+                          <Link
+                            href="/kontakt"
+                            onClick={() => trackCTAClick(`service_${service.slug}_contact`, "services", "service_card")}
+                          >
+                            Kostenlose Beratung
+                            <Phone className="ml-2 h-4 w-4" />
+                          </Link>
+                        </Button>
                       </div>
                     </CardContent>
                   </Card>

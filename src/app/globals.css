@@ -189,6 +189,17 @@
   }
 }
 
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -213,6 +224,12 @@
 
 .animate-fade-in-left {
   animation: fade-in-left 0.2s ease-out forwards;
+  opacity: 0;
+  will-change: opacity, transform; /* GPU-Beschleunigung */
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.3s ease-out forwards;
   opacity: 0;
   will-change: opacity, transform; /* GPU-Beschleunigung */
 }

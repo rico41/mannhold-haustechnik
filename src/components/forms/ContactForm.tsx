@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import { Send, Loader2, CheckCircle2, Phone, Clock, Users, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,6 +15,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Card, CardContent } from "@/components/ui/card";
+import { company } from "@/lib/data";
+import { trackFormSubmit, trackFormFieldFocus } from "@/lib/analytics/conversion-events";
+import { trackFacebookEvent, trackGoogleAdsConversion } from "@/components/analytics/RetargetingPixels";
 
 type FormData = {
   name: string;
@@ -42,6 +45,7 @@ export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedAnliegen, setSelectedAnliegen] = useState("");
+  const [showFullForm, setShowFullForm] = useState(false);
 
   const {
     register,
@@ -69,6 +73,19 @@ export const ContactForm = () => {
       if (!response.ok) {
         throw new Error("Fehler beim Senden der Nachricht");
       }
+
+      // Track Conversion
+      trackFormSubmit("contact", {
+        anliegen: selectedAnliegen,
+        hasPhone: !!data.phone,
+      });
+
+      // Retargeting Events
+      trackFacebookEvent("Lead", {
+        content_name: "Contact Form",
+        content_category: "Contact",
+      });
+      trackGoogleAdsConversion("contact_form_submit");
 
       setIsSubmitted(true);
       reset();
@@ -110,6 +127,57 @@ export const ContactForm = () => {
   return (
     <Card className="border-0 shadow-xl">
       <CardContent className="p-8 md:p-12">
+        {/* Trust Indicators */}
+        <div className="mb-8 p-6 bg-gradient-to-r from-[#F7941D]/5 to-[#0089CF]/5 rounded-xl border border-[#F7941D]/10">
+          <h3 className="font-semibold text-lg mb-4">Was Sie erhalten:</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-[#F7941D] shrink-0" />
+              <span className="text-sm">Kostenlose Beratung</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-[#F7941D] shrink-0" />
+              <span className="text-sm">Unverbindliches Angebot</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-[#F7941D] shrink-0" />
+              <span className="text-sm">Hilfestellung bei Förderung</span>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground pt-4 border-t border-gray-200">
+            <div className="flex items-center gap-1">
+              <Users className="h-4 w-4" />
+              <span>200+ Anfragen diesen Monat</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Clock className="h-4 w-4" />
+              <span>Durchschnittliche Antwortzeit: 2h</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Phone-First CTA */}
+        <div className="mb-6 p-4 bg-[#0089CF]/5 border border-[#0089CF]/20 rounded-lg">
+          <p className="text-sm font-medium mb-3">Schnellere Hilfe gewünscht?</p>
+          <Button
+            asChild
+            variant="outline"
+            className="w-full border-2 border-[#0089CF] text-[#0089CF] hover:bg-[#0089CF] hover:text-white"
+          >
+            <a
+              href={`tel:${company.contact.phone}`}
+              onClick={() => {
+                if (typeof window !== "undefined" && window.gtag) {
+                  trackFormSubmit("contact", { action: "phone_fallback" });
+                }
+              }}
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Direkt anrufen: {company.contact.phoneDisplay}
+            </a>
+          </Button>
+        </div>
+
         <form onSubmit={handleSubmit(handleFormSubmit)} className="space-y-6">
           {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -125,6 +193,7 @@ export const ContactForm = () => {
                 })}
                 className={errors.name ? "border-red-500" : ""}
                 aria-invalid={errors.name ? "true" : "false"}
+                onFocus={() => trackFormFieldFocus("name", "contact")}
               />
               {errors.name && (
                 <p className="text-sm text-red-500">{errors.name.message}</p>
@@ -155,70 +224,86 @@ export const ContactForm = () => {
             </div>
           </div>
 
-          {/* Phone & PLZ */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="phone">Telefon (optional)</Label>
-              <Input
-                id="phone"
-                type="tel"
-                placeholder="030 550 718 31"
-                {...register("phone")}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="plz">
-                PLZ / Ort <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="plz"
-                placeholder="10827 Berlin"
-                {...register("plz", {
-                  required: "PLZ/Ort ist erforderlich",
-                })}
-                className={errors.plz ? "border-red-500" : ""}
-                aria-invalid={errors.plz ? "true" : "false"}
-              />
-              {errors.plz && (
-                <p className="text-sm text-red-500">{errors.plz.message}</p>
-              )}
-            </div>
-          </div>
-
-          {/* Anliegen */}
+          {/* PLZ - Always visible */}
           <div className="space-y-2">
-            <Label htmlFor="anliegen">
-              Anliegen <span className="text-red-500">*</span>
+            <Label htmlFor="plz">
+              PLZ / Ort <span className="text-red-500">*</span>
             </Label>
-            <Select
-              value={selectedAnliegen}
-              onValueChange={setSelectedAnliegen}
-              required
-            >
-              <SelectTrigger id="anliegen">
-                <SelectValue placeholder="Bitte wählen Sie Ihr Anliegen" />
-              </SelectTrigger>
-              <SelectContent>
-                {anliegenOptions.map((option) => (
-                  <SelectItem key={option.value} value={option.value}>
-                    {option.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Input
+              id="plz"
+              placeholder="10827 Berlin"
+              {...register("plz", {
+                required: "PLZ/Ort ist erforderlich",
+              })}
+              className={errors.plz ? "border-red-500" : ""}
+              aria-invalid={errors.plz ? "true" : "false"}
+            />
+            {errors.plz && (
+              <p className="text-sm text-red-500">{errors.plz.message}</p>
+            )}
           </div>
 
-          {/* Nachricht */}
-          <div className="space-y-2">
-            <Label htmlFor="nachricht">Ihre Nachricht</Label>
-            <Textarea
-              id="nachricht"
-              placeholder="Beschreiben Sie Ihr Anliegen..."
-              rows={5}
-              {...register("nachricht")}
-            />
-          </div>
+          {/* Progressive Disclosure Button */}
+          {!showFullForm && (
+            <Button
+              type="button"
+              variant="outline"
+              className="w-full"
+              onClick={() => setShowFullForm(true)}
+            >
+              Weitere Details angeben (optional)
+            </Button>
+          )}
+
+          {/* Additional Fields - Shown after clicking "Weitere Details" */}
+          {showFullForm && (
+            <>
+              {/* Phone */}
+              <div className="space-y-2">
+                <Label htmlFor="phone">Telefon (optional)</Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="030 550 718 31"
+                  {...register("phone")}
+                />
+              </div>
+
+              {/* Anliegen */}
+              <div className="space-y-2">
+                <Label htmlFor="anliegen">
+                  Anliegen <span className="text-red-500">*</span>
+                </Label>
+                <Select
+                  value={selectedAnliegen}
+                  onValueChange={setSelectedAnliegen}
+                  required
+                >
+                  <SelectTrigger id="anliegen">
+                    <SelectValue placeholder="Bitte wählen Sie Ihr Anliegen" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {anliegenOptions.map((option) => (
+                      <SelectItem key={option.value} value={option.value}>
+                        {option.label}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Nachricht */}
+              <div className="space-y-2">
+                <Label htmlFor="nachricht">Ihre Nachricht</Label>
+                <Textarea
+                  id="nachricht"
+                  placeholder="Beschreiben Sie Ihr Anliegen..."
+                  rows={5}
+                  {...register("nachricht")}
+                />
+              </div>
+            </>
+          )}
 
           {/* Datenschutz */}
           <div className="flex items-start gap-3">

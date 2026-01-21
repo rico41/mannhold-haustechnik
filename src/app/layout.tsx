@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import dynamic from "next/dynamic";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { RetargetingPixels } from "@/components/analytics/RetargetingPixels";
+import { StickyMobileCTA } from "@/components/common/StickyMobileCTA";
+import { ExitIntentModal } from "@/components/common/ExitIntentModal";
+import { FloatingReviewsBadge } from "@/components/common/FloatingReviewsBadge";
+import { ScrollTriggeredCTA } from "@/components/common/ScrollTriggeredCTA";
+import { MobileQuickActions } from "@/components/common/MobileQuickActions";
 // CSS Import am Ende für bessere Performance
 import "./globals.css";
 
@@ -269,11 +275,17 @@ export default function RootLayout({
           Zum Hauptinhalt springen
         </a>
         <GoogleAnalytics />
+        <RetargetingPixels />
         <Header />
         <main id="main-content" className="min-h-screen pt-16 lg:pt-28" role="main">
           {children}
         </main>
         <Footer />
+        <StickyMobileCTA />
+        <ExitIntentModal />
+        <FloatingReviewsBadge />
+        <ScrollTriggeredCTA />
+        <MobileQuickActions />
       </body>
     </html>
   );

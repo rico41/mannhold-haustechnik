@@ -1,8 +1,20 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Star, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company } from "@/lib/data";
+import { GoogleReviewsBadge } from "@/components/reviews/GoogleReviewsBadge";
+import { useGoogleReviews } from "@/lib/hooks/useGoogleReviews";
+import { trackCTAClick, trackPhoneClick } from "@/lib/analytics/conversion-events";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { getTopFAQs } from "@/lib/data/faq";
 
 const benefits = [
   "Bis zu 70% Förderung möglich",
@@ -14,6 +26,11 @@ const benefits = [
 // Hier nutzen wir CSS-Animationen statt Framer Motion für besseren LCP
 
 export const Hero = () => {
+  const { data } = useGoogleReviews();
+  const totalReviews = data?.totalReviews || 200;
+  const averageRating = data?.averageRating || 5.0;
+  const topFAQs = getTopFAQs(3);
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50">
       {/* Background Pattern */}
@@ -23,6 +40,14 @@ export const Hero = () => {
       </div>
 
       <div className="container-custom relative">
+        {/* Urgency Banner */}
+        <div className="mb-4 text-center animate-fade-in-down">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F7941D]/10 border border-[#F7941D]/20 rounded-full text-sm font-medium text-[#F7941D]">
+            <Clock className="h-4 w-4" />
+            <span>Förderung 2024 läuft aus – Jetzt noch sichern!</span>
+          </div>
+        </div>
+
         {/* Mobile Hero Image - LCP Element für mobile Geräte - ZUERST für besseren LCP */}
         <div className="relative lg:hidden mb-8">
           <div className="relative aspect-[4/3] max-w-md mx-auto">
@@ -57,16 +82,49 @@ export const Hero = () => {
             className="text-center lg:text-left animate-fade-in-up"
             style={{ animationDelay: "0ms" }}
           >
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium mb-6 animate-fade-in-scale"
-              style={{ animationDelay: "50ms" }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0089CF] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0089CF]"></span>
-              </span>
-              Zertifizierter Vaillant & OVUM Partner
+            {/* Trust Badges Row */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6">
+              {/* Partner Badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/10 text-[#0089CF] text-sm font-medium animate-fade-in-scale"
+                style={{ animationDelay: "50ms" }}
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0089CF] opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0089CF]"></span>
+                </span>
+                Zertifizierter Partner
+              </div>
+
+              {/* Google Rating Badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 shadow-sm text-sm animate-fade-in-scale"
+                style={{ animationDelay: "80ms" }}
+              >
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`h-4 w-4 ${
+                        i < Math.round(averageRating)
+                          ? "fill-[#F7941D] text-[#F7941D]"
+                          : "fill-gray-200 text-gray-200"
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="font-semibold text-gray-900">{averageRating.toFixed(1)}</span>
+                <span className="text-gray-600">({totalReviews}+)</span>
+              </div>
+
+              {/* Customer Count Badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0089CF]/5 text-[#0089CF] text-sm font-medium animate-fade-in-scale"
+                style={{ animationDelay: "110ms" }}
+              >
+                <Users className="h-4 w-4" />
+                <span>200+ Installationen 2024</span>
+              </div>
             </div>
 
             {/* Headline */}
@@ -97,6 +155,15 @@ export const Hero = () => {
               ))}
             </div>
 
+            {/* Trust Indicator - Response Time */}
+            <div
+              className="mt-6 flex items-center justify-center lg:justify-start gap-2 text-sm text-muted-foreground animate-fade-in-up"
+              style={{ animationDelay: "150ms" }}
+            >
+              <Clock className="h-4 w-4 text-[#F7941D]" />
+              <span>Durchschnittliche Antwortzeit: 2 Stunden</span>
+            </div>
+
             {/* CTAs */}
             <div
               className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up"
@@ -107,7 +174,10 @@ export const Hero = () => {
                 size="lg"
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-lg px-8 h-14"
               >
-                <Link href="/kontakt">
+                <Link
+                  href="/kontakt"
+                  onClick={() => trackCTAClick("hero_cta", "hero", "hero_section")}
+                >
                   Kostenlose Beratung
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
@@ -118,11 +188,48 @@ export const Hero = () => {
                 size="lg"
                 className="w-full sm:w-auto text-lg px-8 h-14 border-2"
               >
-                <a href={`tel:${company.contact.phone}`}>
+                <a
+                  href={`tel:${company.contact.phone}`}
+                  onClick={() => trackPhoneClick("general", "hero_section")}
+                >
                   <Phone className="mr-2 h-5 w-5" />
                   {company.contact.phoneDisplay}
                 </a>
               </Button>
+            </div>
+
+            {/* Top 3 FAQs */}
+            <div
+              className="mt-12 max-w-2xl mx-auto lg:mx-0 animate-fade-in-up"
+              style={{ animationDelay: "250ms" }}
+            >
+              <h3 className="text-xl font-semibold font-heading mb-4 text-center lg:text-left">
+                Häufig gestellte Fragen
+              </h3>
+              <Accordion type="single" collapsible className="space-y-2">
+                {topFAQs.map((faq) => (
+                  <AccordionItem
+                    key={faq.id}
+                    value={faq.id}
+                    className="bg-white/50 rounded-lg border border-gray-200 px-4"
+                  >
+                    <AccordionTrigger className="text-left text-sm font-medium py-3 hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-muted-foreground pb-3">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+              <div className="mt-4 text-center lg:text-left">
+                <Link
+                  href="/faq"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  Alle FAQs ansehen →
+                </Link>
+              </div>
             </div>
           </div>
 

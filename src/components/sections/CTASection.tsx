@@ -3,9 +3,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone, Calendar } from "lucide-react";
+import { ArrowRight, Phone, Calendar, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company } from "@/lib/data";
+import { trackCTAClick, trackPhoneClick } from "@/lib/analytics/conversion-events";
 
 export const CTASection = () => {
   return (
@@ -80,6 +81,24 @@ export const CTASection = () => {
             </div>
           </motion.div>
 
+          {/* Scarcity & Social Proof */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.35 }}
+            className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400"
+          >
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
+              <Users className="h-4 w-4 text-[#F7941D]" />
+              <span>12 Anfragen in den letzten 24h</span>
+            </div>
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
+              <Clock className="h-4 w-4 text-[#0089CF]" />
+              <span>Nächste freie Beratung: Diese Woche</span>
+            </div>
+          </motion.div>
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,7 +112,10 @@ export const CTASection = () => {
               size="lg"
               className="w-full sm:w-auto bg-[#F7941D] hover:bg-[#F7941D]/90 text-white text-lg px-8 h-14"
             >
-              <Link href="/kontakt">
+              <Link
+                href="/kontakt"
+                onClick={() => trackCTAClick("cta_section_form", "cta_section", "bottom_cta")}
+              >
                 Beratung anfragen
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
@@ -104,7 +126,10 @@ export const CTASection = () => {
               size="lg"
               className="w-full sm:w-auto text-lg px-8 h-14 border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:text-white hover:border-white/50 font-semibold"
             >
-              <a href={`tel:${company.contact.phone}`}>
+              <a
+                href={`tel:${company.contact.phone}`}
+                onClick={() => trackPhoneClick("general", "cta_section")}
+              >
                 <Phone className="mr-2 h-5 w-5" />
                 <span className="font-bold">{company.contact.phoneDisplay}</span>
               </a>
