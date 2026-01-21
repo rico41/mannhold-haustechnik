@@ -45,7 +45,6 @@ export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedAnliegen, setSelectedAnliegen] = useState("");
-  const [showFullForm, setShowFullForm] = useState(false);
 
   const {
     register,
@@ -224,7 +223,7 @@ export const ContactForm = () => {
             </div>
           </div>
 
-          {/* PLZ - Always visible */}
+          {/* PLZ */}
           <div className="space-y-2">
             <Label htmlFor="plz">
               PLZ / Ort <span className="text-red-500">*</span>
@@ -243,67 +242,52 @@ export const ContactForm = () => {
             )}
           </div>
 
-          {/* Progressive Disclosure Button */}
-          {!showFullForm && (
-            <Button
-              type="button"
-              variant="outline"
-              className="w-full"
-              onClick={() => setShowFullForm(true)}
+          {/* Phone */}
+          <div className="space-y-2">
+            <Label htmlFor="phone">Telefon (optional)</Label>
+            <Input
+              id="phone"
+              type="tel"
+              placeholder="030 550 718 31"
+              {...register("phone")}
+              onFocus={() => trackFormFieldFocus("phone", "contact")}
+            />
+          </div>
+
+          {/* Anliegen */}
+          <div className="space-y-2">
+            <Label htmlFor="anliegen">
+              Anliegen <span className="text-red-500">*</span>
+            </Label>
+            <Select
+              value={selectedAnliegen}
+              onValueChange={setSelectedAnliegen}
+              required
             >
-              Weitere Details angeben (optional)
-            </Button>
-          )}
+              <SelectTrigger id="anliegen">
+                <SelectValue placeholder="Bitte wählen Sie Ihr Anliegen" />
+              </SelectTrigger>
+              <SelectContent>
+                {anliegenOptions.map((option) => (
+                  <SelectItem key={option.value} value={option.value}>
+                    {option.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-          {/* Additional Fields - Shown after clicking "Weitere Details" */}
-          {showFullForm && (
-            <>
-              {/* Phone */}
-              <div className="space-y-2">
-                <Label htmlFor="phone">Telefon (optional)</Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="030 550 718 31"
-                  {...register("phone")}
-                />
-              </div>
-
-              {/* Anliegen */}
-              <div className="space-y-2">
-                <Label htmlFor="anliegen">
-                  Anliegen <span className="text-red-500">*</span>
-                </Label>
-                <Select
-                  value={selectedAnliegen}
-                  onValueChange={setSelectedAnliegen}
-                  required
-                >
-                  <SelectTrigger id="anliegen">
-                    <SelectValue placeholder="Bitte wählen Sie Ihr Anliegen" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {anliegenOptions.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Nachricht */}
-              <div className="space-y-2">
-                <Label htmlFor="nachricht">Ihre Nachricht</Label>
-                <Textarea
-                  id="nachricht"
-                  placeholder="Beschreiben Sie Ihr Anliegen..."
-                  rows={5}
-                  {...register("nachricht")}
-                />
-              </div>
-            </>
-          )}
+          {/* Nachricht */}
+          <div className="space-y-2">
+            <Label htmlFor="nachricht">Ihre Nachricht</Label>
+            <Textarea
+              id="nachricht"
+              placeholder="Beschreiben Sie Ihr Anliegen..."
+              rows={5}
+              {...register("nachricht")}
+              onFocus={() => trackFormFieldFocus("nachricht", "contact")}
+            />
+          </div>
 
           {/* Datenschutz */}
           <div className="flex items-start gap-3">
