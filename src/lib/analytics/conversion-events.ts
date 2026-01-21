@@ -7,18 +7,9 @@
  * - CTA Clicks
  * - Scroll Depth
  * - Exit Intent
+ * 
+ * Type-Definitionen sind in src/types/analytics.d.ts
  */
-
-declare global {
-  interface Window {
-    gtag?: (
-      command: "config" | "event" | "js",
-      targetId: string | Date,
-      config?: Record<string, unknown>
-    ) => void;
-    dataLayer?: unknown[];
-  }
-}
 
 /**
  * Trackt Form Submission
