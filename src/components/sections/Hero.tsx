@@ -40,14 +40,6 @@ export const Hero = () => {
       </div>
 
       <div className="container-custom relative">
-        {/* Urgency Banner */}
-        <div className="mb-4 text-center animate-fade-in-down">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#F7941D]/10 border border-[#F7941D]/20 rounded-full text-sm font-medium text-[#F7941D]">
-            <Clock className="h-4 w-4" />
-            <span>Förderung 2024 läuft aus – Jetzt noch sichern!</span>
-          </div>
-        </div>
-
         {/* Mobile Hero Image - LCP Element für mobile Geräte - ZUERST für besseren LCP */}
         <div className="relative lg:hidden mb-8">
           <div className="relative aspect-[4/3] max-w-md mx-auto">

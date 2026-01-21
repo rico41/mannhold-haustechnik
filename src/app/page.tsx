@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
-import { UrgencyBanner } from "@/components/common/UrgencyBanner";
 import { company } from "@/lib/data";
 
 // Hero ist LCP-Element - MUSS direkt importiert werden für schnelles initiales Rendering
@@ -258,7 +257,6 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      <UrgencyBanner />
       <Hero />
       <Partners />
       <Services />
