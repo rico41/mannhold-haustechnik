@@ -4,14 +4,23 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host") || "";
+  let shouldRedirect = false;
 
-  // Prüfe ob die Anfrage mit "www." beginnt
+  // 1. HTTP → HTTPS Redirect (Sicherheit)
+  if (request.nextUrl.protocol === "http:") {
+    url.protocol = "https:";
+    shouldRedirect = true;
+  }
+
+  // 2. www → non-www Redirect (SEO: Duplicate Content vermeiden)
   if (hostname.startsWith("www.")) {
-    // Entferne "www." und leite auf die kanonische Domain um
     const newHostname = hostname.replace(/^www\./, "");
     url.hostname = newHostname;
-    
-    // 301 Permanent Redirect für SEO
+    shouldRedirect = true;
+  }
+
+  // Führe Redirect aus falls nötig (301 Permanent Redirect)
+  if (shouldRedirect) {
     return NextResponse.redirect(url, 301);
   }
 
