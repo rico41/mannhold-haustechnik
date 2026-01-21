@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -118,20 +119,77 @@ export default async function ServicePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Benefits Card */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-xl font-bold font-heading mb-6">
-                Ihre Vorteile
-              </h3>
-              <ul className="space-y-4">
-                {service.benefits.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-[#F7941D] shrink-0 mt-0.5" />
-                    <span className="text-lg">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Benefits Card / OVUM Image Gallery */}
+            {service.slug === "waermepumpe/ovum" ? (
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h3 className="text-xl font-bold font-heading mb-6">
+                  OVUM Wärmepumpen im Detail
+                </h3>
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP312_black_Medaille.png"
+                      alt="OVUM ACP312 Wärmepumpe schwarz mit Medaille"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 50vw, 300px"
+                    />
+                  </div>
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP312_grau_Medaille.png"
+                      alt="OVUM ACP312 Wärmepumpe grau mit Medaille"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 50vw, 300px"
+                    />
+                  </div>
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP208_black.png"
+                      alt="OVUM ACP208 Wärmepumpe schwarz"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 50vw, 300px"
+                    />
+                  </div>
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP208_grau.png"
+                      alt="OVUM ACP208 Wärmepumpe grau"
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 50vw, 300px"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4 pt-6 border-t">
+                  <h4 className="font-semibold text-lg">Ihre Vorteile</h4>
+                  <ul className="space-y-3">
+                    {service.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h3 className="text-xl font-bold font-heading mb-6">
+                  Ihre Vorteile
+                </h3>
+                <ul className="space-y-4">
+                  {service.benefits.map((benefit, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-[#F7941D] shrink-0 mt-0.5" />
+                      <span className="text-lg">{benefit}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -166,6 +224,150 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* OVUM Image Gallery Section */}
+      {service.slug === "waermepumpe/ovum" && (
+        <section className="section-padding bg-gray-50">
+          <div className="container-custom">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold font-heading">
+                OVUM Wärmepumpen Modelle
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Entdecken Sie unsere Premium Wärmepumpen von OVUM – Made in Austria
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* ACP 312 Series */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP_312_520_black.png"
+                      alt="OVUM ACP 312/520 Wärmepumpe schwarz"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">ACP 312/520</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Kompakte Premium-Wärmepumpe mit integriertem Pufferspeicher
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ACP 312 Explosion */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP_312_520_Explosion_black.png"
+                      alt="OVUM ACP 312/520 Explosionszeichnung"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">Technische Details</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Explosionszeichnung zeigt die hochwertige Verarbeitung
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* AC16 Außen */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/AC16-Aussen.png"
+                      alt="OVUM AC16 Außengerät"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">AC16 Außengerät</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Kompaktes Außengerät für Split-Systeme
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* AC16 Hinten */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/AC16-Hinten.png"
+                      alt="OVUM AC16 Rückansicht"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">AC16 Rückansicht</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Optimierte Anschlüsse und Wartungszugang
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* MIRA Cube */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/MIRA_Cube_500_mLogo.png"
+                      alt="OVUM MIRA Cube 500 Wärmepumpe"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">MIRA Cube 500</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Premium Kompakt-Wärmepumpe mit modernem Design
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* ACP 208 Grau */}
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="relative aspect-[4/3] bg-gray-100">
+                    <Image
+                      src="/images/ovum/ACP208_grau.png"
+                      alt="OVUM ACP208 Wärmepumpe grau"
+                      fill
+                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-lg mb-2">ACP 208 Grau</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Elegante graue Variante für moderne Architektur
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Testimonial */}
       {relatedTestimonial && (
