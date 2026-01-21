@@ -74,7 +74,6 @@ export const services: Service[] = [
       "Vorlauftemperaturen bis 75°C",
       "Flüsterleiser Betrieb",
       "myVAILLANT App-Steuerung",
-      "5 Jahre Garantie",
     ],
     benefits: [
       "Deutsche Markenqualität",

@@ -9,7 +9,6 @@ import {
   Award,
   HeadphonesIcon,
 } from "lucide-react";
-import { GuaranteeBadge } from "@/components/common/GuaranteeBadge";
 
 const benefits = [
   {
@@ -139,17 +138,6 @@ export const Benefits = () => {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Guarantee Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 max-w-2xl mx-auto"
-        >
-          <GuaranteeBadge />
         </motion.div>
       </div>
     </section>
