@@ -112,7 +112,6 @@ export const services: Service[] = [
       "Ideal für Wohngebiete",
       "Höchste Verarbeitungsqualität",
       "Lange Lebensdauer",
-      "Persönlicher Herstellersupport",
     ],
     keywords: [
       "OVUM Wärmepumpe Berlin",
