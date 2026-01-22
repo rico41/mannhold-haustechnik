@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { getRedirectPath } from "@/lib/redirects";
 
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
@@ -20,8 +21,24 @@ export function middleware(request: NextRequest) {
   }
 
   // Führe Redirect aus falls nötig (301 Permanent Redirect)
+  // Wichtig: Nur ein Redirect pro Request, daher prüfen wir hier
   if (shouldRedirect) {
     return NextResponse.redirect(url, 301);
+  }
+
+  // 3. Alte URLs → Neue URLs Redirect (SEO: Link-Juice erhalten)
+  // Wird NACH HTTP→HTTPS und www→non-www Checks ausgeführt
+  const pathname = request.nextUrl.pathname;
+  const redirectPath = getRedirectPath(pathname);
+
+  if (redirectPath) {
+    // Erstelle neue URL mit dem Redirect-Pfad
+    const newUrl = request.nextUrl.clone();
+    newUrl.pathname = redirectPath;
+    // Query-Parameter beibehalten (z.B. ?utm_source=...)
+    // nextUrl.clone() behält bereits Query-Parameter bei
+    
+    return NextResponse.redirect(newUrl, 301);
   }
 
   return NextResponse.next();
