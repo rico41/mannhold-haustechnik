@@ -11,7 +11,7 @@ export const faqItems: FAQItem[] = [
     id: "wp-1",
     question: "Wie viel kostet eine Wärmepumpe inklusive Installation?",
     answer:
-      "Die Kosten für eine Wärmepumpe variieren je nach Typ und Gebäude zwischen 15.000 € und 35.000 €. Durch staatliche Förderungen können Sie bis zu 70% der Kosten zurückerhalten. Wir erstellen Ihnen gerne ein individuelles Angebot mit Förderberechnung.",
+      "Die Kosten für eine Wärmepumpe variieren je nach Typ und Gebäude zwischen 28.000 € und 45.000 €. Durch staatliche Förderungen können Sie bis zu 70% der Kosten zurückerhalten. Wir erstellen Ihnen gerne ein individuelles Angebot mit Förderberechnung.",
     category: "waermepumpe",
   },
   {

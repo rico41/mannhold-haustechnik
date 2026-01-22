@@ -84,12 +84,12 @@ Wärmepumpe + Gastherme als Backup für sehr kalte Tage. Die Wärmepumpe überni
 
 | Position | Kosten (ca.) |
 |----------|-------------|
-| Wärmepumpe (Luft-Wasser) | 12.000 - 18.000 € |
+| Wärmepumpe (Luft-Wasser) | 20.000 - 28.000 € |
 | Installation & Verrohrung | 4.000 - 8.000 € |
 | Ggf. neue Heizkörper | 2.000 - 5.000 € |
 | Hydraulischer Abgleich | 600 - 1.200 € |
-| **Gesamt vor Förderung** | **18.600 - 32.200 €** |
-| **Nach 70% Förderung** | **5.580 - 9.660 €** |
+| **Gesamt vor Förderung** | **26.600 - 41.200 €** |
+| **Nach 70% Förderung** | **7.980 - 12.360 €** |
 
 ## Praxisbeispiel: Altbau in Berlin-Steglitz
 
@@ -102,7 +102,7 @@ Wärmepumpe + Gastherme als Backup für sehr kalte Tage. Die Wärmepumpe überni
 - Heizkosten nachher (Strom): 1.400 €/Jahr
 - **Ersparnis: 1.400 €/Jahr**
 
-Bei Investitionskosten von ca. 8.000 € (nach Förderung) amortisiert sich die Anlage in unter 6 Jahren.
+Bei Investitionskosten von ca. 8.000 - 12.000 € (nach Förderung) amortisiert sich die Anlage in unter 6 Jahren.
 
 ## So prüfen wir, ob Ihr Altbau geeignet ist
 
@@ -373,11 +373,11 @@ Der hydraulische Abgleich ist keine bürokratische Pflichtübung, sondern eine s
 
 | | Gasbrennwert | Wärmepumpe |
 |--|--------------|------------|
-| Gerät | 4.000 - 8.000 € | 12.000 - 20.000 € |
+| Gerät | 4.000 - 8.000 € | 20.000 - 28.000 € |
 | Installation | 2.000 - 4.000 € | 4.000 - 8.000 € |
 | Schornstein/Außengerät | 500 - 1.500 € | 0 - 2.000 € |
-| **Gesamt** | **6.500 - 13.500 €** | **16.000 - 30.000 €** |
-| **Nach Förderung (55%)** | - | **7.200 - 13.500 €** |
+| **Gesamt** | **6.500 - 13.500 €** | **24.000 - 38.000 €** |
+| **Nach Förderung (55%)** | - | **10.800 - 17.100 €** |
 
 **Erkenntnis:** Nach Förderung liegen beide Systeme oft gleichauf!
 

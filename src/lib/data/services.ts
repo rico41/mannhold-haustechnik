@@ -36,7 +36,6 @@ export const services: Service[] = [
     icon: Wind,
     features: [
       "Luft-Wasser-Wärmepumpen",
-      "Sole-Wasser-Wärmepumpen",
       "Vaillant aroTHERM plus",
       "OVUM Premium Wärmepumpen",
       "Hybridlösungen",

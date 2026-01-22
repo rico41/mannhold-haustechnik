@@ -73,7 +73,6 @@ export const seoServices: SEOService[] = [
       "Vaillant aroTHERM plus Wärmepumpen",
       "OVUM Premium Wärmepumpen",
       "Luft-Wasser-Wärmepumpen",
-      "Sole-Wasser-Wärmepumpen",
       "Hybridlösungen",
       "Hilfestellung bei Förderanträgen",
     ],
@@ -81,7 +80,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Was kostet eine Wärmepumpe in {bezirk}?",
         answerTemplate:
-          "Die Kosten für eine Wärmepumpe in {bezirk} liegen zwischen 15.000€ und 35.000€ je nach Gebäude und Modell. Durch staatliche Förderung können Sie bis zu 70% der Kosten zurückerhalten. Wir erstellen Ihnen ein individuelles Angebot für Ihr Objekt in {bezirk}.",
+          "Die Kosten für eine Wärmepumpe in {bezirk} liegen zwischen 28.000€ und 45.000€ je nach Gebäude und Modell. Durch staatliche Förderung können Sie bis zu 70% der Kosten zurückerhalten. Wir erstellen Ihnen ein individuelles Angebot für Ihr Objekt in {bezirk}.",
       },
       {
         questionTemplate: "Welche Wärmepumpe ist für {bezirk} geeignet?",
@@ -284,7 +283,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Gastherme oder Wärmepumpe in {bezirk} – was ist günstiger?",
         answerTemplate:
-          "Kurzfristig ist eine Gastherme in {bezirk} günstiger (3.000-6.000€). Langfristig ist eine Wärmepumpe (15.000-35.000€ vor Förderung) oft günstiger, da sie bis zu 50% Heizkosten spart und bis zu 70% Förderung erhält. Wir rechnen das für Ihr Objekt durch.",
+          "Kurzfristig ist eine Gastherme in {bezirk} günstiger (3.000-6.000€). Langfristig ist eine Wärmepumpe (28.000-45.000€ vor Förderung) oft günstiger, da sie bis zu 50% Heizkosten spart und bis zu 70% Förderung erhält. Wir rechnen das für Ihr Objekt durch.",
       },
     ],
     keywordTemplates: [
@@ -706,7 +705,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Was kostet es, die Heizung in {bezirk} zu erneuern?",
         answerTemplate:
-          "Die Kosten für eine neue Heizung in {bezirk} variieren: Brennwerttherme ab ca. 5.000€, Wärmepumpe ab ca. 15.000€. Durch Förderung von bis zu 70% sinken die tatsächlichen Kosten erheblich.",
+          "Die Kosten für eine neue Heizung in {bezirk} variieren: Brennwerttherme ab ca. 5.000€, Wärmepumpe ab ca. 28.000€. Durch Förderung von bis zu 70% sinken die tatsächlichen Kosten erheblich.",
       },
       {
         questionTemplate: "Welche Förderung gibt es für die Heizungserneuerung in {bezirk}?",
