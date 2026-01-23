@@ -724,7 +724,7 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
                         <MapPin className="h-5 w-5 text-[#F7941D] shrink-0 mt-0.5" />
                         <div>
                           <h3 className="font-semibold group-hover:text-primary transition-colors">
-                            {page.location.shortName}
+                            {page.service.shortName} in {page.location.shortName}
                           </h3>
                           <p className="text-sm text-muted-foreground">
                             {page.location.distanceInfo}
