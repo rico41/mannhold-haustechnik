@@ -11,6 +11,16 @@
 
 export const redirectMap: Record<string, string> = {
   // ========================================
+  // STANDORT REDIRECTS (falsche Slugs)
+  // ========================================
+  // berlin-schöneberg (mit ö) → berlin-schoeneberg (mit oe)
+  "/standorte/berlin-schöneberg": "/standorte/berlin-schoeneberg",
+  "/standorte/berlin-schöneberg/": "/standorte/berlin-schoeneberg",
+  // berlin-potsdam → potsdam (ohne berlin- Präfix)
+  "/standorte/berlin-potsdam": "/standorte/potsdam",
+  "/standorte/berlin-potsdam/": "/standorte/potsdam",
+
+  // ========================================
   // STRUKTURELLE REDIRECTS
   // ========================================
   "/services": "/leistungen",
