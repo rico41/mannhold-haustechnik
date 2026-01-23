@@ -231,6 +231,15 @@ export default async function HomePage() {
     "@type": "LocalBusiness",
     "@id": "https://mannhold-haustechnik.de#reviews",
     name: company.name,
+    // Adresse ist Pflichtfeld für LocalBusiness
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: company.address.street,
+      addressLocality: company.address.city,
+      postalCode: company.address.zip,
+      addressRegion: "Berlin",
+      addressCountry: "DE",
+    },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: googleRating.average,
