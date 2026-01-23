@@ -217,17 +217,26 @@ export default async function HomePage() {
     ],
   };
 
+  // Hilfsfunktion für vollständiges ISO-Datum (Google erwartet YYYY-MM-DD)
+  const formatDateForSchema = (date: string) => {
+    // Falls Datum nur Jahr-Monat hat, füge "-01" hinzu
+    if (/^\d{4}-\d{2}$/.test(date)) {
+      return `${date}-01`;
+    }
+    return date;
+  };
+
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://mannhold-haustechnik.de",
+    "@id": "https://mannhold-haustechnik.de#reviews",
     name: company.name,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: googleRating.average.toString(),
-      reviewCount: googleRating.total.toString(),
-      bestRating: "5",
-      worstRating: "1",
+      ratingValue: googleRating.average,
+      reviewCount: googleRating.total,
+      bestRating: 5,
+      worstRating: 1,
     },
     review: testimonials.slice(0, 5).map((testimonial) => ({
       "@type": "Review",
@@ -235,13 +244,13 @@ export default async function HomePage() {
         "@type": "Person",
         name: testimonial.name,
       },
-      datePublished: testimonial.date,
+      datePublished: formatDateForSchema(testimonial.date),
       reviewBody: testimonial.text,
       reviewRating: {
         "@type": "Rating",
-        ratingValue: testimonial.rating.toString(),
-        bestRating: "5",
-        worstRating: "1",
+        ratingValue: testimonial.rating,
+        bestRating: 5,
+        worstRating: 1,
       },
     })),
   };

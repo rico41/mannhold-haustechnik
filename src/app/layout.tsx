@@ -148,87 +148,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://mannhold-haustechnik.de"),
 };
 
-import { company } from "@/lib/data";
-import { googleRating } from "@/lib/data/testimonials";
-
-// LocalBusiness Schema für alle Seiten
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://mannhold-haustechnik.de",
-  name: company.name,
-  image: "https://mannhold-haustechnik.de/images/logo.svg",
-  url: "https://mannhold-haustechnik.de",
-  telephone: company.contact.phone,
-  email: company.contact.email,
-  priceRange: "€€-€€€",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: company.address.street,
-    addressLocality: company.address.city,
-    postalCode: company.address.zip,
-    addressRegion: "BE",
-    addressCountry: "DE",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 52.4862,
-    longitude: 13.3589,
-  },
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "18:00",
-    },
-  ],
-  areaServed: [
-    { "@type": "City", name: "Tempelhof-Schöneberg" },
-    { "@type": "City", name: "Steglitz-Zehlendorf" },
-    { "@type": "City", name: "Charlottenburg-Wilmersdorf" },
-    { "@type": "City", name: "Neukölln" },
-    { "@type": "City", name: "Friedrichshain-Kreuzberg" },
-    { "@type": "City", name: "Spandau" },
-    { "@type": "City", name: "Potsdam" },
-    { "@type": "City", name: "Kleinmachnow" },
-  ],
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Heizungstechnik Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Wärmepumpe Installation",
-          description: "Installation von Vaillant und OVUM Wärmepumpen",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Hydraulischer Abgleich",
-          description: "Optimierung der Heizungsanlage nach DIN EN 12831",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Wartung & Service",
-          description: "Regelmäßige Wartung von Wärmepumpen und Gasthermen",
-        },
-      },
-    ],
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: googleRating.average.toString(),
-    reviewCount: googleRating.total.toString(),
-  },
-};
+// HINWEIS: LocalBusiness Schema wurde entfernt, um Duplikate zu vermeiden.
+// Jede Seite definiert ihr eigenes spezifisches Schema (HVACBusiness, etc.)
+// Das verhindert Konflikte und "ungültige Elemente" in Google Search Console.
 
 export default function RootLayout({
   children,
@@ -257,11 +179,7 @@ export default function RootLayout({
           httpEquiv="Content-Security-Policy"
           content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://images.unsplash.com; frame-src 'self' https://www.google.com;"
         />
-        {/* Schema.org */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
+        {/* Schema.org wird auf Seitenebene definiert (page.tsx, etc.) */}
       </head>
       <body
         className={`${inter.variable} ${plusJakartaSans.variable} font-sans antialiased`}
