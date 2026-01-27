@@ -54,7 +54,7 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection").then
 });
 
 export const metadata: Metadata = {
-  title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
+  title: "Wärmepumpe Berlin | Vaillant & OVUM",
   description:
     "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam ✓ Kostenlose Beratung ✓ 030 550 718 31",
   keywords: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     "Heizungsinstallateur Berlin",
   ],
   openGraph: {
-    title: "Wärmepumpe Berlin | Vaillant & OVUM | Mannhold",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM",
     description:
       "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
     url: "https://mannhold-haustechnik.de",
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation | Mannhold",
+    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation",
     description:
       "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
     images: ["https://mannhold-haustechnik.de/images/og-image.jpg"],

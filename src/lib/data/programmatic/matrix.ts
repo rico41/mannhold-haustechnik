@@ -233,7 +233,7 @@ export const generateAllDistrictPages = (): SEODistrictPage[] => {
         slug,
         service,
         district,
-        title: `${service.name} ${district.name} | ${district.fullName} | Mannhold`,
+        title: `${service.name} ${district.name} | ${district.fullName}`,
         metaDescription: `${service.name} in ${district.fullName} ✓ Lokaler Fachbetrieb ✓ ${district.characteristics[0]} ✓ Schneller Service. Jetzt Angebot für ${district.name} anfordern!`,
         h1: `${service.name} in ${district.name}`,
         intro: replaceDistrictPlaceholders(service.introTemplate, district) + " " + district.localIntro,

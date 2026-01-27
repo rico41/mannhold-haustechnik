@@ -6,7 +6,7 @@ import { company } from "@/lib/data";
 import { CTASection } from "@/components/sections";
 
 export const metadata: Metadata = {
-  title: "Über uns | Mannhold Haustechnik - Ihr Experte in Berlin",
+  title: "Über uns - Ihr Experte in Berlin",
   description:
     "Lernen Sie Mannhold Haustechnik kennen – Ihr Experte für Wärmepumpen und Heizungstechnik in Berlin seit 2020. Zertifizierter Vaillant und OVUM Partner.",
 };

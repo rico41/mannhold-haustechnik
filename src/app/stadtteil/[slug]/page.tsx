@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const { service, district } = parsed;
 
-  const title = `${service.name} ${district.name} | ${district.fullName} | Mannhold`;
+  const title = `${service.name} ${district.name} | ${district.fullName}`;
   const description = `${service.name} in ${district.fullName} ✓ Lokaler Fachbetrieb ✓ Vaillant & OVUM Partner ✓ ${district.characteristics[0]}. Jetzt Angebot anfordern!`;
 
   return {
