@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { FlyerHero } from "@/components/sections/FlyerHero";
-import { FlyerServices } from "@/components/sections/FlyerServices";
-import { FlyerContact } from "@/components/sections/FlyerContact";
+import { FlyerLanding } from "@/components/sections/FlyerLanding";
 
 export const metadata: Metadata = {
   title: "Angebot anfordern | Wärmepumpe Berlin",
@@ -17,11 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function FlyerPage() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      <FlyerHero />
-      <FlyerServices />
-      <FlyerContact />
-    </div>
-  );
+  return <FlyerLanding />;
 }
