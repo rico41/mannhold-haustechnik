@@ -51,6 +51,10 @@ export const company = {
     commercialRegister: "HRB 261024 B",
     registerCourt: "Amtsgericht Charlottenburg",
   },
+  offerSoftware: {
+    url: process.env.NEXT_PUBLIC_OFFER_SOFTWARE_URL || "",
+    label: "Online-Angebot für Wärmepumpen anfordern",
+  },
 } as const;
 
 export type Company = typeof company;

@@ -8,3 +8,6 @@ export { FAQPreview } from "./FAQPreview";
 export { LocationsPreview } from "./LocationsPreview";
 export { BlogPreview } from "./BlogPreview";
 export { GoogleMapsSection } from "./GoogleMapsSection";
+export { FlyerHero } from "./FlyerHero";
+export { FlyerServices } from "./FlyerServices";
+export { FlyerContact } from "./FlyerContact";
