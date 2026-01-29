@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Phone, CheckCircle2, Star, Users, Clock } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Star, Users, Clock, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { company } from "@/lib/data";
 import { GoogleReviewsBadge } from "@/components/reviews/GoogleReviewsBadge";
@@ -116,6 +116,15 @@ export const Hero = () => {
               >
                 <Users className="h-4 w-4" />
                 <span>200+ Installationen 2024</span>
+              </div>
+
+              {/* 24/7 KI-Telefon Badge */}
+              <div
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#F7941D]/10 to-[#0089CF]/10 border border-[#F7941D]/20 text-gray-700 text-sm font-medium animate-fade-in-scale"
+                style={{ animationDelay: "140ms" }}
+              >
+                <Bot className="h-4 w-4 text-[#F7941D]" />
+                <span>24/7 erreichbar – KI-Telefonassistent</span>
               </div>
             </div>
 

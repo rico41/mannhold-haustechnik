@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, Bot } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { company } from "@/lib/data";
 
@@ -50,21 +50,31 @@ export default function KontaktPage() {
 
               {/* Contact Cards */}
               <div className="space-y-4">
-                {/* Phone */}
+                {/* Phone with 24/7 KI Badge */}
                 <a
                   href={`tel:${company.contact.phone}`}
-                  className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-gradient-to-br hover:from-[#F7941D]/5 hover:to-[#0089CF]/5 transition-colors group"
+                  className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-[#F7941D]/5 to-[#0089CF]/10 border-2 border-[#F7941D]/20 hover:border-[#F7941D]/40 transition-colors group relative overflow-hidden"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#F7941D]/10 flex items-center justify-center shrink-0 group-hover:bg-[#F7941D]/20 transition-colors">
+                  {/* 24/7 Badge */}
+                  <div className="absolute top-0 right-0 bg-[#F7941D] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                    24/7
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-[#F7941D]/20 flex items-center justify-center shrink-0 group-hover:bg-[#F7941D]/30 transition-colors">
                     <Phone className="h-6 w-6 text-[#F7941D]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-1">Telefon</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <h3 className="font-semibold">Telefon</h3>
+                      <span className="inline-flex items-center gap-1 text-xs bg-[#0089CF]/10 text-[#0089CF] px-2 py-0.5 rounded-full">
+                        <Bot className="h-3 w-3" />
+                        KI-Assistent
+                      </span>
+                    </div>
                     <p className="text-lg font-medium text-primary">
                       {company.contact.phoneDisplay}
                     </p>
                     <p className="text-sm text-muted-foreground mt-1">
-                      Direkter Draht zu uns
+                      Jederzeit erreichbar – unser KI-Telefonassistent nimmt Ihre Anfrage entgegen
                     </p>
                   </div>
                 </a>
@@ -121,15 +131,18 @@ export default function KontaktPage() {
                 </div>
               </div>
 
-              {/* Quick Info */}
-              <div className="p-6 rounded-xl bg-gradient-to-br from-[#F7941D]/10 to-[#0089CF]/10">
+              {/* Quick Info - Digital & Innovation */}
+              <div className="p-6 rounded-xl bg-gradient-to-br from-[#0089CF]/10 to-[#F7941D]/10 border border-[#0089CF]/20">
                 <div className="flex items-start gap-3">
-                  <MessageCircle className="h-6 w-6 text-[#F7941D] shrink-0 mt-0.5" />
+                  <Bot className="h-6 w-6 text-[#0089CF] shrink-0 mt-0.5" />
                   <div>
-                    <h3 className="font-semibold mb-2">Schnelle Hilfe?</h3>
+                    <h3 className="font-semibold mb-2">Digital & Zukunftsorientiert</h3>
                     <p className="text-sm text-muted-foreground">
-                      Für dringende Anfragen rufen Sie uns direkt an. Wir
-                      versuchen, Ihnen so schnell wie möglich zu helfen.
+                      Unser KI-Telefonassistent ermöglicht es Ihnen, uns <strong>24 Stunden am Tag, 7 Tage die Woche</strong> zu erreichen. 
+                      Hinterlassen Sie Ihre Anfrage oder vereinbaren Sie einen Rückruf – auch außerhalb der Geschäftszeiten.
+                    </p>
+                    <p className="text-sm text-[#0089CF] font-medium mt-2">
+                      Modernste Technik für besten Service.
                     </p>
                   </div>
                 </div>

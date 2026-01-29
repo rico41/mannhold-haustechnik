@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ChevronRight, Bot } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { company } from "@/lib/data";
 import { getMainServices } from "@/lib/data/services";
@@ -114,6 +114,15 @@ export const Footer = () => {
                   {company.hours.friday}
                   <br />
                   {company.hours.saturday}
+                </span>
+              </div>
+              {/* 24/7 KI-Assistent Hinweis */}
+              <div className="flex items-start gap-3 text-gray-400 mt-4 pt-4 border-t border-gray-700">
+                <Bot className="h-5 w-5 shrink-0 mt-0.5 text-[#F7941D]" />
+                <span>
+                  <span className="text-white font-medium">24/7 erreichbar</span>
+                  <br />
+                  <span className="text-sm">Unser KI-Telefonassistent nimmt Ihre Anfrage jederzeit entgegen</span>
                 </span>
               </div>
             </div>
