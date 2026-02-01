@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
-import { RetargetingPixels } from "@/components/analytics/RetargetingPixels";
+import { ConsentAwareAnalytics } from "@/components/providers/ConsentAwareAnalytics";
 // CSS Import am Ende für bessere Performance
 import "./globals.css";
 
@@ -156,8 +155,7 @@ export default function RootLayout({
         >
           Zum Hauptinhalt springen
         </a>
-        <GoogleAnalytics />
-        <RetargetingPixels />
+        <ConsentAwareAnalytics />
         {children}
       </body>
     </html>

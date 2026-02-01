@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { company } from "@/lib/data";
+import { CookieSettingsLink } from "@/components/common/CookieSettingsLink";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -121,13 +122,31 @@ export default function DatenschutzPage() {
               können Sie sich jederzeit an uns wenden.
             </p>
 
-            <h2>6. Analyse-Tools und Werbung</h2>
+            <h2>6. Cookies und Einwilligung</h2>
             <p>
-              Diese Website verwendet keine Analyse-Tools oder
-              Tracking-Technologien.
+              Wir verwenden Cookies auf unserer Website. Dabei unterscheiden wir
+              zwischen technisch notwendigen Cookies, die für den Betrieb der
+              Website erforderlich sind, sowie optionalen Cookies für Analyse und
+              Marketing, die nur mit Ihrer Einwilligung gesetzt werden.
+            </p>
+            <p>
+              Die Einwilligung erfolgt über unseren Cookie-Banner beim ersten
+              Besuch. Sie können Ihre Einwilligung jederzeit widerrufen oder
+              anpassen:
+            </p>
+            <p className="my-4">
+              <CookieSettingsLink />
             </p>
 
-            <h2>7. SSL- bzw. TLS-Verschlüsselung</h2>
+            <h2>7. Analyse-Tools und Werbung</h2>
+            <p>
+              Nach Ihrer Einwilligung nutzen wir folgende Dienste: Google
+              Analytics zur Auswertung der Website-Nutzung, sowie ggf. Google Ads
+              und Facebook Pixel für Werbezwecke. Diese Tools werden erst nach
+              Ihrer ausdrücklichen Einwilligung aktiviert.
+            </p>
+
+            <h2>8. SSL- bzw. TLS-Verschlüsselung</h2>
             <p>
               Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
               Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.

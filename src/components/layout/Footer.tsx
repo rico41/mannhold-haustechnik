@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Clock, ChevronRight, Bot } from "lucide-react";
+import { CookieSettingsLink } from "@/components/common/CookieSettingsLink";
 import { Separator } from "@/components/ui/separator";
 import { company } from "@/lib/data";
 import { getMainServices } from "@/lib/data/services";
@@ -296,7 +297,7 @@ export const Footer = () => {
           <p className="text-sm text-gray-500">
             © {currentYear} {company.name}. Alle Rechte vorbehalten.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 flex-wrap">
             {footerLinks.rechtliches.map((link) => (
               <Link
                 key={link.href}
@@ -306,6 +307,7 @@ export const Footer = () => {
                 {link.label}
               </Link>
             ))}
+            <CookieSettingsLink variant="link" />
           </div>
         </div>
       </div>
