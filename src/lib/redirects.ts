@@ -27,7 +27,6 @@ export const redirectMap: Record<string, string> = {
   "/services/": "/leistungen",
   "/blog-list": "/ratgeber",
   "/blog-list/": "/ratgeber",
-  "/impressum": "/impressum/",
 
   // ========================================
   // TAG/CATEGORY REDIRECTS (alle zu Ratgeber)
