@@ -167,16 +167,19 @@ export const CookieConsentBanner = () => {
             </div>
           )}
 
-          {/* Action Buttons */}
-          <div className="flex flex-col-reverse sm:flex-row gap-3 sm:justify-end">
+          {/* Action Buttons - DSGVO: Beide Optionen gleichwertig darstellen */}
+          <div className="flex flex-col sm:flex-row gap-3">
             <Button
               variant="outline"
               onClick={handleEssentialOnly}
-              className="sm:mr-auto"
+              className="flex-1 sm:flex-none sm:min-w-[180px] border-2"
             >
               Nur notwendige
             </Button>
-            <Button onClick={handleAcceptAll}>
+            <Button 
+              onClick={handleAcceptAll}
+              className="flex-1 sm:flex-none sm:min-w-[180px]"
+            >
               Alle akzeptieren
             </Button>
           </div>

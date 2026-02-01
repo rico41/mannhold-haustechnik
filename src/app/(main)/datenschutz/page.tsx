@@ -138,12 +138,162 @@ export default function DatenschutzPage() {
               <CookieSettingsLink />
             </p>
 
-            <h2>7. Analyse-Tools und Werbung</h2>
+            <h3>Cookie-Verzeichnis</h3>
             <p>
-              Nach Ihrer Einwilligung nutzen wir folgende Dienste: Google
-              Analytics zur Auswertung der Website-Nutzung, sowie ggf. Google Ads
-              und Facebook Pixel für Werbezwecke. Diese Tools werden erst nach
-              Ihrer ausdrücklichen Einwilligung aktiviert.
+              Folgende Cookies können auf dieser Website zum Einsatz kommen:
+            </p>
+
+            <h4>Technisch notwendige Cookies</h4>
+            <p>
+              Diese Cookies sind für den Betrieb der Website zwingend erforderlich
+              und können nicht deaktiviert werden.
+            </p>
+            <ul>
+              <li>
+                <strong>mannhold-cookie-consent</strong> (localStorage)
+                <br />
+                Zweck: Speichert Ihre Cookie-Einwilligung
+                <br />
+                Speicherdauer: Unbegrenzt (bis zum Widerruf)
+              </li>
+            </ul>
+
+            <h4>Analyse-Cookies (nur mit Einwilligung)</h4>
+            <p>
+              Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer
+              Website interagieren.
+            </p>
+            <ul>
+              <li>
+                <strong>_ga</strong> (Google Analytics)
+                <br />
+                Zweck: Unterscheidung von Website-Besuchern
+                <br />
+                Speicherdauer: 2 Jahre
+                <br />
+                Anbieter: Google Ireland Limited
+              </li>
+              <li>
+                <strong>_ga_*</strong> (Google Analytics 4)
+                <br />
+                Zweck: Speicherung des Session-Status
+                <br />
+                Speicherdauer: 2 Jahre
+                <br />
+                Anbieter: Google Ireland Limited
+              </li>
+              <li>
+                <strong>_gid</strong> (Google Analytics)
+                <br />
+                Zweck: Unterscheidung von Website-Besuchern
+                <br />
+                Speicherdauer: 24 Stunden
+                <br />
+                Anbieter: Google Ireland Limited
+              </li>
+            </ul>
+
+            <h4>Marketing-Cookies (nur mit Einwilligung)</h4>
+            <p>
+              Diese Cookies werden für Werbezwecke und Conversion-Tracking
+              eingesetzt.
+            </p>
+            <ul>
+              <li>
+                <strong>_fbp</strong> (Facebook Pixel)
+                <br />
+                Zweck: Tracking von Conversions und Retargeting
+                <br />
+                Speicherdauer: 3 Monate
+                <br />
+                Anbieter: Meta Platforms Ireland Limited
+              </li>
+              <li>
+                <strong>_gcl_*</strong> (Google Ads)
+                <br />
+                Zweck: Conversion-Tracking für Google Ads
+                <br />
+                Speicherdauer: 90 Tage
+                <br />
+                Anbieter: Google Ireland Limited
+              </li>
+            </ul>
+
+            <h2>7. Analyse-Tools und Werbung</h2>
+            
+            <h3>Google Analytics 4</h3>
+            <p>
+              Diese Website nutzt Google Analytics 4, einen Webanalysedienst der
+              Google Ireland Limited („Google"), Gordon House, Barrow Street,
+              Dublin 4, Irland.
+            </p>
+            <p>
+              <strong>Umfang der Verarbeitung:</strong>
+              <br />
+              Google Analytics verwendet Cookies und ähnliche Technologien, um
+              Informationen über die Nutzung dieser Website zu sammeln. Die
+              erfassten Informationen (einschließlich Ihrer IP-Adresse) werden in
+              der Regel an einen Server von Google übertragen und dort
+              gespeichert.
+            </p>
+            <p>
+              <strong>Zweck der Verarbeitung:</strong>
+              <br />
+              Wir nutzen Google Analytics, um die Nutzung unserer Website zu
+              analysieren und regelmäßig zu verbessern. Über die gewonnenen
+              Statistiken können wir unser Angebot optimieren und für Sie als
+              Nutzer interessanter gestalten.
+            </p>
+            <p>
+              <strong>Rechtsgrundlage:</strong>
+              <br />
+              Die Nutzung von Google Analytics erfolgt auf Grundlage Ihrer
+              Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1
+              TTDSG. Sie können Ihre Einwilligung jederzeit widerrufen.
+            </p>
+            <p>
+              <strong>Datenübermittlung in Drittländer:</strong>
+              <br />
+              Google verarbeitet Ihre Daten ggf. auch in den USA. Google ist nach
+              dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen
+              finden Sie in der{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0089CF] hover:underline"
+              >
+                Datenschutzerklärung von Google
+              </a>
+              .
+            </p>
+
+            <h3>Google Ads Conversion-Tracking</h3>
+            <p>
+              Nach Ihrer Einwilligung nutzen wir Google Ads Conversion-Tracking,
+              um die Effektivität unserer Werbemaßnahmen zu messen. Die
+              Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6
+              Abs. 1 lit. a DSGVO.
+            </p>
+
+            <h3>Facebook Pixel</h3>
+            <p>
+              Nach Ihrer Einwilligung nutzen wir das Facebook Pixel der Meta
+              Platforms Ireland Limited für Werbezwecke und Retargeting. Die
+              Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung gemäß Art. 6
+              Abs. 1 lit. a DSGVO.
+            </p>
+            <p>
+              Weitere Informationen finden Sie in der{" "}
+              <a
+                href="https://www.facebook.com/privacy/explanation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#0089CF] hover:underline"
+              >
+                Datenschutzerklärung von Meta
+              </a>
+              .
             </p>
 
             <h2>8. SSL- bzw. TLS-Verschlüsselung</h2>
