@@ -27,6 +27,10 @@ export const redirectMap: Record<string, string> = {
   "/services/": "/leistungen",
   "/blog-list": "/ratgeber",
   "/blog-list/": "/ratgeber",
+  "/blog": "/ratgeber",
+  "/blog/": "/ratgeber",
+  "/service": "/leistungen",
+  "/service/": "/leistungen",
 
   // ========================================
   // TAG/CATEGORY REDIRECTS (alle zu Ratgeber)
@@ -55,6 +59,8 @@ export const redirectMap: Record<string, string> = {
   "/gebaeudeenergiegesetz-leitfaden-und-neuerungen/": "/ratgeber",
   "/weihnachtsgruesse-und-betriebsferien-zeit-fuer-besinnliche-momente": "/ratgeber",
   "/weihnachtsgruesse-und-betriebsferien-zeit-fuer-besinnliche-momente/": "/ratgeber",
+  "/rohrreinigung-berlin": "/leistungen",
+  "/rohrreinigung-berlin/": "/leistungen",
 };
 
 /**
