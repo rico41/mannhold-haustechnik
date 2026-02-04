@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { getMainServices } from "@/lib/data/services";
 import { company } from "@/lib/data";
 import { trackCTAClick } from "@/lib/analytics/conversion-events";
@@ -79,82 +80,68 @@ export const Services = () => {
             const Icon = service.icon;
             return (
               <motion.div key={service.id} variants={itemVariants}>
-                <Link href={`/leistungen/${service.slug}`}>
-                  <Card className="group h-full border-2 border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer overflow-hidden">
-                    
-                    {/* Image Header */}
-                    <div className="relative h-48 overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                      <Image 
-                        src={service.image} 
-                        alt={`${service.title} Installation Berlin - Mannhold Haustechnik ${service.shortTitle}`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transform group-hover:scale-110 transition-transform duration-500"
-                        loading="lazy"
-                        quality={85}
-                      />
-                      <div className="absolute bottom-4 left-6 right-6 z-20 flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                          <Icon className="h-5 w-5 text-white" />
-                        </div>
-                        <h3 className="text-lg font-bold font-heading text-white">
-                          {service.shortTitle}
-                        </h3>
+                <Card className="group h-full border-2 border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  {/* Image Header */}
+                  <div className="relative h-48 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
+                    <Image 
+                      src={service.image} 
+                      alt={`${service.title} Installation Berlin - Mannhold Haustechnik ${service.shortTitle}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      quality={85}
+                    />
+                    <div className="absolute bottom-4 left-6 right-6 z-20 flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+                        <Icon className="h-5 w-5 text-white" />
                       </div>
+                      <h3 className="text-lg font-bold font-heading text-white">
+                        {service.shortTitle}
+                      </h3>
                     </div>
+                  </div>
 
-                    <CardContent className="p-6">
-                      <p className="text-muted-foreground mb-4 line-clamp-3">
-                        {service.description}
-                      </p>
+                  <CardContent className="p-6">
+                    <p className="text-muted-foreground mb-4 line-clamp-3">
+                      {service.description}
+                    </p>
 
-                      {/* Features Preview */}
-                      <ul className="space-y-2 mb-6">
-                        {service.features.slice(0, 3).map((feature) => (
-                          <li
-                            key={feature}
-                            className="text-sm text-muted-foreground flex items-center gap-2"
-                          >
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#F7941D]" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-
-                      {/* CTA Buttons */}
-                      <div className="flex flex-col gap-2 mt-4">
-                        <Button
-                          asChild
-                          size="sm"
-                          variant="outline"
-                          className="w-full text-sm"
+                    {/* Features Preview */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.slice(0, 3).map((feature) => (
+                        <li
+                          key={feature}
+                          className="text-sm text-muted-foreground flex items-center gap-2"
                         >
-                          <Link
-                            href={`/leistungen/${service.slug}`}
-                            onClick={() => trackCTAClick(`service_${service.slug}`, "services", "service_card")}
-                          >
-                            Mehr erfahren
-                            <ArrowRight className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                        <Button
-                          asChild
-                          size="sm"
-                          className="w-full bg-primary hover:bg-primary/90 text-sm"
-                        >
-                          <Link
-                            href="/kontakt"
-                            onClick={() => trackCTAClick(`service_${service.slug}_contact`, "services", "service_card")}
-                          >
-                            Kostenlose Beratung
-                            <Phone className="ml-2 h-4 w-4" />
-                          </Link>
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#F7941D]" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* CTA Buttons – nur <Link> mit Button-Styles, kein <a> in <a> */}
+                    <div className="flex flex-col gap-2 mt-4">
+                      <Link
+                        href={`/leistungen/${service.slug}`}
+                        onClick={() => trackCTAClick(`service_${service.slug}`, "services", "service_card")}
+                        className={cn(buttonVariants({ size: "sm", variant: "outline" }), "w-full text-sm")}
+                      >
+                        Mehr erfahren
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                      <Link
+                        href="/kontakt"
+                        onClick={() => trackCTAClick(`service_${service.slug}_contact`, "services", "service_card")}
+                        className={cn(buttonVariants({ size: "sm" }), "w-full text-sm")}
+                      >
+                        Kostenlose Beratung
+                        <Phone className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             );
           })}

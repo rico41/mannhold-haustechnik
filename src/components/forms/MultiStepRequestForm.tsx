@@ -42,6 +42,7 @@ import {
   X,
   FileImage,
   File,
+  Camera,
 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -475,7 +476,7 @@ const FileUploadField = ({
             className="cursor-pointer flex flex-col items-center gap-2"
           >
             <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
-              <Upload className="h-6 w-6 text-gray-500" />
+              <Camera className="h-6 w-6 text-gray-500" aria-hidden />
             </div>
             <div>
               <span className="text-primary font-medium">Dateien auswählen</span>

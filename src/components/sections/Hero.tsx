@@ -49,16 +49,14 @@ export const Hero = () => {
             {/* Main Image - LCP Element Mobile */}
             <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-xl border-2 border-white">
               <Image 
-                src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
-                alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
+                src="/images/installation_außen.png" 
+                alt="Wärmepumpen-Außeneinheit am modernen Einfamilienhaus - Mannhold Haustechnik Installation Berlin" 
                 fill
                 priority
                 fetchPriority="high"
                 sizes="(max-width: 640px) 100vw, 640px"
                 className="object-cover"
                 quality={75}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
                 loading="eager"
               />
               
@@ -246,16 +244,14 @@ export const Hero = () => {
               {/* Main Image - LCP Element Desktop */}
               <div className="relative h-full w-full rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
-                  src="/images/vaillant/aroTHERMplus_13x18_quer_300dpi5.jpg" 
-                  alt="Vaillant aroTHERM plus Wärmepumpe Installation Berlin - Mannhold Haustechnik" 
+                  src="/images/installation_außen.png" 
+                  alt="Wärmepumpen-Außeneinheit am modernen Einfamilienhaus - Mannhold Haustechnik Installation Berlin" 
                   fill
                   priority
                   fetchPriority="high"
                   sizes="(max-width: 1024px) 0vw, (max-width: 1280px) 50vw, 480px"
                   className="object-cover"
                   quality={78}
-                  placeholder="blur"
-                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//Z"
                   loading="eager"
                 />
                 
@@ -278,17 +274,16 @@ export const Hero = () => {
               </div>
 
               <div
-                className="absolute bottom-12 -left-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100 animate-float-delayed"
+                className="absolute bottom-12 -left-6 bg-white rounded-xl shadow-lg px-4 py-3 border border-gray-100 animate-float-delayed"
               >
-                <div className="flex items-center gap-3">
-                   <div className="h-10 w-10 rounded-full bg-[#F7941D]/10 flex items-center justify-center">
-                     <span className="font-bold text-[#F7941D]">70%</span>
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-gray-900">Förderung</div>
-                    <div className="text-xs text-muted-foreground">Hilfestellung beim Antrag</div>
-                  </div>
-                </div>
+                <Image
+                  src="/images/OVUM_waermepumpen_logo_landscape_cmyk_color_black.png"
+                  alt="OVUM Premium Partner Logo"
+                  width={120}
+                  height={40}
+                  className="h-10 w-auto object-contain"
+                  quality={85}
+                />
               </div>
             </div>
           </div>
