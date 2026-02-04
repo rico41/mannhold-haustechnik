@@ -20,6 +20,7 @@ import {
 } from "@/lib/data";
 import { getMainServices } from "@/lib/data/services";
 import { CTASection } from "@/components/sections";
+import { MultiStepRequestForm } from "@/components/forms/MultiStepRequestForm";
 
 type Props = {
   params: Promise<{ bezirk: string }>;
@@ -219,48 +220,13 @@ export default async function StandortPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Info Card */}
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-xl font-bold mb-6">
-                Service in {location.name}
-              </h3>
-
-              {/* ZIP Codes */}
-              <div className="mb-6">
-                <p className="text-sm text-muted-foreground mb-2">
-                  Postleitzahlen in {location.name}:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {location.zipCodes.map((zip) => (
-                    <span
-                      key={zip}
-                      className="px-3 py-1 bg-gray-100 rounded-full text-sm"
-                    >
-                      {zip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Nearby Areas */}
-              <div className="mb-6">
-                <p className="text-sm text-muted-foreground mb-2">
-                  Auch in der Nähe:
-                </p>
-                <p className="text-sm">{location.nearbyAreas.join(", ")}</p>
-              </div>
-
-              {/* Contact */}
-              <div className="pt-6 border-t">
-                <p className="font-semibold mb-2">Kontakt</p>
-                <a
-                  href={`tel:${company.contact.phone}`}
-                  className="flex items-center gap-2 text-primary hover:underline"
-                >
-                  <Phone className="h-4 w-4" />
-                  {company.contact.phoneDisplay}
-                </a>
-              </div>
+            {/* Anfrage-Formular */}
+            <div>
+              <MultiStepRequestForm
+                showTitle
+                title={`Anfrage in ${location.name}`}
+                subtitle="In wenigen Schritten zur passenden Lösung"
+              />
             </div>
           </div>
         </div>

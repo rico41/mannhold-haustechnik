@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, MessageCircle, Bot } from "lucide-react";
-import { ContactForm } from "@/components/forms/ContactForm";
+import { Phone, Mail, MapPin, Clock, Bot } from "lucide-react";
+import { MultiStepRequestForm } from "@/components/forms/MultiStepRequestForm";
 import { company } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -153,13 +153,13 @@ export default function KontaktPage() {
             <div className="lg:col-span-3">
               <div className="mb-8">
                 <h2 className="text-2xl font-bold font-heading mb-2">
-                  Schreiben Sie uns
+                  Starten Sie Ihre Anfrage
                 </h2>
                 <p className="text-muted-foreground">
-                  Füllen Sie das Formular aus und wir melden uns bei Ihnen.
+                  Wählen Sie Ihr Anliegen und wir führen Sie durch den Prozess.
                 </p>
               </div>
-              <ContactForm />
+              <MultiStepRequestForm />
             </div>
           </div>
         </div>

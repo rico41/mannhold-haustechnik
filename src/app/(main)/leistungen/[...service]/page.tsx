@@ -6,12 +6,73 @@ import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { services, getServiceBySlug } from "@/lib/data/services";
+import { services, getServiceBySlug, type Service } from "@/lib/data/services";
 import { company, testimonials } from "@/lib/data";
-import { CTASection } from "@/components/sections";
+import { CTASection, RequestFormSection } from "@/components/sections";
+import type { MultiStepFormPreselection } from "@/components/forms/MultiStepRequestForm";
 
 type Props = {
   params: Promise<{ service: string[] }>;
+};
+
+// Map service to form preselection
+const getFormPreselection = (service: Service): MultiStepFormPreselection => {
+  const slug = service.slug;
+  
+  // Wartung
+  if (slug === "wartung") {
+    return { category: "wartung" };
+  }
+  
+  // Wärmepumpe & variants
+  if (slug === "waermepumpe" || slug === "waermepumpe/vaillant" || slug === "waermepumpe/ovum") {
+    return { category: "modernisierung", systemTyp: "waermepumpe" };
+  }
+  
+  // Gastherme
+  if (slug === "gastherme") {
+    return { category: "modernisierung", systemTyp: "gas" };
+  }
+  
+  // Fußbodenheizung
+  if (slug === "fussbodenheizung") {
+    return { category: "modernisierung", systemTyp: "fussbodenheizung" };
+  }
+  
+  // Heizung erneuern / Modernisierung
+  if (slug === "heizung-erneuern") {
+    return { category: "modernisierung" };
+  }
+  
+  // Heizlastberechnung
+  if (slug === "heizlastberechnung") {
+    return { category: "planung", leistungsTyp: "heizlastberechnung" };
+  }
+  
+  // Hydraulischer Abgleich
+  if (slug === "hydraulischer-abgleich") {
+    return { category: "planung", leistungsTyp: "hydraulischer_abgleich" };
+  }
+  
+  // Default: no preselection
+  return {};
+};
+
+// Get custom form title based on service
+const getFormTitle = (service: Service): string => {
+  switch (service.slug) {
+    case "wartung":
+      return "Wartungstermin anfragen";
+    case "waermepumpe":
+    case "waermepumpe/vaillant":
+    case "waermepumpe/ovum":
+      return "Wärmepumpen-Beratung anfragen";
+    case "heizlastberechnung":
+    case "hydraulischer-abgleich":
+      return "Jetzt Angebot anfragen";
+    default:
+      return "Jetzt unverbindlich anfragen";
+  }
 };
 
 export async function generateStaticParams() {
@@ -193,6 +254,14 @@ export default async function ServicePage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Request Form with Preselection */}
+      <RequestFormSection
+        preselection={getFormPreselection(service)}
+        title={getFormTitle(service)}
+        subtitle={`Starten Sie Ihre Anfrage für ${service.shortTitle} – wir melden uns schnellstmöglich.`}
+        variant="gradient"
+      />
 
       {/* Features */}
       <section className="section-padding bg-white">

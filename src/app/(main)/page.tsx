@@ -22,6 +22,14 @@ const Benefits = dynamic(() => import("@/components/sections/Benefits").then((mo
   loading: () => <div className="min-h-[400px]" />,
 });
 
+const RequestFormSection = dynamic(
+  () => import("@/components/sections/RequestFormSection").then((mod) => ({ default: mod.RequestFormSection })),
+  {
+    ssr: true,
+    loading: () => <div className="min-h-[600px]" />,
+  }
+);
+
 // Lazy Load nicht-kritische Komponenten (below the fold)
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then((mod) => ({ default: mod.Testimonials })), {
   ssr: true,
@@ -277,6 +285,11 @@ export default async function HomePage() {
       />
       <Hero />
       <Partners />
+      <RequestFormSection
+        variant="gradient"
+        title="Jetzt unverbindlich anfragen"
+        subtitle="In wenigen Schritten zur passenden Lösung – wir melden uns schnellstmöglich bei Ihnen."
+      />
       <Services />
       <Benefits />
       <Testimonials />

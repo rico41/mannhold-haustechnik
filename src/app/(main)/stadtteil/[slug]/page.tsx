@@ -29,10 +29,27 @@ import {
   type SEODistrict,
 } from "@/lib/data/programmatic";
 import { company, testimonials, getTestimonialsByLocation } from "@/lib/data";
-import { CTASection } from "@/components/sections";
+import { CTASection, RequestFormSection } from "@/components/sections";
+import type { MultiStepFormPreselection } from "@/components/forms/MultiStepRequestForm";
 
 type Props = {
   params: Promise<{ slug: string }>;
+};
+
+// Map SEO service to form preselection
+const getFormPreselection = (service: SEOService): MultiStepFormPreselection => {
+  switch (service.slug) {
+    case "waermepumpe":
+      return { category: "modernisierung", systemTyp: "waermepumpe" };
+    case "heizungswartung":
+      return { category: "wartung" };
+    case "heizungsinstallation":
+      return { category: "modernisierung" };
+    case "hydraulischer-abgleich":
+      return { category: "planung", leistungsTyp: "hydraulischer_abgleich" };
+    default:
+      return {};
+  }
 };
 
 // Generiere alle Seiten zur Build-Zeit
@@ -516,6 +533,14 @@ export default async function DistrictSEOPage({ params }: Props) {
           </div>
         </section>
       )}
+
+      {/* Request Form */}
+      <RequestFormSection
+        preselection={getFormPreselection(service)}
+        title={`${service.name} in ${district.name} anfragen`}
+        subtitle="Starten Sie Ihre Anfrage – wir melden uns schnellstmöglich bei Ihnen."
+        variant="gradient"
+      />
 
       <CTASection />
     </>
