@@ -14,7 +14,7 @@
 /**
  * Trackt Form Submission
  */
-export const trackFormSubmit = (formType: "contact" | "quote" | "newsletter", data?: Record<string, unknown>) => {
+export const trackFormSubmit = (formType: "contact" | "quote" | "newsletter" | "multistep_request", data?: Record<string, unknown>) => {
   if (typeof window !== "undefined" && window.gtag) {
     window.gtag("event", "form_submit", {
       event_category: "Conversion",
