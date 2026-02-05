@@ -6,7 +6,6 @@ import {
   Calendar,
   Clock,
   ArrowRight,
-  BookOpen,
   TrendingUp,
   Bell,
 } from "lucide-react";
@@ -83,9 +82,14 @@ export default function RatgeberPage() {
 
             <Link href={`/ratgeber/${featuredArticle.slug}`} className="group">
               <div className="grid lg:grid-cols-2 gap-8 items-center bg-gray-50 rounded-2xl overflow-hidden">
-                {/* Image */}
-                <div className="aspect-video lg:aspect-square bg-gradient-to-br from-[#F7941D]/20 to-[#0089CF]/20 flex items-center justify-center">
-                  <BookOpen className="h-24 w-24 text-[#0089CF]/50" />
+                {/* Featured Image */}
+                <div className="aspect-video lg:aspect-square relative overflow-hidden bg-muted">
+                  <img
+                    src={featuredArticle.featuredImage}
+                    alt={featuredArticle.featuredImageAlt}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="eager"
+                  />
                 </div>
 
                 {/* Content */}
@@ -157,11 +161,14 @@ export default function RatgeberPage() {
               >
                 <Card className="h-full hover:shadow-lg transition-all overflow-hidden">
                   <CardContent className="p-0">
-                    {/* Image */}
-                    <div className="aspect-video bg-gradient-to-br from-[#F7941D]/10 to-[#0089CF]/10 relative">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <BookOpen className="h-12 w-12 text-[#0089CF]/30" />
-                      </div>
+                    {/* Article Image */}
+                    <div className="aspect-video relative overflow-hidden bg-muted">
+                      <img
+                        src={article.featuredImage}
+                        alt={article.featuredImageAlt}
+                        className="absolute inset-0 h-full w-full object-cover"
+                        loading="lazy"
+                      />
                     </div>
 
                     {/* Content */}
