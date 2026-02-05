@@ -41,9 +41,8 @@ export const blogArticles: BlogArticle[] = [
       "wärmepumpe altbau kosten",
       "luftwärmepumpe altbau",
     ],
-    // Bild: Modernes Haus / Renovierung / Architektur
-    featuredImage: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200",
-    featuredImageAlt: "Modernes Wohnhaus, geeignet für Wärmepumpen",
+    featuredImage: "/images/waermepumpe-altbau.png",
+    featuredImageAlt: "Wärmepumpe am Altbau – Luft-Wasser-Wärmepumpe am älteren Wohnhaus",
     relatedArticles: ["foerderung-waermepumpe-2026", "gasheizung-vs-waermepumpe"],
     relatedServices: ["waermepumpe", "heizlastberechnung"],
     content: `## Das Wichtigste in Kürze
@@ -137,9 +136,8 @@ Die pauschale Aussage "Im Altbau funktioniert keine Wärmepumpe" ist überholt. 
       "bafa zuschuss wärmepumpe",
       "heizungsförderung beantragen",
     ],
-    // Bild: Beratung / Dokumente / Planung
-    featuredImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=1200",
-    featuredImageAlt: "Beratungsgespräch zur Heizungsförderung",
+    featuredImage: "/images/foerderung-waermepumpe-2026.png",
+    featuredImageAlt: "Beratung zur KfW- und BAFA-Förderung für die Wärmepumpe",
     relatedArticles: ["waermepumpe-altbau", "heizungstausch-geg-2026"],
     relatedServices: ["waermepumpe", "heizung-erneuern"],
     content: `## Die Förderstruktur 2026 im Überblick
@@ -250,9 +248,8 @@ Bei Mannhold Haustechnik begleiten wir Sie durch den gesamten Prozess:
       "hydraulischer abgleich förderung",
       "verfahren b hydraulischer abgleich",
     ],
-    // Bild: Techniker bei der Arbeit / Heizkörperventil
-    featuredImage: "https://images.unsplash.com/photo-1581092921461-eab62e97a782?auto=format&fit=crop&q=80&w=1200",
-    featuredImageAlt: "Fachmann beim Einstellen eines Heizkörperventils",
+    featuredImage: "/images/hydraulischer-abgleich.png",
+    featuredImageAlt: "Fachmann beim hydraulischen Abgleich – Einstellen der Heizkörperventile",
     relatedArticles: ["foerderung-waermepumpe-2026", "waermepumpe-altbau"],
     relatedServices: ["hydraulischer-abgleich", "heizlastberechnung"],
     content: `## Was ist ein hydraulischer Abgleich?
@@ -460,9 +457,8 @@ Aber: Es gibt Fälle, wo eine neue Gastherme (noch) Sinn macht. Das klären wir 
       "gasheizung verbot",
       "welche heizung ist erlaubt",
     ],
-    // Bild: Gesetzbuch / Hausmodell / Waage
-    featuredImage: "https://images.unsplash.com/photo-1626178793926-22b28830aa30?auto=format&fit=crop&q=80&w=1200",
-    featuredImageAlt: "Hausmodell auf Plänen, Symbol für GEG Gesetzgebung",
+    featuredImage: "/images/heizungstausch-geg-2026.png",
+    featuredImageAlt: "Heizungstausch 2026 – GEG und Gesetzgebung im Überblick",
     relatedArticles: ["gasheizung-vs-waermepumpe", "foerderung-waermepumpe-2026"],
     relatedServices: ["waermepumpe", "heizung-erneuern", "gastherme"],
     content: `## Mythos vs. Realität
@@ -558,7 +554,7 @@ Die Übergangsfristen sind großzügig – aber die Förderung wird nicht ewig s
       "kosten wärmepumpe altbau",
       "wärmepumpe mit förderung kosten",
     ],
-    featuredImage: "https://images.unsplash.com/photo-1631545914468-fc41f53d0112?auto=format&fit=crop&q=80&w=1200",
+    featuredImage: "/images/waermepumpe-kosten-einfamilienhaus.png",
     featuredImageAlt: "Luft-Wasser-Wärmepumpe am Einfamilienhaus – Wärmepumpe Kosten 2026",
     relatedArticles: [
       "foerderung-waermepumpe-2026-kfw-bafa",
