@@ -85,8 +85,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title,
       description,
+      url: `https://mannhold-haustechnik.de/stadtteil/${slug}`,
       type: "website",
       locale: "de_DE",
+      siteName: "Mannhold Haustechnik",
     },
     twitter: {
       card: "summary_large_image",

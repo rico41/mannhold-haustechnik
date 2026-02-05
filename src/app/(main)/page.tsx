@@ -61,26 +61,28 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection").then
   loading: () => <div className="min-h-[300px]" />,
 });
 
+// SEO: Title für Quick Wins "mannhold" (Pos 4) + "heiztechnik" (Pos 8) – Marke & Heiztechnik im Title erhöhen CTR
 export const metadata: Metadata = {
-  title: "Wärmepumpe Berlin | Vaillant & OVUM",
+  title: "Mannhold Haustechnik | Wärmepumpe Berlin – Heiztechnik & Vaillant Partner",
   description:
-    "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam ✓ Kostenlose Beratung ✓ 030 550 718 31",
+    "Mannhold Haustechnik – Ihr Heiztechnik- und Wärmepumpen-Spezialist in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Kostenlose Beratung ☎ 030 550 718 31",
   keywords: [
     "Wärmepumpe Berlin",
     "Wärmepumpe Installation Berlin",
     "Vaillant Wärmepumpe Berlin",
     "OVUM Wärmepumpe Berlin",
+    "Heiztechnik Berlin",
+    "Heizungsinstallateur Berlin",
     "Wärmepumpe Steglitz",
     "Wärmepumpe Charlottenburg",
     "Wärmepumpe Potsdam",
     "Wärmepumpe Kosten Berlin",
     "Wärmepumpe Förderung Berlin",
-    "Heizungsinstallateur Berlin",
   ],
   openGraph: {
-    title: "Wärmepumpe Berlin | Vaillant & OVUM",
+    title: "Mannhold Haustechnik | Wärmepumpe Berlin – Heiztechnik & Vaillant Partner",
     description:
-      "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
+      "Mannhold Haustechnik – Heiztechnik und Wärmepumpen in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Kostenlose Beratung ☎ 030 550 718 31",
     url: "https://mannhold-haustechnik.de",
     siteName: "Mannhold Haustechnik",
     locale: "de_DE",
@@ -96,9 +98,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Wärmepumpe Berlin | Vaillant & OVUM Installation",
+    title: "Mannhold Haustechnik | Wärmepumpe Berlin – Heiztechnik & Vaillant Partner",
     description:
-      "Wärmepumpe Berlin: Bis zu 70% Förderung möglich ✓ Hilfestellung bei Förderanträgen ✓ Vaillant & OVUM Spezialist ✓ Installation in Steglitz, Charlottenburg, Potsdam",
+      "Mannhold Haustechnik – Heiztechnik und Wärmepumpen in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Jetzt beraten lassen!",
     images: ["https://mannhold-haustechnik.de/images/og-image.jpg"],
   },
   alternates: {
@@ -118,7 +120,7 @@ export default async function HomePage() {
     "@id": "https://mannhold-haustechnik.de",
     name: company.name,
     alternateName: "Mannhold Haustechnik",
-    description: "Ihr Experte für Wärmepumpen, Heizungsinstallation und Heizungswartung in Berlin und Potsdam. Vaillant & OVUM Partner.",
+    description: "Ihr Experte für Heiztechnik, Wärmepumpen, Heizungsinstallation und Heizungswartung in Berlin und Potsdam. Vaillant & OVUM Partner.",
     image: "https://mannhold-haustechnik.de/images/logo.svg",
     url: "https://mannhold-haustechnik.de",
     telephone: company.contact.phone,

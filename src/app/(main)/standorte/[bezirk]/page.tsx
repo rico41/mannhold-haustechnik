@@ -42,14 +42,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const canonicalUrl = `https://mannhold-haustechnik.de/standorte/${bezirk}`;
   return {
     title: location.seoTitle,
     description: location.seoDescription,
     keywords: location.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+    },
     openGraph: {
       title: location.seoTitle,
       description: location.seoDescription,
+      url: canonicalUrl,
       type: "website",
+      locale: "de_DE",
+      siteName: "Mannhold Haustechnik",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: location.seoTitle,
+      description: location.seoDescription,
     },
   };
 }

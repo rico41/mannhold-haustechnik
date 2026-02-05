@@ -364,20 +364,19 @@ Der hydraulische Abgleich ist keine bürokratische Pflichtübung, sondern eine s
       "heizung austauschen was lohnt sich",
       "betriebskosten wärmepumpe vs gas",
     ],
-    // Bild: Heizungskeller / Vergleich / Rohre
-    featuredImage: "https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&q=80&w=1200",
-    featuredImageAlt: "Vergleich alte Gasheizung und moderne Wärmepumpe im Keller",
+    featuredImage: "/images/gasheizung-waermepumpe-kostenvergleich.png",
+    featuredImageAlt: "Vergleich Gasheizung und Wärmepumpe – Kostenvergleich für Hausbesitzer",
     relatedArticles: ["waermepumpe-altbau", "heizungstausch-geg-2026"],
     relatedServices: ["waermepumpe", "gastherme", "heizung-erneuern"],
     content: `## Die nackte Wahrheit: Anschaffungskosten
 
-| | Gasbrennwert | Wärmepumpe |
-|--|--------------|------------|
+| Kriterium | Gasheizung | Wärmepumpe |
+|-----------|------------|------------|
 | Gerät | 4.000 - 8.000 € | 20.000 - 28.000 € |
 | Installation | 2.000 - 4.000 € | 4.000 - 8.000 € |
 | Schornstein/Außengerät | 500 - 1.500 € | 0 - 2.000 € |
 | **Gesamt** | **6.500 - 13.500 €** | **24.000 - 38.000 €** |
-| **Nach Förderung (55%)** | - | **10.800 - 17.100 €** |
+| **Nach Förderung (55%)** | – | **10.800 - 17.100 €** |
 
 **Erkenntnis:** Nach Förderung liegen beide Systeme oft gleichauf!
 
@@ -389,14 +388,14 @@ Der hydraulische Abgleich ist keine bürokratische Pflichtübung, sondern eine s
 - Strompreis: 0,35 €/kWh
 - Wärmepumpen-COP: 3,5 (Jahresarbeitszahl)
 
-| | Gasheizung | Wärmepumpe |
-|--|------------|------------|
+| Kriterium | Gasheizung | Wärmepumpe |
+|-----------|------------|------------|
 | Verbrauch | 22.000 kWh Gas | 5.700 kWh Strom |
 | Kosten | **2.640 €/Jahr** | **1.995 €/Jahr** |
 | Wartung | 150 €/Jahr | 100 €/Jahr |
 | Schornsteinfeger | 80 €/Jahr | 0 € |
 | **Gesamt/Jahr** | **2.870 €** | **2.095 €** |
-| **Ersparnis/Jahr** | - | **775 €** |
+| **Ersparnis/Jahr** | – | **775 €** |
 
 ## Die CO2-Abgabe: Der stille Kostentreiber
 

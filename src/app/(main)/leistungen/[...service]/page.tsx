@@ -82,9 +82,53 @@ export async function generateStaticParams() {
   }));
 }
 
+const BASE_URL = "https://mannhold-haustechnik.de";
+
+// SEO: Keyword-starke Titles/Descriptions/H1 für Kern-Keywords (Berlin)
+const getServiceSEO = (slug: string, title: string, description: string) => {
+  switch (slug) {
+    case "waermepumpe":
+      return {
+        title: "Wärmepumpe Berlin | Installation & Förderung | Vaillant & OVUM",
+        description:
+          "Wärmepumpe Berlin: Installation von Vaillant & OVUM ✓ Bis 70% Förderung ✓ Kostenlose Beratung ✓ Steglitz, Charlottenburg, Potsdam. Jetzt anfragen!",
+        h1: "Wärmepumpe Berlin: Installation & Förderung",
+      };
+    case "waermepumpe/vaillant":
+      return {
+        title: "Vaillant Wärmepumpe Berlin | aroTHERM plus Installation",
+        description:
+          "Vaillant Wärmepumpe Berlin: aroTHERM plus vom zertifizierten Partner ✓ Installation & Wartung ✓ Bis 70% Förderung. Kostenlose Beratung!",
+        h1: "Vaillant Wärmepumpe Berlin: aroTHERM plus Installation",
+      };
+    case "waermepumpe/ovum":
+      return {
+        title: "OVUM Wärmepumpe Berlin | Premium Installation",
+        description:
+          "OVUM Wärmepumpe Berlin: Premium-Wärmepumpen vom Partner ✓ Installation & Service ✓ Leise & effizient. Jetzt Beratung anfragen!",
+        h1: "OVUM Wärmepumpe Berlin: Premium Installation",
+      };
+    case "wartung":
+      return {
+        title: "Heizung Wartung Berlin | Vaillant & OVUM Service",
+        description:
+          "Heizung Wartung Berlin: Wartung Vaillant & OVUM ✓ Gastherme & Wärmepumpe ✓ Schnelle Termine. Jetzt Wartungstermin anfragen!",
+        h1: "Heizung Wartung Berlin: Vaillant & OVUM Service",
+      };
+    case "gastherme":
+      return {
+        title: "Gastherme Berlin | Wartung, Austausch & Reparatur",
+        description:
+          "Gastherme Berlin: Wartung, Austausch & Reparatur ✓ Brennwerttechnik ✓ Vaillant Service. Festpreise & schnelle Termine!",
+        h1: "Gastherme Berlin: Wartung, Austausch & Reparatur",
+      };
+    default:
+      return { title, description, h1: title };
+  }
+};
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { service: serviceSegments } = await params;
-  // Join segments back to original slug format
   const serviceSlug = serviceSegments.join("/");
   const service = getServiceBySlug(serviceSlug);
 
@@ -94,10 +138,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const seo = getServiceSEO(serviceSlug, service.title, service.description);
+  const canonicalPath = `/leistungen/${serviceSlug}`;
+
   return {
-    title: service.title,
-    description: service.description,
+    title: seo.title,
+    description: seo.description,
     keywords: service.keywords,
+    alternates: {
+      canonical: `${BASE_URL}${canonicalPath}`,
+    },
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      url: `${BASE_URL}${canonicalPath}`,
+      type: "website",
+      locale: "de_DE",
+      siteName: "Mannhold Haustechnik",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seo.title,
+      description: seo.description,
+    },
   };
 }
 
@@ -153,7 +216,7 @@ export default async function ServicePage({ params }: Props) {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading">
-                {service.title}
+                {getServiceSEO(serviceSlug, service.title, service.description).h1}
               </h1>
 
               <p className="mt-6 text-lg md:text-xl text-muted-foreground">
