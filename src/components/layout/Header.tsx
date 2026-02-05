@@ -105,12 +105,12 @@ export const Header = () => {
             className="flex items-center gap-3 shrink-0"
             aria-label="Zur Startseite"
           >
-            <img 
-              src="/images/logo.svg" 
-              alt="Mannhold Haustechnik Logo" 
-              width={180}
-              height={48}
-              className="h-10 lg:h-12 w-auto"
+            <img
+              src="/images/logo.svg"
+              alt="Mannhold Haustechnik Logo"
+              width={200}
+              height={65}
+              className="h-11 lg:h-14 w-auto max-w-[220px] object-contain object-left"
             />
           </Link>
 
@@ -203,12 +203,12 @@ export const Header = () => {
                     href="/"
                     onClick={handleCloseMobileMenu}
                   >
-                    <img 
-                      src="/images/logo.svg" 
-                      alt="Mannhold Haustechnik Logo" 
-                      width={150}
-                      height={40}
-                      className="h-10 w-auto"
+                    <img
+                      src="/images/logo.svg"
+                      alt="Mannhold Haustechnik Logo"
+                      width={155}
+                      height={50}
+                      className="h-10 w-auto max-w-[155px] object-contain object-left"
                     />
                   </Link>
                 </div>

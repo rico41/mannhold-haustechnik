@@ -36,9 +36,9 @@ export const FlyerLanding = () => {
           <Image
             src="/images/logo.svg"
             alt="Mannhold Haustechnik"
-            width={120}
-            height={40}
-            className="h-9 w-auto"
+            width={155}
+            height={50}
+            className="h-10 w-auto max-w-[155px] object-contain object-left"
             priority
           />
           <span className="text-sm font-medium text-gray-600 hidden sm:inline">

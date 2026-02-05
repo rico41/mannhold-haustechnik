@@ -71,12 +71,12 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block">
-              <img 
-                src="/images/logo.svg" 
-                alt="Mannhold Haustechnik Logo" 
-                width={180}
-                height={48}
-                className="h-10 lg:h-12 w-auto"
+              <img
+                src="/images/logo.svg"
+                alt="Mannhold Haustechnik Logo"
+                width={200}
+                height={65}
+                className="h-11 lg:h-14 w-auto max-w-[220px] object-contain object-left"
               />
             </Link>
             <p className="mt-4 text-gray-400 leading-relaxed">

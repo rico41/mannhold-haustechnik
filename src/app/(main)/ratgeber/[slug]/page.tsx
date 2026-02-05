@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -401,15 +400,15 @@ export default async function BlogArticlePage({ params }: Props) {
       <article className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            {/* Featured Image */}
+            {/* Featured Image – img für zuverlässige Anzeige (auch großer lokaler PNGs) */}
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-10 bg-muted">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={article.featuredImage}
                 alt={article.featuredImageAlt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 896px"
-                priority
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
               />
             </div>
 
