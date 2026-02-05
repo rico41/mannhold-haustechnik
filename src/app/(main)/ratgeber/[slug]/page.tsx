@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -10,7 +11,6 @@ import {
   ArrowLeft,
   ArrowRight,
   Share2,
-  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -401,12 +401,16 @@ export default async function BlogArticlePage({ params }: Props) {
       <article className="section-padding bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
-            {/* Featured Image Placeholder */}
-            <div className="aspect-video bg-gradient-to-br from-[#F7941D]/10 to-[#0089CF]/10 rounded-2xl mb-10 flex items-center justify-center">
-              <div className="text-center">
-                <BookOpen className="h-16 w-16 text-[#0089CF] mx-auto mb-4" />
-                <p className="text-muted-foreground">{article.featuredImageAlt}</p>
-              </div>
+            {/* Featured Image */}
+            <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-10 bg-muted">
+              <Image
+                src={article.featuredImage}
+                alt={article.featuredImageAlt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 896px"
+                priority
+              />
             </div>
 
             {/* Content */}
