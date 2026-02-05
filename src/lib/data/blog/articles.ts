@@ -30,8 +30,8 @@ export const blogArticles: BlogArticle[] = [
     excerpt:
       "Sie besitzen einen Altbau und fragen sich, ob eine Wärmepumpe funktioniert – vielleicht sogar ohne Fußbodenheizung? Die gute Nachricht: In den meisten Fällen ja!",
     author: "Mannhold Haustechnik",
-    publishDate: "2026-01-27",
-    lastUpdated: "2026-01-27",
+    publishDate: "2025-09-12",
+    lastUpdated: "2025-09-28",
     readingTime: 8,
     category: "Wärmepumpen",
     tags: ["Wärmepumpe", "Altbau", "Fußbodenheizung", "Heizungsmodernisierung"],
@@ -126,8 +126,8 @@ Die pauschale Aussage "Im Altbau funktioniert keine Wärmepumpe" ist überholt. 
     excerpt:
       "Die Förderung für den Heizungstausch ist 2026 so attraktiv wie nie. Bis zu 70% der Kosten übernimmt der Staat – wenn du die Regeln kennst.",
     author: "Mannhold Haustechnik",
-    publishDate: "2026-02-10",
-    lastUpdated: "2026-02-10",
+    publishDate: "2025-10-05",
+    lastUpdated: "2025-11-10",
     readingTime: 10,
     category: "Förderung",
     tags: ["Förderung", "KfW", "BAFA", "Wärmepumpe", "Zuschuss"],
@@ -239,8 +239,8 @@ Bei Mannhold Haustechnik begleiten wir Sie durch den gesamten Prozess:
     excerpt:
       "Der hydraulische Abgleich ist seit 2024 Pflicht für die Heizungsförderung – aber was genau passiert dabei? Und lohnt sich das auch ohne Förderung?",
     author: "Mannhold Haustechnik",
-    publishDate: "2026-02-24",
-    lastUpdated: "2026-02-24",
+    publishDate: "2025-10-22",
+    lastUpdated: "2025-11-05",
     readingTime: 7,
     category: "Heizungsoptimierung",
     tags: ["Hydraulischer Abgleich", "Heizungsoptimierung", "Energiesparen", "Förderung"],
@@ -353,8 +353,8 @@ Der hydraulische Abgleich ist keine bürokratische Pflichtübung, sondern eine s
     excerpt:
       "Soll ich meine Gasheizung behalten oder auf Wärmepumpe umsteigen? Diese Frage beschäftigt aktuell tausende Hausbesitzer. Wir machen den ehrlichen Vergleich.",
     author: "Mannhold Haustechnik",
-    publishDate: "2026-03-10",
-    lastUpdated: "2026-03-10",
+    publishDate: "2025-11-08",
+    lastUpdated: "2025-12-01",
     readingTime: 9,
     category: "Vergleich",
     tags: ["Gasheizung", "Wärmepumpe", "Kostenvergleich", "Heizungstausch"],
@@ -449,8 +449,8 @@ Aber: Es gibt Fälle, wo eine neue Gastherme (noch) Sinn macht. Das klären wir 
     excerpt:
       "Das Gebäudeenergiegesetz (GEG) sorgt für Verunsicherung: Muss ich meine Heizung jetzt austauschen? Wir räumen mit Mythen auf.",
     author: "Mannhold Haustechnik",
-    publishDate: "2026-03-24",
-    lastUpdated: "2026-03-24",
+    publishDate: "2025-11-25",
+    lastUpdated: "2025-12-18",
     readingTime: 8,
     category: "Gesetzgebung",
     tags: ["GEG", "Heizungsgesetz", "Heizungstausch", "Pflicht"],
@@ -531,6 +531,114 @@ Das GEG schreibt vor: **65% erneuerbare Energien** bei Neuinstallation
 > - Freier Terminwahl (nicht in der Hochphase)
 
 Die Übergangsfristen sind großzügig – aber die Förderung wird nicht ewig so hoch bleiben.`,
+  },
+  {
+    id: "waermepumpe-kosten-2026",
+    slug: "waermepumpe-kosten-2026-einfamilienhaus-foerderung-berlin",
+    title: "Was kostet eine Wärmepumpe 2026? Kosten Einfamilienhaus, Förderung & was Berliner wissen müssen",
+    metaTitle: "Wärmepumpe Kosten 2026: Komplettpreis Einfamilienhaus in Berlin",
+    metaDescription:
+      "Was kostet eine Wärmepumpe 2026? ✓ Kosten Einfamilienhaus ✓ Mit & ohne Förderung ✓ Luft-Wasser Preise ✓ Berlin. Transparente Übersicht – Jetzt Beratung sichern!",
+    excerpt:
+      "Eine Wärmepumpe fürs Einfamilienhaus: Mit welchen Kosten müssen Sie 2026 rechnen – und wie viel bleibt nach der Förderung? Die klaren Zahlen für Berlin und Umgebung.",
+    author: "Mannhold Haustechnik",
+    publishDate: "2025-12-10",
+    lastUpdated: "2026-01-08",
+    readingTime: 9,
+    category: "Wärmepumpen",
+    tags: ["Wärmepumpe", "Kosten", "Förderung", "Einfamilienhaus", "Berlin"],
+    keywords: [
+      "wärmepumpe kosten 2026",
+      "was kostet eine wärmepumpe",
+      "wärmepumpe kosten einfamilienhaus",
+      "wärmepumpe installation kosten",
+      "wärmepumpe kosten berlin",
+      "luft wärmepumpe kosten",
+      "wärmepumpe preis einfamilienhaus",
+      "kosten wärmepumpe altbau",
+      "wärmepumpe mit förderung kosten",
+    ],
+    featuredImage: "https://images.unsplash.com/photo-1631545914468-fc41f53d0112?auto=format&fit=crop&q=80&w=1200",
+    featuredImageAlt: "Luft-Wasser-Wärmepumpe am Einfamilienhaus – Wärmepumpe Kosten 2026",
+    relatedArticles: [
+      "foerderung-waermepumpe-2026-kfw-bafa",
+      "waermepumpe-altbau-ohne-fussbodenheizung",
+      "gasheizung-vs-waermepumpe-kostenvergleich",
+    ],
+    relatedServices: ["waermepumpe", "heizung-erneuern"],
+    content: `## Das Wichtigste in Kürze
+
+- ✅ **Wärmepumpe Kosten 2026:** Luft-Wasser für ein Einfamilienhaus ca. 25.000–45.000 € Gesamtkosten (Anlage + Installation)
+- ✅ **Mit Förderung:** Bis zu 70 % Zuschuss – nach Förderung oft nur **7.500–13.500 €** Eigenanteil
+- ✅ **Kosten hängen ab von:** Gebäudegröße, Heizlast, Marke (z. B. Vaillant, OVUM) und Aufwand der Installation
+- ✅ **Berlin:** In Berlin und Umgebung liegen die Installationskosten typischerweise im genannten Rahmen – eine kostenlose Beratung lohnt sich
+
+## Was kostet eine Wärmepumpe 2026? Die Kernfrage
+
+Wer mit dem Gedanken spielt, von Gas oder Öl auf eine Wärmepumpe umzusteigen, fragt sich zuerst: **Was kostet eine Wärmepumpe** – und was kommt auf mich wirklich zu? Die gute Nachricht: Die Zahlen sind 2026 transparenter denn je, und mit der aktuellen **Förderung** sinkt Ihr Eigenanteil deutlich.
+
+In diesem Ratgeber zeigen wir Ihnen die **Wärmepumpe Kosten** für ein typisches Einfamilienhaus, was die **Wärmepumpe Installation kostet** und wie viel nach Abzug der Förderung übrig bleibt. Plus: was Berliner Hausbesitzer konkret wissen müssen.
+
+## Wärmepumpe Kosten Einfamilienhaus: Die Kostentabelle
+
+Die **Wärmepumpe Kosten** setzen sich aus der Anlage selbst, der Installation, eventuellen Anpassungen am Heizsystem (z. B. hydraulischer Abgleich) und der Förderberatung zusammen. Hier eine realistische **Wärmepumpe Preis**-Übersicht für ein **Einfamilienhaus** (ca. 120–150 m², Luft-Wasser-Wärmepumpe):
+
+| Position | Kosten (Richtwert) |
+|----------|-------------------|
+| Luft-Wasser-Wärmepumpe (Anlage, 8–12 kW) | 15.000 – 25.000 € |
+| Installation & Verrohrung | 5.000 – 10.000 € |
+| Hydraulischer Abgleich, ggf. Heizkörper | 1.000 – 4.000 € |
+| Elektroarbeiten, Förderantrag-Service | 1.500 – 3.000 € |
+| **Gesamt vor Förderung** | **22.500 – 42.000 €** |
+| **Nach 70 % Förderung** | **6.750 – 12.600 €** |
+
+*Die Förderung (bis zu 70 %) setzt voraus, dass Sie die [Förderbedingungen 2026](/ratgeber/foerderung-waermepumpe-2026-kfw-bafa) erfüllen – z. B. Austausch einer alten Öl- oder Gasheizung. Details dazu finden Sie in unserem Ratgeber zur [Förderung Wärmepumpe 2026](/ratgeber/foerderung-waermepumpe-2026-kfw-bafa).*
+
+### Wärmepumpe Komplettpreis Installation: Was ist drin?
+
+Unter **Wärmepumpe Komplettpreis Installation** verstehen wir: Anlage, Montage, Anschluss, Inbetriebnahme und in der Regel die Unterstützung beim Förderantrag. Ein Pauschalpreis „von der Stange“ ist schwer zu nennen – je nach Gebäude (Altbau, [Wärmepumpe Altbau](/ratgeber/waermepumpe-altbau-ohne-fussbodenheizung), Dämmung, Heizkörper) kann der Aufwand variieren. Ein detailliertes Angebot nach Vor-Ort-Termin gibt Ihnen Planungssicherheit.
+
+## Wärmepumpe Kosten Berlin: Was Sie in der Region erwarten können
+
+**Wärmepumpe Kosten Berlin** und Umgebung bewegen sich in der Regel im bundesweiten Mittelfeld. In Berlin und Umgebung liegen die Installationskosten typischerweise bei **ca. 5.000–10.000 €** für die Montage und Anbindung – abhängig von Zugänglichkeit, vorhandener Heizungsanlage und gewählter Marke (z. B. Vaillant, OVUM). Entscheidend ist eine saubere Planung: [Heizlastberechnung](/leistungen/waermepumpe), Förderantrag vor Beginn der Maßnahme und ein fachgerechter Einbau. Wir beraten Sie gerne unverbindlich zu den [Wärmepumpe Kosten für Ihr Projekt](/kontakt).
+
+## Luft-Wärmepumpe Kosten: Warum Luft-Wasser die häufigste Wahl ist
+
+Die **Luft-Wärmepumpe** (Luft-Wasser) ist in Ein- und Zweifamilienhäusern am weitesten verbreitet – kein Erdbohrung nötig, vergleichsweise geringer Platzbedarf. Die **Luft Wärmepumpe Kosten** liegen wie in der Tabelle oben: Anlage plus Installation meist zwischen 25.000 und 45.000 € brutto, mit Förderung reduziert sich Ihr Anteil auf oft **unter 15.000 €**. Für **Wärmepumpe Preis Einfamilienhaus**-Vergleiche lohnt sich auch ein Blick in unseren Artikel [Gasheizung vs. Wärmepumpe](/ratgeber/gasheizung-vs-waermepumpe-kostenvergleich) – dort sehen Sie die Gesamtkosten (Anschaffung + Betrieb) im Vergleich.
+
+## Kosten Wärmepumpe Altbau: Geht das ins Geld?
+
+**Kosten Wärmepumpe Altbau** können etwas höher ausfallen, wenn z. B. Heizkörper getauscht oder die Vorlauftemperatur angepasst werden muss. Trotzdem: Auch im Altbau ist die Wärmepumpe oft wirtschaftlich – vor allem mit Förderung. Ausführlich dazu: [Wärmepumpe im Altbau](/ratgeber/waermepumpe-altbau-ohne-fussbodenheizung).
+
+## Wärmepumpe mit Förderung Kosten: Vorher / Nachher
+
+| Szenario | Ohne Förderung | Mit 70 % Förderung |
+|----------|-----------------|---------------------|
+| Einfamilienhaus, Luft-Wasser, Standard | ca. 32.000 € | **ca. 9.600 €** |
+| Einfamilienhaus, höherer Aufwand (Altbau) | ca. 40.000 € | **ca. 12.000 €** |
+
+*Förderung vor Beginn beantragen – wir unterstützen Sie dabei. Alle Schritte erklärt unser Ratgeber [Förderung Wärmepumpe 2026](/ratgeber/foerderung-waermepumpe-2026-kfw-bafa).*
+
+## Was kostet eine Wärmepumpe für 120 Quadratmeter?
+
+Für **ca. 120 m²** Wohnfläche reicht in vielen Fällen eine Luft-Wasser-Wärmepumpe mit **8–10 kW** Heizleistung. **Wärmepumpe Kosten** inkl. Installation: grob **25.000–35.000 €** vor Förderung, **Wärmepumpe Einfamilienhaus Kosten mit Förderung** oft **7.500–10.500 €**. Die exakte Dimensionierung erfolgt über eine Heizlastberechnung – nur so vermeiden Sie Unter- oder Überdimensionierung.
+
+## Kurz-FAQ: Wärmepumpe Kosten
+
+**Was kostet eine Wärmepumpe 2026 ungefähr?**  
+Luft-Wasser für ein Einfamilienhaus: ca. 25.000–45.000 € Gesamtkosten. Mit bis zu 70 % Förderung: oft nur 7.500–13.500 € Eigenanteil.
+
+**Sind die Wärmepumpe Installation Kosten in Berlin anders?**  
+In Berlin und Umgebung bewegen sich die Installationskosten im üblichen Rahmen (ca. 5.000–10.000 € für Montage/Anschluss). Entscheidend sind Objekt und gewählte Technik.
+
+**Wärmepumpe Komplettpreis Installation – was ist enthalten?**  
+Anlage, Montage, Anschluss, Inbetriebnahme und in der Regel Beratung zum Förderantrag. Einzelpositionen können je nach Anbieter variieren.
+
+## Nächster Schritt: Kostenlos beraten lassen
+
+Die **Wärmepumpe Kosten** hängen von Ihrem Gebäude, Ihrer Heizlast und der gewünschten Ausstattung ab. Statt pauschal zu schätzen, empfehlen wir eine **kostenlose Beratung** mit Vor-Ort-Termin: Dann erhalten Sie ein klares Angebot inkl. Förderoptionen. Wir sind Ihr Ansprechpartner für [Wärmepumpe Berlin](/leistungen/waermepumpe) und Umgebung – von der Planung bis zur Installation.
+
+**[Jetzt Beratung anfragen](/kontakt)** – unverbindlich und auf Ihr Objekt zugeschnitten.`,
   },
 ];
 
