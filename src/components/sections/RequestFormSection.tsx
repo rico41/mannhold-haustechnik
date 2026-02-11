@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import { MultiStepRequestForm, type MultiStepFormPreselection } from "@/components/forms/MultiStepRequestForm";
 
 export type RequestFormSectionProps = {
@@ -8,6 +9,8 @@ export type RequestFormSectionProps = {
   subtitle?: string;
   variant?: "default" | "gradient" | "gray";
   className?: string;
+  id?: string;
+  introContent?: ReactNode;
 };
 
 export const RequestFormSection = ({
@@ -16,6 +19,8 @@ export const RequestFormSection = ({
   subtitle = "Wählen Sie Ihr Anliegen und wir melden uns schnellstmöglich bei Ihnen.",
   variant = "default",
   className = "",
+  id,
+  introContent,
 }: RequestFormSectionProps) => {
   const bgClasses = {
     default: "bg-white",
@@ -24,16 +29,17 @@ export const RequestFormSection = ({
   };
 
   return (
-    <section className={`section-padding ${bgClasses[variant]} ${className}`}>
+    <section id={id} className={`section-padding ${bgClasses[variant]} ${className}`}>
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
             <span className="inline-block text-sm font-semibold text-primary uppercase tracking-wider mb-2">
-              Anfrage starten
+              {id === "eignungs-check" ? "Eignungs-Check" : "Anfrage starten"}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold font-heading">{title}</h2>
             <p className="mt-4 text-lg text-muted-foreground">{subtitle}</p>
           </div>
+          {introContent && <div className="mb-8">{introContent}</div>}
           <MultiStepRequestForm preselection={preselection} />
         </div>
       </div>

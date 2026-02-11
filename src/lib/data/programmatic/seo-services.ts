@@ -192,7 +192,7 @@ export const seoServices: SEOService[] = [
       {
         questionTemplate: "Was kostet ein Heizungsinstallateur in {bezirk}?",
         answerTemplate:
-          "Die Kosten für einen Heizungsinstallateur in {bezirk} hängen von der Leistung ab. Eine Beratung ist bei uns kostenlos, Wartungen starten ab 150€, Installationen werden individuell kalkuliert. Wir bieten transparente Festpreise.",
+          "Die Kosten für einen Heizungsinstallateur in {bezirk} hängen von der Leistung ab. Unser Eignungs-Check ist kostenfrei, Wartungen starten ab 150€, Installationen werden individuell kalkuliert. Wir bieten transparente Festpreise.",
       },
       {
         questionTemplate: "Welche Heizungssysteme installieren Sie in {bezirk}?",

@@ -218,8 +218,8 @@ export default async function StandortPage({ params }: Props) {
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                 >
-                  <Link href="/kontakt">
-                    Kostenlose Beratung in {location.name}
+                  <Link href="/#eignungs-check">
+                    Machen Sie den Eignungs-Check
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

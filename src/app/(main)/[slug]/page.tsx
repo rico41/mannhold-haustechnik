@@ -294,8 +294,8 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                 >
-                  <Link href="/kontakt">
-                    Kostenlose Beratung in {location.shortName}
+                  <Link href="/#eignungs-check">
+                    Machen Sie den Eignungs-Check
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -516,7 +516,7 @@ export default async function ProgrammaticSEOPage({ params }: Props) {
           <div className="grid md:grid-cols-5 gap-4">
             {[
               { step: 1, title: "Kontakt", desc: "Telefonisch oder über unser Formular" },
-              { step: 2, title: "Vor-Ort-Termin", desc: "Kostenlose Beratung bei Ihnen" },
+              { step: 2, title: "Vor-Ort-Termin", desc: "Eignungs-Check bei Ihnen" },
               { step: 3, title: "Angebot", desc: "Individuelles Festpreis-Angebot" },
               { step: 4, title: "Umsetzung", desc: "Professionelle Installation" },
               { step: 5, title: "Abnahme", desc: "Einweisung & Übergabe" },

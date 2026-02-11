@@ -66,7 +66,7 @@ const getFormTitle = (service: Service): string => {
     case "waermepumpe":
     case "waermepumpe/vaillant":
     case "waermepumpe/ovum":
-      return "Wärmepumpen-Beratung anfragen";
+      return "Machen Sie den Eignungs-Check";
     case "heizlastberechnung":
     case "hydraulischer-abgleich":
       return "Jetzt Angebot anfragen";
@@ -91,21 +91,21 @@ const getServiceSEO = (slug: string, title: string, description: string) => {
       return {
         title: "Wärmepumpe Berlin | Installation & Förderung | Vaillant & OVUM",
         description:
-          "Wärmepumpe Berlin: Installation von Vaillant & OVUM ✓ Bis 70% Förderung ✓ Kostenlose Beratung ✓ Steglitz, Charlottenburg, Potsdam. Jetzt anfragen!",
+          "Wärmepumpe Berlin: Installation von Vaillant & OVUM ✓ Bis 70% Förderung ✓ Eignungs-Check ✓ Steglitz, Charlottenburg, Potsdam. Jetzt anfragen!",
         h1: "Wärmepumpe Berlin: Installation & Förderung",
       };
     case "waermepumpe/vaillant":
       return {
         title: "Vaillant Wärmepumpe Berlin | aroTHERM plus Installation",
         description:
-          "Vaillant Wärmepumpe Berlin: aroTHERM plus vom zertifizierten Partner ✓ Installation & Wartung ✓ Bis 70% Förderung. Kostenlose Beratung!",
+          "Vaillant Wärmepumpe Berlin: aroTHERM plus vom zertifizierten Partner ✓ Installation & Wartung ✓ Bis 70% Förderung. Eignungs-Check!",
         h1: "Vaillant Wärmepumpe Berlin: aroTHERM plus Installation",
       };
     case "waermepumpe/ovum":
       return {
         title: "OVUM Wärmepumpe Berlin | Premium Installation",
         description:
-          "OVUM Wärmepumpe Berlin: Premium-Wärmepumpen vom Partner ✓ Installation & Service ✓ Leise & effizient. Jetzt Beratung anfragen!",
+          "OVUM Wärmepumpe Berlin: Premium-Wärmepumpen vom Partner ✓ Installation & Service ✓ Leise & effizient. Jetzt Eignungs-Check starten!",
         h1: "OVUM Wärmepumpe Berlin: Premium Installation",
       };
     case "wartung":
@@ -229,8 +229,8 @@ export default async function ServicePage({ params }: Props) {
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                 >
-                  <Link href="/kontakt">
-                    Kostenlose Beratung
+                  <Link href="/#eignungs-check">
+                    Machen Sie den Eignungs-Check
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

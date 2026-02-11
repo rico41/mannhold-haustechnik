@@ -4,7 +4,7 @@ import { FlyerLanding } from "@/components/sections/FlyerLanding";
 export const metadata: Metadata = {
   title: "Angebot anfordern | Wärmepumpe Berlin",
   description:
-    "Schnell und unverbindlich: Online-Angebot für Wärmepumpen anfordern. Vaillant & OVUM Partner. Bis zu 70% Förderung möglich. Kostenlose Beratung.",
+    "Schnell und unverbindlich: Online-Angebot für Wärmepumpen anfordern. Vaillant & OVUM Partner. Bis zu 70% Förderung möglich. Eignungs-Check.",
   robots: {
     index: false,
     follow: false,

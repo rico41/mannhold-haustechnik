@@ -7,7 +7,7 @@ import { company } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Kontakt | Mannhold Haustechnik Berlin – Wärmepumpe & Heiztechnik",
   description:
-    "Kontakt: Mannhold Haustechnik, Kolonnenstraße 8, 10827 Berlin. ☎ 030 550 718 31. Kostenlose Beratung zu Wärmepumpe, Heizung & Gastherme in Berlin und Potsdam.",
+    "Kontakt: Mannhold Haustechnik, Kolonnenstraße 8, 10827 Berlin. ☎ 030 550 718 31. Eignungs-Check für Wärmepumpe, Heizung & Gastherme in Berlin und Potsdam.",
 };
 
 export default function KontaktPage() {

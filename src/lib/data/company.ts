@@ -55,6 +55,8 @@ export const company = {
     url: process.env.NEXT_PUBLIC_OFFER_SOFTWARE_URL || "",
     label: "Online-Angebot für Wärmepumpen anfordern",
   },
+  /** PDF-Broschüre für „Ich informiere mich nur“-Leads (Eignungs-Check-Funnel) */
+  brochurePdfUrl: "/downloads/Warmepumpen-verstehen-Effizient-nachhaltig-und-zukunftssicher-heizen.pdf",
 } as const;
 
 export type Company = typeof company;

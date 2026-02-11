@@ -33,6 +33,7 @@ type UploadedFile = {
 type MultiStepFormData = BaseContactFormData & {
   formType: "multistep";
   category: "modernisierung" | "wartung" | "reparatur" | "planung";
+  zeitrahmen?: "sofort" | "3-6_monate";
   strasse?: string;
   ort?: string;
   details?: Record<string, unknown> & {
@@ -279,6 +280,11 @@ const generateMultiStepEmailHtml = (data: MultiStepFormData): string => {
             ${serviceAreaBadge}
           </div>
 
+          ${data.zeitrahmen ? `
+          <div style="background-color: #dcfce7; border: 1px solid #22c55e; padding: 12px; border-radius: 8px; margin-bottom: 20px;">
+            <p style="margin: 0; font-weight: bold; color: #166534;">Zeitrahmen: ${data.zeitrahmen === "sofort" ? "Sofort / Akuter Handlungsbedarf" : "In den nächsten 3–6 Monaten"}</p>
+          </div>
+          ` : ""}
           <h2 style="color: #F7941D; margin-top: 0;">Kontaktdaten</h2>
           <table style="width: 100%; border-collapse: collapse;">
             <tr>

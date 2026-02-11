@@ -178,7 +178,7 @@ export const Header = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link href="/kontakt">Kostenlose Beratung</Link>
+              <Link href="/#eignungs-check">Machen Sie den Eignungs-Check</Link>
             </Button>
           </div>
 
@@ -246,8 +246,8 @@ export const Header = () => {
                 {/* Mobile Footer */}
                 <div className="p-6 border-t space-y-4">
                   <Button asChild className="w-full bg-primary hover:bg-primary/90">
-                    <Link href="/kontakt" onClick={handleCloseMobileMenu}>
-                      Kostenlose Beratung
+                    <Link href="/#eignungs-check" onClick={handleCloseMobileMenu}>
+                      Machen Sie den Eignungs-Check
                     </Link>
                   </Button>
                   <a

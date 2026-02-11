@@ -174,10 +174,10 @@ export const Hero = () => {
                 className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-lg px-8 h-14"
               >
                 <Link
-                  href="/kontakt"
+                  href="/#eignungs-check"
                   onClick={() => trackCTAClick("hero_cta", "hero", "hero_section")}
                 >
-                  Kostenlose Beratung
+                  Machen Sie den Eignungs-Check
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

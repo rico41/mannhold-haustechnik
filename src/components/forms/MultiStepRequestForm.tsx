@@ -38,7 +38,6 @@ import {
   Gauge,
   Settings2,
   Lightbulb,
-  Upload,
   X,
   FileImage,
   File,
@@ -132,8 +131,11 @@ type UploadedFile = {
   base64: string;
 };
 
+export type ZeitrahmenType = "" | "sofort" | "3-6_monate" | "nur_informieren";
+
 type FormData = {
   category: CategoryType | null;
+  zeitrahmen: ZeitrahmenType;
   modernisierung: ModernisierungData;
   wartung: WartungData;
   reparatur: ReparaturData;
@@ -578,10 +580,17 @@ const bauplaeneOptions: OptionItem[] = [
   { value: "nein", label: "Nein / Unvollständig", icon: FileX, description: "Keine Pläne verfügbar" },
 ];
 
+const zeitrahmenOptions: OptionItem[] = [
+  { value: "sofort", label: "Sofort / Akuter Handlungsbedarf", icon: AlertTriangle, description: "Heizung defekt" },
+  { value: "3-6_monate", label: "In den nächsten 3–6 Monaten", icon: CalendarDays, description: "Konkrete Planung läuft" },
+  { value: "nur_informieren", label: "Ich informiere mich erst mal nur", icon: HelpCircle, description: "Kein konkretes Datum" },
+];
+
 // ============ INITIAL STATE ============
 
 const initialFormData: FormData = {
   category: null,
+  zeitrahmen: "",
   modernisierung: {
     systemTyp: "",
     gebaeudeTyp: "",
@@ -638,10 +647,17 @@ type StepConfig = {
   subtitle?: string;
 };
 
+const zeitrahmenStep: StepConfig = {
+  id: "zeitrahmen",
+  title: "Zeitrahmen",
+  subtitle: "Wann planen Sie die Modernisierung?",
+};
+
 const getStepsForCategory = (category: CategoryType | null): StepConfig[] => {
   const baseSteps: StepConfig[] = [{ id: "category", title: "Anliegen" }];
+  const contactStep: StepConfig = { id: "contact", title: "Kontakt" };
 
-  if (!category) return [...baseSteps, { id: "contact", title: "Kontakt" }];
+  if (!category) return [...baseSteps, zeitrahmenStep, contactStep];
 
   switch (category) {
     case "modernisierung":
@@ -651,14 +667,16 @@ const getStepsForCategory = (category: CategoryType | null): StepConfig[] => {
         { id: "mod-gebaeude", title: "Gebäude", subtitle: "Gebäudetyp & Baujahr" },
         { id: "mod-heizung", title: "Heizung", subtitle: "Aktuelle Situation" },
         { id: "mod-details", title: "Details", subtitle: "Zusätzliche Infos" },
-        { id: "contact", title: "Kontakt" },
+        zeitrahmenStep,
+        contactStep,
       ];
     case "wartung":
       return [
         ...baseSteps,
         { id: "wart-geraet", title: "Gerät", subtitle: "Gerätetyp & Hersteller" },
         { id: "wart-details", title: "Details", subtitle: "Modell & Wartungsstatus" },
-        { id: "contact", title: "Kontakt" },
+        zeitrahmenStep,
+        contactStep,
       ];
     case "reparatur":
       return [
@@ -666,17 +684,19 @@ const getStepsForCategory = (category: CategoryType | null): StepConfig[] => {
         { id: "rep-problem", title: "Problem", subtitle: "Was ist passiert?" },
         { id: "rep-dringlichkeit", title: "Dringlichkeit", subtitle: "Wie schnell?" },
         { id: "rep-details", title: "Details", subtitle: "Weitere Infos" },
-        { id: "contact", title: "Kontakt" },
+        zeitrahmenStep,
+        contactStep,
       ];
     case "planung":
       return [
         ...baseSteps,
         { id: "plan-leistung", title: "Leistung", subtitle: "Was benötigen Sie?" },
         { id: "plan-details", title: "Details", subtitle: "Weitere Infos" },
-        { id: "contact", title: "Kontakt" },
+        zeitrahmenStep,
+        contactStep,
       ];
     default:
-      return [...baseSteps, { id: "contact", title: "Kontakt" }];
+      return [...baseSteps, zeitrahmenStep, contactStep];
   }
 };
 
@@ -717,6 +737,7 @@ export const MultiStepRequestForm = ({
   const [formData, setFormData] = useState<FormData>(getInitialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isInformierenOnly, setIsInformierenOnly] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [serviceAreaResult, setServiceAreaResult] = useState<ServiceAreaResult | null>(null);
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
@@ -737,10 +758,15 @@ export const MultiStepRequestForm = ({
 
   // Navigation
   const handleNext = () => {
-    if (validateCurrentStep()) {
-      setCurrentStep((prev) => Math.min(prev + 1, totalSteps - 1));
-      setValidationErrors({});
+    if (!validateCurrentStep()) return;
+    setValidationErrors({});
+
+    if (currentStepConfig?.id === "zeitrahmen" && formData.zeitrahmen === "nur_informieren") {
+      setIsInformierenOnly(true);
+      return;
     }
+
+    setCurrentStep((prev) => Math.min(prev + 1, totalSteps - 1));
   };
 
   const handleBack = () => {
@@ -787,6 +813,9 @@ export const MultiStepRequestForm = ({
       case "plan-details":
         if (!formData.planung.grund) errors.grund = "Bitte auswählen";
         break;
+      case "zeitrahmen":
+        if (!formData.zeitrahmen) errors.zeitrahmen = "Bitte wählen Sie einen Zeitrahmen";
+        break;
       case "contact":
         if (!formData.contact.name.trim()) errors.name = "Name ist erforderlich";
         if (!formData.contact.email.trim()) errors.email = "E-Mail ist erforderlich";
@@ -823,6 +852,7 @@ export const MultiStepRequestForm = ({
           nachricht: formData.contact.nachricht,
           formType: "multistep",
           category: formData.category,
+          zeitrahmen: formData.zeitrahmen === "sofort" || formData.zeitrahmen === "3-6_monate" ? formData.zeitrahmen : undefined,
           strasse: formData.contact.strasse,
           ort: formData.contact.ort,
           details: getCategoryDetails(),
@@ -950,6 +980,43 @@ export const MultiStepRequestForm = ({
           >
             Neue Anfrage senden
           </Button>
+        </CardContent>
+      </Card>
+    );
+  }
+
+  // ============ RENDER INFORMIEREN ONLY (kein Kontaktformular, PDF-Download) ============
+
+  if (isInformierenOnly) {
+    return (
+      <Card className="border-0 shadow-xl">
+        <CardContent className="p-8 md:p-12 text-center">
+          <h3 className="text-2xl font-bold font-heading mb-4">Vielen Dank für Ihr Interesse.</h3>
+          <p className="text-muted-foreground mb-6">
+            Da wir aktuell stark ausgelastet sind, können wir Vor-Ort-Termine nur für konkrete Bauvorhaben anbieten.
+            Hier finden Sie unsere Broschüre „Wärmepumpen verstehen – Effizient, nachhaltig und zukunftssicher heizen“ als PDF-Download.
+          </p>
+          <div className="flex flex-col items-center gap-4">
+            <a
+              href={company.brochurePdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-white font-medium hover:bg-primary/90 transition-colors"
+            >
+              <FileText className="h-5 w-5" />
+              Broschüre „Wärmepumpen verstehen“ herunterladen
+            </a>
+            <Button
+              variant="outline"
+              onClick={() => {
+                setIsInformierenOnly(false);
+                setFormData((prev) => ({ ...prev, zeitrahmen: "" }));
+                setCurrentStep(Math.max(0, totalSteps - 2));
+              }}
+            >
+              Neue Anfrage starten
+            </Button>
+          </div>
         </CardContent>
       </Card>
     );
@@ -1549,9 +1616,36 @@ export const MultiStepRequestForm = ({
             </div>
           )}
 
+          {/* ===== ZEITRAHMEN STEP ===== */}
+          {currentStepConfig?.id === "zeitrahmen" && (
+            <div className="space-y-6">
+              <div className="space-y-4">
+                {zeitrahmenOptions.map((opt) => (
+                  <OptionButton
+                    key={opt.value}
+                    option={opt}
+                    isSelected={formData.zeitrahmen === opt.value}
+                    onClick={() => setFormData((prev) => ({ ...prev, zeitrahmen: opt.value as FormData["zeitrahmen"] }))}
+                    size="large"
+                  />
+                ))}
+                {validationErrors.zeitrahmen && (
+                  <p className="text-xs text-red-500">{validationErrors.zeitrahmen}</p>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* ===== CONTACT STEP ===== */}
           {currentStepConfig?.id === "contact" && (
             <div className="space-y-6">
+              {(formData.zeitrahmen === "sofort" || formData.zeitrahmen === "3-6_monate") && (
+                <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl">
+                  <p className="text-sm font-medium text-foreground">
+                    Super, Ihr Haus scheint geeignet zu sein. Bitte hinterlassen Sie Ihre Daten für den Termin zum Eignungs-Check.
+                  </p>
+                </div>
+              )}
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold mb-2">Ihre Kontaktdaten</h2>
                 <p className="text-muted-foreground">Wo soll die Leistung erbracht werden?</p>

@@ -105,7 +105,7 @@ Bei Investitionskosten von ca. 8.000 - 12.000 € (nach Förderung) amortisiert 
 
 ## So prüfen wir, ob Ihr Altbau geeignet ist
 
-1. **Kostenlose Erstberatung** – Wir besprechen Ihre Situation
+1. **Eignungs-Check (kostenfrei)** – Wir besprechen Ihre Situation
 2. **Vor-Ort-Termin** – Aufnahme der Gebäudedaten
 3. **Heizlastberechnung nach DIN 12831** – Exakte Bedarfsermittlung
 4. **Angebotserstellung** – Transparent mit allen Kosten und Förderung
@@ -567,7 +567,7 @@ Die Übergangsfristen sind großzügig – aber die Förderung wird nicht ewig s
 - ✅ **Wärmepumpe Kosten 2026:** Luft-Wasser für ein Einfamilienhaus ca. 25.000–45.000 € Gesamtkosten (Anlage + Installation)
 - ✅ **Mit Förderung:** Bis zu 70 % Zuschuss – nach Förderung oft nur **7.500–13.500 €** Eigenanteil
 - ✅ **Kosten hängen ab von:** Gebäudegröße, Heizlast, Marke (z. B. Vaillant, OVUM) und Aufwand der Installation
-- ✅ **Berlin:** In Berlin und Umgebung liegen die Installationskosten typischerweise im genannten Rahmen – eine kostenlose Beratung lohnt sich
+- ✅ **Berlin:** In Berlin und Umgebung liegen die Installationskosten typischerweise im genannten Rahmen – ein Eignungs-Check lohnt sich
 
 ## Was kostet eine Wärmepumpe 2026? Die Kernfrage
 
@@ -632,9 +632,9 @@ Anlage, Montage, Anschluss, Inbetriebnahme und in der Regel Beratung zum Förder
 
 ## Nächster Schritt: Kostenlos beraten lassen
 
-Die **Wärmepumpe Kosten** hängen von Ihrem Gebäude, Ihrer Heizlast und der gewünschten Ausstattung ab. Statt pauschal zu schätzen, empfehlen wir eine **kostenlose Beratung** mit Vor-Ort-Termin: Dann erhalten Sie ein klares Angebot inkl. Förderoptionen. Wir sind Ihr Ansprechpartner für [Wärmepumpe Berlin](/leistungen/waermepumpe) und Umgebung – von der Planung bis zur Installation.
+Die **Wärmepumpe Kosten** hängen von Ihrem Gebäude, Ihrer Heizlast und der gewünschten Ausstattung ab. Statt pauschal zu schätzen, empfehlen wir unseren **Eignungs-Check** mit Vor-Ort-Termin: Dann erhalten Sie ein klares Angebot inkl. Förderoptionen. Wir sind Ihr Ansprechpartner für [Wärmepumpe Berlin](/leistungen/waermepumpe) und Umgebung – von der Planung bis zur Installation.
 
-**[Jetzt Beratung anfragen](/kontakt)** – unverbindlich und auf Ihr Objekt zugeschnitten.`,
+**[Jetzt Eignungs-Check starten](/)** – unverbindlich und auf Ihr Objekt zugeschnitten.`,
   },
 ];
 

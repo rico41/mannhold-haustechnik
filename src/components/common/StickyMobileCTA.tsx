@@ -66,11 +66,11 @@ export const StickyMobileCTA = () => {
                 className="flex-1 bg-primary hover:bg-primary/90 text-white h-12 text-base font-semibold"
               >
                 <Link
-                  href="/kontakt"
+                  href="/#eignungs-check"
                   onClick={() => trackCTAClick("sticky_mobile", "mobile", "sticky_bottom")}
                 >
                   <ArrowRight className="mr-2 h-5 w-5" />
-                  Kostenlose Beratung
+                  Machen Sie den Eignungs-Check
                 </Link>
               </Button>
               <Button

@@ -39,7 +39,7 @@ export const MobileQuickActions = () => {
     trackWhatsAppClick("general");
     window.open(
       `https://wa.me/493055071831?text=${encodeURIComponent(
-        "Hallo, ich hätte gerne eine kostenlose Beratung zu Wärmepumpen."
+        "Hallo, ich möchte den Eignungs-Check für eine Wärmepumpe machen."
       )}`,
       "_blank"
     );

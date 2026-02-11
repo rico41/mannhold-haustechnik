@@ -132,11 +132,11 @@ export const Services = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                       <Link
-                        href="/kontakt"
+                        href="/#eignungs-check"
                         onClick={() => trackCTAClick(`service_${service.slug}_contact`, "services", "service_card")}
                         className={cn(buttonVariants({ size: "sm" }), "w-full text-sm")}
                       >
-                        Kostenlose Beratung
+                        Machen Sie den Eignungs-Check
                         <Phone className="ml-2 h-4 w-4" />
                       </Link>
                     </div>

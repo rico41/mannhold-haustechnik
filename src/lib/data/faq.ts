@@ -92,7 +92,7 @@ export const faqItems: FAQItem[] = [
     id: "al-2",
     question: "Wie läuft die Zusammenarbeit ab?",
     answer:
-      "1. Kostenlose Erstberatung vor Ort, 2. Individuelle Heizlastberechnung und Angebot, 3. Hilfestellung bei Förderanträgen, 4. Terminierte Installation durch unser Fachteam, 5. Einweisung und laufender Service. Wir begleiten Sie durch den gesamten Prozess.",
+      "1. Eignungs-Check vor Ort (kostenfrei), 2. Individuelle Heizlastberechnung und Angebot, 3. Hilfestellung bei Förderanträgen, 4. Terminierte Installation durch unser Fachteam, 5. Einweisung und laufender Service. Wir begleiten Sie durch den gesamten Prozess.",
     category: "allgemein",
   },
 ];

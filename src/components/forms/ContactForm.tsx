@@ -132,7 +132,7 @@ export const ContactForm = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-[#F7941D] shrink-0" />
-              <span className="text-sm">Kostenlose Beratung</span>
+              <span className="text-sm">Eignungs-Check</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-[#F7941D] shrink-0" />

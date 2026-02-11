@@ -67,7 +67,7 @@ export const ScrollTriggeredCTA = () => {
           {/* Content */}
           <div className="flex-1">
             <p className="text-sm font-semibold text-gray-900 mb-2">
-              Kostenlose Beratung gewünscht?
+              Eignungs-Check gewünscht?
             </p>
             <p className="text-xs text-muted-foreground mb-3">
               Bis zu 70% Förderung möglich – jetzt unverbindlich informieren!
@@ -81,10 +81,10 @@ export const ScrollTriggeredCTA = () => {
                 className="flex-1 bg-primary hover:bg-primary/90 text-white text-xs"
               >
                 <Link
-                  href="/kontakt"
+                  href="/#eignungs-check"
                   onClick={() => trackCTAClick("scroll_triggered", "general", "scroll_50")}
                 >
-                  Jetzt anfragen
+                  Machen Sie den Eignungs-Check
                   <ArrowRight className="ml-1 h-3 w-3" />
                 </Link>
               </Button>

@@ -263,12 +263,12 @@ export default function RatgeberPage() {
             </h2>
             <p className="text-muted-foreground mb-8">
               Unser Ratgeber beantwortet nicht alle Fragen? Kontaktieren Sie uns
-              direkt – wir beraten Sie gerne persönlich und kostenlos.
+              direkt – wir beraten Sie gerne persönlich und unverbindlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-                <Link href="/kontakt">
-                  Beratung anfragen
+                <Link href="/#eignungs-check">
+                  Machen Sie den Eignungs-Check
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

@@ -90,11 +90,11 @@ export const ExitIntentModal = () => {
 
           {/* Text */}
           <p className="text-muted-foreground mb-6">
-            Nutzen Sie unsere kostenlose Erstberatung und erhalten Sie{" "}
+            Machen Sie den Eignungs-Check und erfahren Sie,{" "}
             <span className="font-semibold text-primary">
-              bis zu 70% staatliche Förderung
+              ob Ihr Haus für eine Wärmepumpe geeignet ist
             </span>{" "}
-            für Ihre neue Wärmepumpe. Wir helfen Ihnen bei der Antragstellung!
+            – inkl. bis zu 70% staatlicher Förderung. Wir helfen Ihnen bei der Antragstellung!
           </p>
 
           {/* Benefits */}
@@ -103,7 +103,7 @@ export const ExitIntentModal = () => {
               <div className="w-5 h-5 rounded-full bg-[#F7941D]/10 flex items-center justify-center shrink-0">
                 <span className="text-[#F7941D] text-xs font-bold">✓</span>
               </div>
-              Kostenlose Erstberatung
+              Kostenloser Eignungs-Check
             </li>
             <li className="flex items-center gap-2 text-sm">
               <div className="w-5 h-5 rounded-full bg-[#F7941D]/10 flex items-center justify-center shrink-0">
@@ -133,13 +133,13 @@ export const ExitIntentModal = () => {
               className="w-full bg-primary hover:bg-primary/90 text-white"
             >
               <Link
-                href="/kontakt"
+                href="/#eignungs-check"
                 onClick={() => {
                   trackCTAClick("exit_intent_form", "general", "exit_intent_modal");
                   handleClose();
                 }}
               >
-                Jetzt kostenlos beraten lassen
+                Machen Sie den Eignungs-Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

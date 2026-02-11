@@ -139,8 +139,8 @@ export default function LeistungenPage() {
 
           <div className="text-center mt-12">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
-              <Link href="/kontakt">
-                Kostenlose Beratung anfragen
+              <Link href="/#eignungs-check">
+                Machen Sie den Eignungs-Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

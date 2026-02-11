@@ -423,13 +423,13 @@ export default async function BlogArticlePage({ params }: Props) {
                 Sie möchten mehr erfahren?
               </h3>
               <p className="text-muted-foreground mb-6">
-                Unsere Experten beraten Sie gerne persönlich und kostenlos zu Ihrer
+                Unsere Experten beraten Sie gerne persönlich und unverbindlich zu Ihrer
                 individuellen Situation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild className="bg-primary hover:bg-primary/90">
-                  <Link href="/kontakt">
-                    Kostenlose Beratung anfragen
+                  <Link href="/#eignungs-check">
+                    Machen Sie den Eignungs-Check
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

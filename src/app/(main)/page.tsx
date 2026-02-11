@@ -65,7 +65,7 @@ const CTASection = dynamic(() => import("@/components/sections/CTASection").then
 export const metadata: Metadata = {
   title: "Mannhold Haustechnik | Wärmepumpe Berlin – Heiztechnik & Vaillant Partner",
   description:
-    "Mannhold Haustechnik – Ihr Heiztechnik- und Wärmepumpen-Spezialist in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Kostenlose Beratung ☎ 030 550 718 31",
+    "Mannhold Haustechnik – Ihr Heiztechnik- und Wärmepumpen-Spezialist in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Eignungs-Check ☎ 030 550 718 31",
   keywords: [
     "Wärmepumpe Berlin",
     "Wärmepumpe Installation Berlin",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mannhold Haustechnik | Wärmepumpe Berlin – Heiztechnik & Vaillant Partner",
     description:
-      "Mannhold Haustechnik – Heiztechnik und Wärmepumpen in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Kostenlose Beratung ☎ 030 550 718 31",
+      "Mannhold Haustechnik – Heiztechnik und Wärmepumpen in Berlin. Bis zu 70% Förderung ✓ Vaillant & OVUM ✓ Eignungs-Check ☎ 030 550 718 31",
     url: "https://mannhold-haustechnik.de",
     siteName: "Mannhold Haustechnik",
     locale: "de_DE",
@@ -288,9 +288,31 @@ export default async function HomePage() {
       <Hero />
       <Partners />
       <RequestFormSection
+        id="eignungs-check"
         variant="gradient"
-        title="Jetzt unverbindlich anfragen"
-        subtitle="In wenigen Schritten zur passenden Lösung – wir melden uns schnellstmöglich bei Ihnen."
+        title="Ist Ihr Haus bereit für eine Wärmepumpe? Machen Sie den Eignungs-Check."
+        subtitle="Der Wärmepumpen-Eignungs-Check für Ihr Zuhause (Regulärer Wert: 189,00 € – Für Hausbesitzer in Berlin und Potsdam aktuell kostenfrei)"
+        introContent={
+          <>
+            <p className="text-muted-foreground mb-4">
+              Wir kommen nicht zum Kaffeetrinken, wir prüfen Fakten:
+            </p>
+            <ul className="space-y-2 text-muted-foreground mb-6">
+              <li className="flex items-start gap-2">
+                <span className="text-primary shrink-0">✓</span>
+                <span><strong>Hydraulik-Check:</strong> Sind Ihre Heizkörper groß genug für effizientes Heizen?</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary shrink-0">✓</span>
+                <span><strong>Schallschutz-Messung:</strong> Wo darf die Außeneinheit stehen (Abstandsanalyse)?</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary shrink-0">✓</span>
+                <span><strong>Investitions-Plan:</strong> Was kostet es wirklich und wie viel Förderung bekommen Sie?</span>
+              </li>
+            </ul>
+          </>
+        }
       />
       <Services />
       <Benefits />

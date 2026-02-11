@@ -69,7 +69,7 @@ export const CTASection = () => {
           >
             <div className="flex items-center gap-2">
               <Calendar className="h-5 w-5 text-[#F7941D]" />
-              <span>Kostenlose Beratung</span>
+              <span>Eignungs-Check</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#F7941D]" />
@@ -95,7 +95,7 @@ export const CTASection = () => {
             </div>
             <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full backdrop-blur-sm">
               <Clock className="h-4 w-4 text-[#0089CF]" />
-              <span>Nächste freie Beratung: Diese Woche</span>
+              <span>Nächster Eignungs-Check: Diese Woche</span>
             </div>
           </motion.div>
 
@@ -113,10 +113,10 @@ export const CTASection = () => {
               className="w-full sm:w-auto bg-[#F7941D] hover:bg-[#F7941D]/90 text-white text-lg px-8 h-14"
             >
               <Link
-                href="/kontakt"
+                href="/#eignungs-check"
                 onClick={() => trackCTAClick("cta_section_form", "cta_section", "bottom_cta")}
               >
-                Beratung anfragen
+                Machen Sie den Eignungs-Check
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

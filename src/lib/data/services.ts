@@ -294,7 +294,7 @@ export const services: Service[] = [
       "Sie möchten Ihre alte Heizung erneuern? Der Wechsel zu einer modernen Wärmepumpe oder Brennwerttherme spart Energie und schont die Umwelt. Mit bis zu 70% Förderung ist der Umstieg jetzt besonders attraktiv! Wir begleiten Sie von der Beratung bis zur Installation und geben Ihnen Hilfestellung bei Förderanträgen – alles aus einer Hand.",
     icon: RefreshCw,
     features: [
-      "Kostenlose Erstberatung",
+      "Eignungs-Check",
       "Heizlastberechnung",
       "Hilfestellung bei Förderanträgen",
       "Wärmepumpe oder Brennwerttherme",
