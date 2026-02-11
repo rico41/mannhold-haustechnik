@@ -320,9 +320,41 @@ export default async function ServicePage({ params }: Props) {
 
       {/* Request Form with Preselection */}
       <RequestFormSection
+        id={serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum" ? "eignungs-check" : undefined}
         preselection={getFormPreselection(service)}
-        title={getFormTitle(service)}
-        subtitle={`Starten Sie Ihre Anfrage für ${service.shortTitle} – wir melden uns schnellstmöglich.`}
+        title={
+          serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum"
+            ? "Ist Ihr Haus bereit für eine Wärmepumpe? Machen Sie den Eignungs-Check."
+            : getFormTitle(service)
+        }
+        subtitle={
+          serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum"
+            ? "Der Wärmepumpen-Eignungs-Check für Ihr Zuhause (Regulärer Wert: 189,00 € – Für Hausbesitzer in Berlin und Potsdam aktuell kostenfrei)"
+            : `Starten Sie Ihre Anfrage für ${service.shortTitle} – wir melden uns schnellstmöglich.`
+        }
+        introContent={
+          serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum" ? (
+            <>
+              <p className="text-muted-foreground mb-4">
+                Wir kommen nicht zum Kaffeetrinken, wir prüfen Fakten:
+              </p>
+              <ul className="space-y-2 text-muted-foreground mb-6">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary shrink-0">✓</span>
+                  <span><strong>Hydraulik-Check:</strong> Sind Ihre Heizkörper groß genug für effizientes Heizen?</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary shrink-0">✓</span>
+                  <span><strong>Schallschutz-Messung:</strong> Wo darf die Außeneinheit stehen (Abstandsanalyse)?</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary shrink-0">✓</span>
+                  <span><strong>Investitions-Plan:</strong> Was kostet es wirklich und wie viel Förderung bekommen Sie?</span>
+                </li>
+              </ul>
+            </>
+          ) : undefined
+        }
         variant="gradient"
       />
 
