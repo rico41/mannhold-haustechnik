@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "flyer.mannhold-haustechnik.de"
+        }
+      ],
+      "destination": "https://mannhold-haustechnik.de/flyer",
+      "permanent": true
+    }
+  ]
+}

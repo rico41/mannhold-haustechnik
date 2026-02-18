@@ -2,6 +2,10 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { getRedirectPath } from "@/lib/redirects";
 
+/**
+ * Nur Redirects (HTTP→HTTPS, www→non-www, alte URLs).
+ * Crawler (z. B. Googlebot) dürfen NICHT blockiert werden – 403 kommt sonst von Vercel Firewall, siehe docs/VERCEL-403-BEHEBEN.md.
+ */
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const hostname = request.headers.get("host") || "";

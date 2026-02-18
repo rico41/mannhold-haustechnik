@@ -43,6 +43,8 @@ Stand: Februar 2026 | Basierend auf DataForSEO-Auswertung und technischer Analys
 
 **Problem:** 33 Seiten werden von Google mit „Zugriffsverbot (403)“ blockiert.
 
+**Detaillierte Anleitung (inkl. curl-Test):** [docs/VERCEL-403-BEHEBEN.md](./VERCEL-403-BEHEBEN.md)
+
 **Maßnahmen (Schritt für Schritt):**
 
 1. **Vercel Dashboard** öffnen: [vercel.com/dashboard](https://vercel.com/dashboard) → Projekt **mannhold-haustechnik** (oder dein Projektname) wählen.
