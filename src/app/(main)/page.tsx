@@ -2,63 +2,64 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/sections/Hero";
 import { company } from "@/lib/data";
+import { SectionSkeleton } from "@/components/ui/section-skeleton";
 
 // Hero ist LCP-Element - MUSS direkt importiert werden für schnelles initiales Rendering
 // Lazy-Loading würde LCP verschlechtern!
 // Partners wird lazy-loaded, da es nicht kritisch für LCP ist
 const Partners = dynamic(() => import("@/components/sections/Partners").then((mod) => ({ default: mod.Partners })), {
   ssr: true,
-  loading: () => <div className="min-h-[200px]" />,
+  loading: () => <SectionSkeleton className="min-h-[200px]" />,
 });
 
 // Lazy Load Komponenten mit Framer Motion (große Library)
 const Services = dynamic(() => import("@/components/sections/Services").then((mod) => ({ default: mod.Services })), {
   ssr: true,
-  loading: () => <div className="min-h-[500px]" />,
+  loading: () => <SectionSkeleton className="min-h-[500px]" />,
 });
 
 const Benefits = dynamic(() => import("@/components/sections/Benefits").then((mod) => ({ default: mod.Benefits })), {
   ssr: true,
-  loading: () => <div className="min-h-[400px]" />,
+  loading: () => <SectionSkeleton className="min-h-[400px]" />,
 });
 
 const RequestFormSection = dynamic(
   () => import("@/components/sections/RequestFormSection").then((mod) => ({ default: mod.RequestFormSection })),
   {
     ssr: true,
-    loading: () => <div className="min-h-[600px]" />,
+    loading: () => <SectionSkeleton className="min-h-[600px]" />,
   }
 );
 
 // Lazy Load nicht-kritische Komponenten (below the fold)
 const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then((mod) => ({ default: mod.Testimonials })), {
   ssr: true,
-  loading: () => <div className="min-h-[400px]" />,
+  loading: () => <SectionSkeleton className="min-h-[400px]" />,
 });
 
 const LocationsPreview = dynamic(() => import("@/components/sections/LocationsPreview").then((mod) => ({ default: mod.LocationsPreview })), {
   ssr: true,
-  loading: () => <div className="min-h-[300px]" />,
+  loading: () => <SectionSkeleton className="min-h-[300px]" />,
 });
 
 const GoogleMapsSection = dynamic(() => import("@/components/sections/GoogleMapsSection").then((mod) => ({ default: mod.GoogleMapsSection })), {
   ssr: true,
-  loading: () => <div className="min-h-[400px]" />,
+  loading: () => <SectionSkeleton className="min-h-[400px]" />,
 });
 
 const BlogPreview = dynamic(() => import("@/components/sections/BlogPreview").then((mod) => ({ default: mod.BlogPreview })), {
   ssr: true,
-  loading: () => <div className="min-h-[300px]" />,
+  loading: () => <SectionSkeleton className="min-h-[300px]" />,
 });
 
 const FAQPreview = dynamic(() => import("@/components/sections/FAQPreview").then((mod) => ({ default: mod.FAQPreview })), {
   ssr: true,
-  loading: () => <div className="min-h-[300px]" />,
+  loading: () => <SectionSkeleton className="min-h-[300px]" />,
 });
 
 const CTASection = dynamic(() => import("@/components/sections/CTASection").then((mod) => ({ default: mod.CTASection })), {
   ssr: true,
-  loading: () => <div className="min-h-[300px]" />,
+  loading: () => <SectionSkeleton className="min-h-[300px]" />,
 });
 
 // SEO: Title für Quick Wins "mannhold" (Pos 4) + "heiztechnik" (Pos 8) – Marke & Heiztechnik im Title erhöhen CTR
