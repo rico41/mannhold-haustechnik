@@ -61,6 +61,26 @@ export const redirectMap: Record<string, string> = {
   "/weihnachtsgruesse-und-betriebsferien-zeit-fuer-besinnliche-momente/": "/ratgeber",
   "/rohrreinigung-berlin": "/leistungen",
   "/rohrreinigung-berlin/": "/leistungen",
+
+  // ========================================
+  // ROOT SERVICES REDIRECTS (Für direkte Eingaben)
+  // ========================================
+  "/waermepumpe": "/leistungen/waermepumpe",
+  "/waermepumpe/": "/leistungen/waermepumpe",
+  "/waermepumpen": "/leistungen/waermepumpe",
+  "/waermepumpen/": "/leistungen/waermepumpe",
+  "/gastherme": "/leistungen/gastherme",
+  "/gastherme/": "/leistungen/gastherme",
+  "/fussbodenheizung": "/leistungen/fussbodenheizung",
+  "/fussbodenheizung/": "/leistungen/fussbodenheizung",
+  "/hydraulischer-abgleich": "/leistungen/hydraulischer-abgleich",
+  "/hydraulischer-abgleich/": "/leistungen/hydraulischer-abgleich",
+  "/heizlastberechnung": "/leistungen/heizlastberechnung",
+  "/heizlastberechnung/": "/leistungen/heizlastberechnung",
+  "/wartung": "/leistungen/wartung",
+  "/wartung/": "/leistungen/wartung",
+  "/heizung-erneuern": "/leistungen/heizung-erneuern",
+  "/heizung-erneuern/": "/leistungen/heizung-erneuern",
 };
 
 /**
