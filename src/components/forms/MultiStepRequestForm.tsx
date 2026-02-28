@@ -64,6 +64,7 @@ export type MultiStepFormPreselection = {
   systemTyp?: string;
   geraeteTyp?: string;
   leistungsTyp?: string;
+  problemArt?: string;
 };
 
 export type MultiStepRequestFormProps = {
@@ -730,6 +731,9 @@ export const MultiStepRequestForm = ({
     }
     if (preselection?.leistungsTyp) {
       base.planung.leistungsTyp = preselection.leistungsTyp;
+    }
+    if (preselection?.problemArt) {
+      base.reparatur.problemArt = preselection.problemArt;
     }
     return base;
   };
