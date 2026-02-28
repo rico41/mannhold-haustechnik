@@ -8,7 +8,7 @@ Dieses Dokument beschreibt, welche Tools für die SEO-Platzierung genutzt werden
 
 ### 1. DataForSEO (DFS MCP)
 
-**Server:** `user-dfs`
+**Server:** `dfs`
 
 | Tool | Nutzen für uns |
 |------|-----------------|
@@ -25,7 +25,7 @@ Dieses Dokument beschreibt, welche Tools für die SEO-Platzierung genutzt werden
 
 ### 2. Google Search Console (GSC MCP)
 
-**Server:** `user-gsc`
+**Server:** `gsc`
 
 | Tool | Nutzen für uns |
 |------|-----------------|
@@ -102,7 +102,7 @@ In der MCP-Konfiguration des GSC-Servers den **Pfad zu dieser Datei** korrekt se
 ## Nächste Schritte (manuell / Hosting)
 
 1. **403 beheben:** Vercel Firewall/Bot Protection so einstellen, dass Googlebot nicht blockiert wird.
-2. **GSC MCP:** Pfad zur `client_secret_*.json` in der MCP-Konfiguration korrigieren, danach GSC-Tools (list_sites, list_sitemaps, index_inspect, search_analytics, detect_quick_wins) nutzen.
+2. **GSC MCP:** Pfad zur `client_secret_*.json` in der MCP-Konfiguration korrigieren (bzw. bei Nutzung von `credential.json`/GOOGLE_APPLICATION_CREDENTIALS prüfen). Server-Name in Cursor: **`gsc`**. Danach GSC-Tools (list_sites, list_sitemaps, index_inspect, search_analytics, detect_quick_wins) nutzen.
 3. **Google Business Profile:** Vollständig pflegen, Beschreibung mit Kern-Keywords, regelmäßige Posts.
 4. **Content:** Auf starken Programmseiten 1–2 Absätze einzigartiger Text (Bezirke/Lokalbezug).
 

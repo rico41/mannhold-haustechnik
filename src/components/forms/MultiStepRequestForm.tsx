@@ -552,6 +552,7 @@ const problemArtOptions: OptionItem[] = [
   { value: "keine_waerme", label: "Heizung ausgefallen", icon: Snowflake, description: "Komplett kalt" },
   { value: "kein_warmwasser", label: "Kein Warmwasser", icon: ShowerHead, description: "Wasser bleibt kalt" },
   { value: "wasserverlust", label: "Wasserverlust / Tropft", icon: Droplets, description: "Undichtigkeit" },
+  { value: "rohrbruch_ersttrocknung", label: "Rohrbruch / Leckage / Ersttrocknung", icon: Droplets, description: "Leckortung, Beseitigung & fachgerechte Ersttrocknung" },
   { value: "fehlermeldung", label: "Fehlermeldung", icon: AlertOctagon, description: "Fehler im Display" },
   { value: "geraeusche", label: "Geräusche / Klopfen", icon: Volume2, description: "Ungewöhnliche Töne" },
   { value: "sonstiges", label: "Sonstiges Problem", icon: HelpCircle, description: "Anderes Problem" },

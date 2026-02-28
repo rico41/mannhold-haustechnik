@@ -6,6 +6,7 @@ import {
   Calculator,
   Wrench,
   RefreshCw,
+  Droplets,
   type LucideIcon,
 } from "lucide-react";
 
@@ -316,6 +317,42 @@ export const services: Service[] = [
       "Heizung erneuern Förderung",
     ],
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800",
+  },
+  {
+    id: "ersttrocknung-rohrbruch",
+    slug: "ersttrocknung-rohrbruch",
+    title: "Ersttrocknung & Rohrbruch-Service",
+    shortTitle: "Ersttrocknung",
+    description:
+      "Leckortung, Rohrbruch-Beseitigung und fachgerechte Ersttrocknung nach Wasserschaden – schnell, zuverlässig und mit Fokus auf Schimmelschutz.",
+    longDescription:
+      "Nach einem Rohrbruch oder Wasserschaden ist die Ersttrocknung entscheidend: Sie verhindert Schimmel und Folgeschäden an der Bausubstanz. Wir bieten Leckortung, Beseitigung der Undichtigkeit und professionelle Bautrocknung aus einer Hand. Mit modernen Trocknungsgeräten und Messtechnik sorgen wir dafür, dass Wände, Böden und Decken schnell und gründlich trocknen – in Berlin und Umgebung.",
+    icon: Droplets,
+    features: [
+      "Ersttrocknung nach Wasserschaden",
+      "Bautrocknung mit Trocknungsgeräten",
+      "Leckortung (Rohrbruch-Ortung)",
+      "Beseitigung der Undichtigkeit",
+      "Feuchtemessung & Dokumentation",
+      "Schimmelschutz durch schnelle Trocknung",
+    ],
+    benefits: [
+      "Schimmelprävention durch zügige Trocknung",
+      "Erhalt der Bausubstanz",
+      "Alles aus einer Hand: Ortung, Reparatur, Trocknung",
+      "Schnelle Reaktion bei Notfällen",
+      "Dokumentation für Versicherung möglich",
+    ],
+    keywords: [
+      "Ersttrocknung Berlin",
+      "Bautrocknung Wasserschaden",
+      "Leckortung Berlin",
+      "Rohrbruch Ortung Berlin",
+      "Trocknung nach Rohrbruch",
+      "Wasserschaden Trocknung",
+      "Leckage finden",
+    ],
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=800",
   },
 ];
 

@@ -8,6 +8,7 @@ import {
   Home,
   RefreshCw,
   AlertTriangle,
+  Droplets,
   type LucideIcon,
 } from "lucide-react";
 
@@ -767,6 +768,80 @@ export const seoServices: SEOService[] = [
       maxPercent: 70,
       info: "Bis zu 70% Förderung durch BAFA/KfW beim Umstieg auf Wärmepumpe",
     },
+  },
+  {
+    id: "ersttrocknung-rohrbruch",
+    slug: "ersttrocknung-rohrbruch",
+    name: "Ersttrocknung & Rohrbruch-Service",
+    shortName: "Ersttrocknung",
+    icon: Droplets,
+    priority: 3,
+    titleTemplate: "Ersttrocknung {bezirk} | Leckortung & Rohrbruch-Beseitigung",
+    metaDescriptionTemplate:
+      "Ersttrocknung in {bezirk} ✓ Leckortung ✓ Rohrbruch-Beseitigung ✓ Bautrocknung nach Wasserschaden ✓ Schimmelschutz. Schnelle Hilfe – Jetzt anfragen!",
+    h1Template: "Ersttrocknung {bezirk}: Leckortung, Rohrbruch & Bautrocknung",
+    introTemplate:
+      "Wasserschaden oder Rohrbruch in {bezirk}? Die Ersttrocknung entscheidet über Schimmelschutz und Erhalt der Bausubstanz. Wir bieten Leckortung, Beseitigung der Undichtigkeit und professionelle Bautrocknung aus einer Hand. Mit modernen Trocknungsgeräten und Messtechnik sorgen wir in {bezirk} dafür, dass Wände, Böden und Decken schnell und gründlich trocknen.",
+    benefits: [
+      "Schimmelprävention durch zügige Trocknung",
+      "Erhalt der Bausubstanz",
+      "Alles aus einer Hand: Ortung, Reparatur, Trocknung",
+      "Schnelle Reaktion bei Notfällen",
+      "Dokumentation für Versicherung möglich",
+    ],
+    features: [
+      "Ersttrocknung nach Wasserschaden",
+      "Bautrocknung mit Trocknungsgeräten",
+      "Leckortung (Rohrbruch-Ortung)",
+      "Beseitigung der Undichtigkeit",
+      "Feuchtemessung & Dokumentation",
+      "Schimmelschutz durch schnelle Trocknung",
+    ],
+    faqTemplates: [
+      {
+        questionTemplate: "Was ist Ersttrocknung bei Wasserschaden in {bezirk}?",
+        answerTemplate:
+          "Ersttrocknung in {bezirk} ist die fachgerechte Trocknung von Wänden, Böden und Decken direkt nach einem Wasserschaden oder Rohrbruch. Sie verhindert Schimmel und Folgeschäden. Wir setzen professionelle Trocknungsgeräte ein und messen den Trocknungsfortschritt.",
+      },
+      {
+        questionTemplate: "Wie schnell muss nach einem Rohrbruch in {bezirk} getrocknet werden?",
+        answerTemplate:
+          "Je schneller nach einem Rohrbruch in {bezirk} mit der Trocknung begonnen wird, desto geringer das Schimmelrisiko. Wir empfehlen, innerhalb von 24–48 Stunden mit der Ersttrocknung zu starten. Rufen Sie uns an – wir reagieren schnell.",
+      },
+      {
+        questionTemplate: "Was kostet Ersttrocknung bzw. Bautrocknung in {bezirk}?",
+        answerTemplate:
+          "Die Kosten für Ersttrocknung in {bezirk} hängen vom Umfang des Wasserschadens ab. Nach einer Leckortung und Beseitigung der Undichtigkeit erstellen wir ein transparentes Angebot für die Bautrocknung. Oft übernimmt die Gebäudeversicherung die Kosten.",
+      },
+      {
+        questionTemplate: "Leckortung in {bezirk} – wie finden Sie den Rohrbruch?",
+        answerTemplate:
+          "Wir orten Undichtigkeiten in {bezirk} mit moderner Messtechnik (z. B. Druckprüfung, Thermografie, akustische Ortung). So finden wir den Rohrbruch zielgenau ohne unnötige Aufbrucharbeiten.",
+      },
+      {
+        questionTemplate: "Ersttrocknung oder Bautrocknung – was ist der Unterschied?",
+        answerTemplate:
+          "Ersttrocknung ist die erste Phase der Trocknung direkt nach dem Wasserschaden – oft mit leistungsstarken Geräten. Bautrocknung kann die gesamte Maßnahme umfassen. Wir in {bezirk} bieten beides aus einer Hand inklusive Leckortung und Reparatur.",
+      },
+      {
+        questionTemplate: "Übernimmt die Versicherung die Ersttrocknung in {bezirk}?",
+        answerTemplate:
+          "Bei Leitungswasserschäden übernimmt in der Regel die Gebäudeversicherung die Kosten für Leckortung, Beseitigung und Ersttrocknung. Wir dokumentieren die Maßnahmen für Ihre Versicherung und arbeiten bei Bedarf mit Gutachtern zusammen.",
+      },
+    ],
+    keywordTemplates: [
+      "Ersttrocknung {bezirk}",
+      "Bautrocknung Wasserschaden {bezirk}",
+      "Leckortung {bezirk}",
+      "Rohrbruch Ortung {bezirk}",
+      "Trocknung nach Rohrbruch {bezirk}",
+      "Wasserschaden Trocknung {bezirk}",
+      "Leckage finden {bezirk}",
+      "Rohrbruch Beseitigung {bezirk}",
+      "Ersttrocknung nach Wasserschaden {bezirk}",
+      "Bautrocknung Berlin {bezirk}",
+    ],
+    relatedServices: ["wartung", "gastherme", "fussbodenheizung"],
   },
 ];
 

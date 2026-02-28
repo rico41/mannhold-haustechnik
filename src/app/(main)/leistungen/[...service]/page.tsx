@@ -54,6 +54,11 @@ const getFormPreselection = (service: Service): MultiStepFormPreselection => {
     return { category: "planung", leistungsTyp: "hydraulischer_abgleich" };
   }
   
+  // Ersttrocknung & Rohrbruch
+  if (slug === "ersttrocknung-rohrbruch") {
+    return { category: "reparatur", problemArt: "rohrbruch_ersttrocknung" };
+  }
+  
   // Default: no preselection
   return {};
 };
@@ -70,6 +75,8 @@ const getFormTitle = (service: Service): string => {
     case "heizlastberechnung":
     case "hydraulischer-abgleich":
       return "Jetzt Angebot anfragen";
+    case "ersttrocknung-rohrbruch":
+      return "Ersttrocknung & Rohrbruch anfragen";
     default:
       return "Jetzt unverbindlich anfragen";
   }
@@ -121,6 +128,13 @@ const getServiceSEO = (slug: string, title: string, description: string) => {
         description:
           "Gastherme Berlin: Wartung, Austausch & Reparatur ✓ Brennwerttechnik ✓ Vaillant Service. Festpreise & schnelle Termine!",
         h1: "Gastherme Berlin: Wartung, Austausch & Reparatur",
+      };
+    case "ersttrocknung-rohrbruch":
+      return {
+        title: "Ersttrocknung Berlin | Leckortung & Rohrbruch-Beseitigung",
+        description:
+          "Ersttrocknung Berlin: Leckortung, Rohrbruch-Beseitigung & Bautrocknung ✓ Schimmelschutz ✓ Schnelle Hilfe bei Wasserschaden. Jetzt anfragen!",
+        h1: "Ersttrocknung Berlin: Leckortung, Rohrbruch & Bautrocknung",
       };
     default:
       return { title, description, h1: title };
@@ -229,8 +243,8 @@ export default async function ServicePage({ params }: Props) {
                   size="lg"
                   className="bg-primary hover:bg-primary/90"
                 >
-                  <Link href="/#eignungs-check">
-                    Machen Sie den Eignungs-Check
+                  <Link href={serviceSlug === "ersttrocknung-rohrbruch" ? "/#eignungs-check" : "/#eignungs-check"}>
+                    {serviceSlug === "ersttrocknung-rohrbruch" ? "Schnelle Hilfe anfragen" : "Machen Sie den Eignungs-Check"}
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -325,12 +339,16 @@ export default async function ServicePage({ params }: Props) {
         title={
           serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum"
             ? "Ist Ihr Haus bereit für eine Wärmepumpe? Machen Sie den Eignungs-Check."
-            : getFormTitle(service)
+            : serviceSlug === "ersttrocknung-rohrbruch"
+              ? "Schnelle Hilfe bei Wasserschaden: Ersttrocknung & Rohrbruch anfragen"
+              : getFormTitle(service)
         }
         subtitle={
           serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum"
             ? "Der Wärmepumpen-Eignungs-Check für Ihr Zuhause (Regulärer Wert: 189,00 € – Für Hausbesitzer in Berlin und Potsdam aktuell kostenfrei)"
-            : `Starten Sie Ihre Anfrage für ${service.shortTitle} – wir melden uns schnellstmöglich.`
+            : serviceSlug === "ersttrocknung-rohrbruch"
+              ? "Wir orten die Leckstelle, beseitigen den Schaden und starten die fachgerechte Ersttrocknung – schnell und zuverlässig in Berlin und Umgebung."
+              : `Starten Sie Ihre Anfrage für ${service.shortTitle} – wir melden uns schnellstmöglich.`
         }
         introContent={
           serviceSlug === "waermepumpe" || serviceSlug === "waermepumpe/vaillant" || serviceSlug === "waermepumpe/ovum" ? (
@@ -570,37 +588,27 @@ export default async function ServicePage({ params }: Props) {
               So läuft die Zusammenarbeit
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              In wenigen Schritten zu Ihrer neuen {service.shortTitle}.
+              {service.slug === "ersttrocknung-rohrbruch"
+                ? "Von der Leckortung bis zur trockenen Bausubstanz – in wenigen Schritten."
+                : `In wenigen Schritten zu Ihrer neuen ${service.shortTitle}.`}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Kontakt aufnehmen",
-                description:
-                  "Rufen Sie uns an oder nutzen Sie unser Kontaktformular.",
-              },
-              {
-                step: "2",
-                title: "Beratung vor Ort",
-                description:
-                  "Wir besichtigen Ihre Immobilie und beraten Sie individuell.",
-              },
-              {
-                step: "3",
-                title: "Angebot & Förderung",
-                description:
-                  "Sie erhalten ein transparentes Angebot inkl. Förderberechnung.",
-              },
-              {
-                step: "4",
-                title: "Installation",
-                description:
-                  "Unser Fachteam führt die Installation termingerecht durch.",
-              },
-            ].map((item, index) => (
+            {(service.slug === "ersttrocknung-rohrbruch"
+              ? [
+                  { step: "1", title: "Leckortung", description: "Wir orten die Undichtigkeit zielgenau mit Messtechnik – ohne unnötigen Aufbruch." },
+                  { step: "2", title: "Beseitigung", description: "Rohrbruch oder undichte Stelle wird fachgerecht repariert bzw. ausgetauscht." },
+                  { step: "3", title: "Ersttrocknung", description: "Professionelle Bautrocknung mit Trocknungsgeräten für Wände, Böden und Decken." },
+                  { step: "4", title: "Abnahme & Dokumentation", description: "Feuchtemessung, Abnahme und bei Bedarf Dokumentation für die Versicherung." },
+                ]
+              : [
+                  { step: "1", title: "Kontakt aufnehmen", description: "Rufen Sie uns an oder nutzen Sie unser Kontaktformular." },
+                  { step: "2", title: "Beratung vor Ort", description: "Wir besichtigen Ihre Immobilie und beraten Sie individuell." },
+                  { step: "3", title: "Angebot & Förderung", description: "Sie erhalten ein transparentes Angebot inkl. Förderberechnung." },
+                  { step: "4", title: "Installation", description: "Unser Fachteam führt die Installation termingerecht durch." },
+                ]
+            ).map((item, index) => (
               <div key={index} className="relative">
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#F7941D] to-[#0089CF] flex items-center justify-center mx-auto mb-4">

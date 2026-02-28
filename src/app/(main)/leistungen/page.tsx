@@ -30,8 +30,8 @@ export default function LeistungenPage() {
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground">
               Von der Wärmepumpen-Installation über Gasthermen-Service bis zur
-              Fußbodenheizung – wir bieten Ihnen das komplette Spektrum moderner
-              Heiztechnik.
+              Ersttrocknung nach Wasserschaden – wir bieten Ihnen das komplette
+              Spektrum moderner Heiztechnik und Schadenservice.
             </p>
           </div>
         </div>
